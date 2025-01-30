@@ -17,7 +17,7 @@ const useTextAnimation = (titleText: string) => {
   const animateTitle = () => {
     if (!titleRef.current) return;
 
-    const animationInterval = 3000; // 調整為每次重置動畫的時間（毫秒），例如改為 3000
+    const animationInterval = 7000; // 調整為每次重置動畫的時間（毫秒），例如改為 3000
     const characterDelay = 200; // 調整為每個字符顯示的延遲時間（毫秒），例如改為 200
     const randomDelay = 50; // 調整為隨機字符的顯示延遲時間（毫秒），可保持 50
 
