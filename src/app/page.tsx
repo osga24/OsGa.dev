@@ -16,9 +16,7 @@ export default function Page() {
 
   return (
     <div className="flex justify-center items-center h-screen px-6">
-      {/* 使用 flex-col-reverse 讓小螢幕時變成圖片在下 */}
       <div className="flex flex-col-reverse md:flex-row justify-between items-center w-full max-w-6xl">
-        {/* 左側內容區塊 */}
         <div className="flex flex-col justify-center items-center md:items-start">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -48,11 +46,10 @@ export default function Page() {
               wrapper="span"
               speed={50}
               repeat={Infinity}
-              className="text-2xl md:text-3xl font-mono text-green-300"
+              className="text-xl md:text-3xl font-bold font-mono text-green-300"
             />
           </motion.p>
 
-          {/* 社群連結 */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
@@ -62,27 +59,26 @@ export default function Page() {
             <div className="flex justify-center md:justify-start space-x-4 text-white pl-5">
 			 <a
 				href="#"
-				className="inline-flex justify-center items-center w-12 h-12 border-2 border-green-300 text-green-300 text-xl rounded-full transition-all duration-300 ease-in-out transform hover:scale-125 hover:translate-y-[-5px] hover:bg-green-300 hover:text-black hover:shadow-[0_0_25px_#48bb78]"
+				className="inline-flex justify-center items-center w-12 h-12 border-2 border-green-300 text-green-300 text-xl rounded-full transition-all duration-300 ease-in-out transform hover:scale-125 hover:translate-y-[-5px] hover:bg-green-300 hover:text-white hover:shadow-[0_0_25px_#48bb78]"
+			  >
+				<i className="fa-brands fa-instagram text-lg"></i>
+			  </a>
+			  <a
+				href="#"
+				className="inline-flex justify-center items-center w-12 h-12 border-2 border-green-300 text-green-300 text-xl rounded-full transition-all duration-300 ease-in-out transform hover:scale-125 hover:translate-y-[-5px] hover:bg-green-300 hover:text-white hover:shadow-[0_0_25px_#48bb78]"
 			  >
 				<i className="fa-brands fa-github text-lg"></i>
 			  </a>
 			  <a
 				href="#"
-				className="inline-flex justify-center items-center w-12 h-12 border-2 border-green-300 text-green-300 text-xl rounded-full transition-all duration-300 ease-in-out transform hover:scale-125 hover:translate-y-[-5px] hover:bg-green-300 hover:text-black hover:shadow-[0_0_25px_#48bb78]"
+				className="inline-flex justify-center items-center w-12 h-12 border-2 border-green-300 text-green-300 text-xl rounded-full transition-all duration-300 ease-in-out transform hover:scale-125 hover:translate-y-[-5px] hover:bg-green-300 hover:text-white hover:shadow-[0_0_25px_#48bb78]"
 			  >
 				<i className="fa-brands fa-discord text-lg"></i>
-			  </a>
-			  <a
-				href="#"
-				className="inline-flex justify-center items-center w-12 h-12 border-2 border-green-300 text-green-300 text-xl rounded-full transition-all duration-300 ease-in-out transform hover:scale-125 hover:translate-y-[-5px] hover:bg-green-300 hover:text-black hover:shadow-[0_0_25px_#48bb78]"
-			  >
-				<i className="fa-brands fa-instagram text-lg"></i>
 			  </a>
             </div>
           </motion.div>
         </div>
 
-        {/* 右側圖片區塊 */}
         <div className="flex-shrink-0 pb-8 md:pb-0">
           <img
             src="avatar.png"
