@@ -36,7 +36,7 @@ export default function ContactPage() {
       icon: <Linkedin />,
       label: 'LinkedIn',
       value: 'Yo-Rei Huang',
-      href: 'https://www.linkedin.com/in/oscar-huang-607543340/'
+      href: 'https://www.linkedin.com/in/yo-rei-huang-607543340/'
     },
     {
       icon: <Instagram />,

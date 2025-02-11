@@ -55,7 +55,7 @@ const LinktreePage: React.FC = () => {
     {
       icon: <Linkedin className="w-5 h-5" />,
       label: 'LinkedIn',
-      link: 'https://www.linkedin.com/in/oscar-huang-607543340/'
+      link: 'https://www.linkedin.com/in/yo-rei-huang-607543340://www.linkedin.com/in/yo-rei-huang-607543340/'
     },
     {
       icon: <Instagram className="w-5 h-5" />,
