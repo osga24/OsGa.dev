@@ -182,7 +182,7 @@ const LinktreePage: React.FC = () => {
             </div>
 
             <div>
-              <h2 className="text-xl font-semibold text-green-300 mb-4">Friends Links</h2>
+              <h2 className="text-xl font-semibold text-green-300 mb-4">Friendly Links</h2>
               <div className="grid grid-cols-2 gap-4">
                 {friendLinks.map((friend, index) => (
                   <a
