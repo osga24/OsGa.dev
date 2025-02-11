@@ -13,8 +13,12 @@ interface SectionTitleProps {
   icon: string;
 }
 
-// 添加動畫容器組件
-const AnimatedSection = ({ children, delay = 0 }) => (
+interface AnimatedSectionProps {
+  children: React.ReactNode;
+  delay?: number;
+}
+
+const AnimatedSection = ({ children, delay = 0 }: AnimatedSectionProps) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}

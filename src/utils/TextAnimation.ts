@@ -1,12 +1,12 @@
-"use client"; // 確保這行在檔案的最上方
+"use client";
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 
 const useTextAnimation = (titleText: string) => {
   const titleRef = useRef<HTMLHeadingElement>(null);
 
   const randomText = (amount: number) => {
-    const symbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+[]{}|;:'\",.<>?/`~"; // 符號字符集
+    const symbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+[]{}|;:'\",.<>?/`~";
     let text = '';
     for (let i = 0; i < amount; i++) {
       text += symbols[Math.floor(Math.random() * symbols.length)];
@@ -14,21 +14,20 @@ const useTextAnimation = (titleText: string) => {
     return text;
   };
 
-  const animateTitle = () => {
+  const animateTitle = useCallback(() => {
     if (!titleRef.current) return;
 
-    const animationInterval = 7000; // 調整為每次重置動畫的時間（毫秒），例如改為 3000
-    const characterDelay = 200; // 調整為每個字符顯示的延遲時間（毫秒），例如改為 200
-    const randomDelay = 50; // 調整為隨機字符的顯示延遲時間（毫秒），可保持 50
+    const animationInterval = 7000;
+    const characterDelay = 200;
+    const randomDelay = 50;
 
-    setInterval(() => {
+    const intervalId = setInterval(() => {
       for (let j = 0; j <= titleText.length; j++) {
         window.setTimeout(() => {
           const current = j;
           for (let k = 0; k <= 5; k++) {
             window.setTimeout(() => {
               const correct = titleText.slice(0, current) + randomText(titleText.length - current);
-              // 在這裡檢查 titleRef.current 是否為 null
               if (titleRef.current) {
                 titleRef.current.innerText = correct;
               }
@@ -37,11 +36,16 @@ const useTextAnimation = (titleText: string) => {
         }, characterDelay * j);
       }
     }, animationInterval);
-  };
 
-	useEffect(() => {
-	  animateTitle();
-	}, [animateTitle]);
+    // 清理函數
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [titleText]); // 只依賴 titleText
+
+  useEffect(() => {
+    animateTitle();
+  }, [animateTitle]);
 
   return titleRef;
 };
