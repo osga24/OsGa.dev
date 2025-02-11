@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import experiencesData from '@/data/experiences.json';
 import Navbar from '@/components/Navbar';
@@ -12,6 +13,7 @@ interface SectionTitleProps {
   icon: string;
 }
 
+// 添加動畫容器組件
 const AnimatedSection = ({ children, delay = 0 }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
@@ -79,11 +81,13 @@ export default function Page() {
           transition={{ duration: 0.8 }}
           className="w-full h-[150px] md:h-[250px] bg-gradient-to-r from-blue-500 to-purple-600 relative rounded-lg overflow-hidden shadow-lg"
         >
-          <img
-            src="/background.jpg"
-            alt="Profile Background"
-            className="w-full h-full object-cover"
-          />
+			<Image
+			  src="/background.jpg"
+			  alt="Profile Background"
+			  fill
+			  className="object-cover"
+			  priority
+			/>
         </motion.div>
 
         {/* Profile Picture & Name Section */}
@@ -96,11 +100,14 @@ export default function Page() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="flex justify-center md:block"
             >
-              <img
-                src="/header.png"
-                alt="Profile Picture"
-                className="w-28 h-28 md:w-[168px] md:h-[168px] rounded-full border-4 border-[#2c2a24] bg-white object-cover"
-              />
+			<Image
+			  src="/header.png"
+			  alt="Profile Picture"
+			  width={168}
+			  height={168}
+			  className="w-28 h-28 md:w-[168px] md:h-[168px] rounded-full border-4 border-[#2c2a24] bg-white object-cover"
+			  priority
+			/>
             </motion.div>
             {/* Name and Title */}
             <motion.div
@@ -134,7 +141,7 @@ export default function Page() {
           <section>
             <SectionTitle icon="whoami">Whoami</SectionTitle>
             <p className="mb-4 text-xs md:text-base text-white/80 leading-relaxed">
-              Hi, I'm OsGa, commonly known by the IDs OsGa or os24. I'm a university student at National Yunlin University of Science and Technology with a passion for IT-related skills. I focus on cybersecurity, programming, and related fields, and I'm actively involved in tech communities, often serving as a speaker at conferences and camps.
+              Hi, I&apos;m OsGa, commonly known by the IDs OsGa or os24. I&apos;m a university student at National Yunlin University of Science and Technology with a passion for IT-related skills. I focus on cybersecurity, programming, and related fields, and I&apos;m actively involved in tech communities, often serving as a speaker at conferences and camps.
             </p>
           </section>
         </AnimatedSection>

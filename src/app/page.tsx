@@ -42,7 +42,7 @@ const Page: React.FC = () => {
               transition={{ duration: 0.5 }}
               className="text-lg md:text-3xl text-white text-center md:text-left"
             >
-              <span>HI! I'm a&nbsp;</span>
+              <span>HI! I&apos;m a&nbsp;</span>
               <TypeAnimation
                 sequence={[
                   "Developer",

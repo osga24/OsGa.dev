@@ -39,9 +39,9 @@ const useTextAnimation = (titleText: string) => {
     }, animationInterval);
   };
 
-  useEffect(() => {
-    animateTitle();
-  }, []);
+	useEffect(() => {
+	  animateTitle();
+	}, [animateTitle]);
 
   return titleRef;
 };

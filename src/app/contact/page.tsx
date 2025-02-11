@@ -76,7 +76,7 @@ export default function ContactPage() {
             </h2>
 
             <p className="text-white text-lg leading-relaxed">
-              I'm open to new opportunities, collaborations,
+              I&apos;m open to new opportunities, collaborations,
               or just a friendly chat. Before reaching out,
               please introduce yourself briefly.
             </p>
