@@ -7,7 +7,7 @@ import useTextAnimation from "@/utils/TextAnimation";
 import { TypeAnimation } from "react-type-animation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
+import Image from 'next/image';
 interface SocialLink {
   icon: React.ReactNode;
   label: string;
@@ -103,11 +103,14 @@ const Page: React.FC = () => {
               ))}
             </motion.div>
           </div>
-          <img
-            src="avatar.png"
-            alt="avatar"
-            className="w-[200px] md:w-[300px] lg:w-[500px] h-auto object-cover rounded-full pb-4 md:pb-0"
-          />
+			<Image
+			  src="/avatar.png"
+			  alt="avatar"
+			  width={500}
+			  height={500}
+			  priority
+			  className="w-[200px] md:w-[300px] lg:w-[500px] h-auto object-cover rounded-full pb-4 md:pb-0"
+			/>
         </div>
       </div>
       <div className="absolute bottom-0 left-0 right-0">
