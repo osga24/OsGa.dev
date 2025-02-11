@@ -11,7 +11,6 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Image from "next/image";
 interface ContactMethod {
   icon: React.ReactNode;
   label: string;

@@ -120,12 +120,12 @@ export default function Page() {
     <main className="min-h-screen text-white">
       <Navbar/>
       {/* Facebook-style header with animation */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="max-w-4xl mx-auto px-4 md:px-10 py-4 md:py-8 mt-4 md:mt-8"
-      >
+		<motion.div
+		  initial={{ opacity: 0 }}
+		  animate={{ opacity: 1 }}
+		  transition={{ duration: 0.8 }}
+		  className="max-w-4xl mx-auto px-4 md:px-10 py-8 md:py-8 mt-10 md:mt-8"
+		>
         {/* Background Cover */}
         <motion.div
           initial={{ scale: 1.1 }}
