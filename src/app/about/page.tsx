@@ -18,6 +18,54 @@ interface AnimatedSectionProps {
   delay?: number;
 }
 
+interface Education {
+  school: string;
+  department: string;
+  degree: string;
+  period: string;
+}
+
+interface Work {
+  company: string;
+  title: string;
+  date: string;
+}
+
+interface Certification {
+  title: string;
+  issuer: string;
+  date: string;
+  id?: string;
+}
+
+interface Contest {
+  title: string;
+  desc: string;
+  href?: string;
+}
+
+interface Presentation {
+  desc: string;
+  title: string;
+  topic?: string;
+}
+
+interface CommunityConference {
+  title: string;
+  year: string;
+  position?: string;
+}
+
+interface ExperiencesData {
+  education: Education[];
+  working: Work[];
+  certifications: Certification[];
+  contests: {
+    [year: string]: Contest[];
+  };
+  presentations: Presentation[];
+  communityConferences: CommunityConference[];
+}
 const AnimatedSection = ({ children, delay = 0 }: AnimatedSectionProps) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
