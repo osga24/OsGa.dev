@@ -12,7 +12,7 @@ subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "OsGa.lol",
+  title: "OsGa.dev",
   description: "About the OsGa",
   icons: {
     icon: '/favicon.png',
