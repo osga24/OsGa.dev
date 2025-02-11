@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaDiscord } from 'react-icons/fa';
 import { Mail, Github, Linkedin, Instagram, Facebook } from 'lucide-react';
 const ContactSection = () => {
   const contacts = [
@@ -33,7 +34,7 @@ const ContactSection = () => {
       href: 'https://www.facebook.com/osga24/'
     },
     {
-      icon: <i className="fa-brands fa-discord text-lg" />,
+	  icon: <FaDiscord className="w-6 h-6" />,
       label: 'Discord',
       value: 'osga_',
       href: 'https://discord.com/users/osga_'
@@ -51,12 +52,12 @@ const ContactSection = () => {
               rel="noopener noreferrer"
               className="group flex items-center p-3 rounded-lg text-base
                        transition-all duration-300
-                       hover:bg-green-400/10"
+                       hover:bg-green-300/10"
             >
-              <div className="p-2 rounded-full transition-colors duration-300 text-green-400">
+              <div className="p-2 rounded-full transition-colors duration-300 text-green-300">
                 {contact.icon}
               </div>
-              <span className="ml-4 font-medium text-gray-300 group-hover:text-green-400">
+              <span className="ml-4 font-medium text-gray-300 group-hover:text-green-300">
                 {contact.value}
               </span>
             </a>

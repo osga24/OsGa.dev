@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { FaDiscord } from 'react-icons/fa';
 import Image from "next/image";
 import {
   BookOpen,
@@ -34,7 +35,7 @@ const LinktreePage: React.FC = () => {
     {
       icon: <BookOpen size={20} />,
       label: "BLOG",
-      link: "#"
+      link: "https://blog.osga.dev"
     },
     {
       icon: <Github className="w-5 h-5" />,
@@ -42,7 +43,7 @@ const LinktreePage: React.FC = () => {
       link: 'https://github.com/OsGa24'
     },
     {
-      icon: <i className="fa-brands fa-discord text-lg" />,
+	  icon: <FaDiscord className="w-6 h-6 " />,
       label: 'Discord',
       link: 'https://discord.com/users/osga_'
     },
@@ -86,6 +87,18 @@ const LinktreePage: React.FC = () => {
       avatar: "/friends/yudong.png",
       link: "https://yudong-0222.github.io/links/",
       description: "斜咖"
+    },
+    {
+      name: "Qian",
+      avatar: "/friends/qian.webp",
+      link: "https://blog.qian30.net/",
+      description: "甲柴"
+    },
+    {
+      name: "Nelson",
+      avatar: "/friends/nelson.png",
+      link: "https://nelsongx.com/",
+      description: "他說他要叫大帥哥"
     },
     {
       name: "此情吳計可消除",

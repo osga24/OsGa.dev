@@ -98,9 +98,9 @@ const SectionTitle = ({ children, icon }: SectionTitleProps) => {
       transition={{ duration: 0.5 }}
     >
       <h1 className="title font-bold text-base md:text-2xl relative inline-flex items-center gap-2 pb-2 text-white">
-        {IconComponent && <IconComponent className="w-4 h-4 md:w-6 md:h-6 text-green-400" />}
+        {IconComponent && <IconComponent className="w-4 h-4 md:w-6 md:h-6 text-green-300" />}
         {children}
-        <div className="absolute -bottom-1 left-0 right-0 h-[2px] md:h-[3px] bg-green-400" />
+        <div className="absolute -bottom-1 left-0 right-0 h-[2px] md:h-[3px] bg-green-300" />
       </h1>
     </motion.div>
   );

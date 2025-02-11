@@ -20,7 +20,7 @@ return () => window.removeEventListener('scroll', handleScroll)
 
 const navigation = [
 { name: 'About me (CV)', href: '/about', icon: User },
-{ name: 'Blog', href: 'https://blog.osga.lol', icon: BookOpen },
+{ name: 'Blog', href: 'https://blog.osga.dev', icon: BookOpen },
 { name: 'LinkTree', href: '/linktree', icon: Link2 },
 { name: 'Contact me', href: '/contact', icon: Mail },
 ]

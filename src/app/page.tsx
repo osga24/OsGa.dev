@@ -23,11 +23,11 @@ const Page: React.FC = () => {
     {
       icon: <BookOpen size={20} />,
       label: "BLOG",
-      link: "#"
+      link: "https://blog.osga.dev"
     },
-    { icon: <i className="fa-brands fa-instagram text-lg" />, label: "Instagram", link: "#" },
-    { icon: <i className="fa-brands fa-github text-lg" />, label: "GitHub", link: "#" },
-    { icon: <i className="fa-brands fa-discord text-lg" />, label: "Discord", link: "#" },
+    { icon: <i className="fa-brands fa-instagram text-lg" />, label: "Instagram", link: "https://www.instagram.com/os324_/" },
+    { icon: <i className="fa-brands fa-github text-lg" />, label: "GitHub", link: "https://github.com/OsGa24" },
+    { icon: <i className="fa-brands fa-discord text-lg" />, label: "Discord", link: "https://discord.com/users/osga_" },
   ];
 
   return (

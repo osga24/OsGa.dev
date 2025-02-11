@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { FaDiscord } from 'react-icons/fa';
 import { motion } from "framer-motion";
 import {
   Mail,
@@ -10,7 +11,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
+import Image from "next/image";
 interface ContactMethod {
   icon: React.ReactNode;
   label: string;
@@ -51,8 +52,8 @@ export default function ContactPage() {
       href: 'https://www.facebook.com/osga24/'
     },
     {
-      icon: <i className="fa-brands fa-discord text-lg" />,
-      label: 'Discord',
+	  icon: <FaDiscord className="w-6 h-6 " />,
+	  label: 'Discord',
       value: 'osga_',
       href: 'https://discord.com/users/osga_'
     }
