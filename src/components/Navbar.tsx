@@ -19,9 +19,9 @@ return () => window.removeEventListener('scroll', handleScroll)
 }, [])
 
 const navigation = [
-{ name: 'About me', href: '/', icon: User },
-{ name: 'Blog', href: '/about', icon: BookOpen },
-{ name: 'LinkTree', href: '/services', icon: Link2 },
+{ name: 'About me (CV)', href: '/about', icon: User },
+{ name: 'Blog', href: 'https://blog.osga.lol', icon: BookOpen },
+{ name: 'LinkTree', href: '/linktree', icon: Link2 },
 { name: 'Contact me', href: '/contact', icon: Mail },
 ]
 
@@ -33,7 +33,7 @@ return (
 			{/* Logo */}
 			<div className="flex-shrink-0 transform transition-transform duration-300 hover:scale-110">
 				<Link href="/" className="text-xl font-bold text-white">
-				Logo
+				osga.dev
 				</Link>
 			</div>
 

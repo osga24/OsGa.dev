@@ -1,0 +1,263 @@
+{
+  "education": [
+    {
+      "school": "Kaohsiung Municipal Haiching Vocational High School of Technology and Commerce",
+      "department": "Dept. of Computer Science",
+      "degree": "High School",
+      "period": "2021 - 2024"
+    },
+    {
+      "school": "National Yunlin University of Science and Technology",
+      "department": "Department of Information Management (AI Elite Program)",
+      "degree": "Bachelor's degree",
+      "period": "2024 - NOW"
+    }
+  ],
+  "working": [
+    {
+      "company": "NYUST Information Center - Network Division",
+      "title": "Network Security Intern",
+      "date": "2024 - Now"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Cisco Certified Support Technician Cybersecurity",
+      "issuer": "Cisco",
+      "date": "April 13, 2024",
+      "id": "SxvH-u8w8"
+    },
+	{
+		  "title": "Information Technician Specialist Cybersecurity",
+		  "issuer": "Information Technician Specialist ",
+		  "date": "April 13, 2024",
+		  "id": "wmdx5-48Go"
+	}
+
+  ],
+  "contests": {
+    "2025": [
+      {
+        "title": "AIS3 EOF 進階資安攻防演練 / 最佳藍色小精靈獎",
+        "desc": "(Team: 希望這次可以進決賽><)"
+      }
+    ],
+	"2024": [
+	   {
+		 "title": "CGGC Preliminary / Rank 21",
+		 "desc": "(Team: 測試隊伍)"
+	   },
+	   {
+		 "title": "AEGIS Preliminary / Rank 13",
+		 "desc": "(Team: 從缺)"
+	   },
+	   {
+		 "title": "AIS3 Pre-exam / Rank 109",
+		 "desc": ""
+	   },
+	   {
+		 "title": "AIS3 MyFirstCTF / Silver Award (Rank 7)",
+		 "desc": ""
+	   },
+	   {
+		 "title": "PicoCTF / Rank 281/6957",
+		 "desc": "B33F 50UP 4"
+	   }
+	 ],
+	 "2023": [
+	   {
+		 "title": "T貓盃 全國資安基礎實務能力競賽 / 晉級（卡到檢定 QQ）",
+		 "desc": ""
+	   },
+	   {
+		 "title": "53屆 全國技能競賽 網路安全分區賽 / 中區佳作",
+		 "desc": ""
+	   }
+	 ],
+	 "2022": [
+	   {
+		 "title": "52屆 全國技能競賽 資訊網路布建全國賽 / 全國第四",
+		 "desc": ""
+	   },
+	   {
+		 "title": "52屆 全國技能競賽 資訊網路布建分區賽",
+		 "desc": ""
+	   }
+	 ]
+  },
+  "presentations": [
+	  {
+		"title": "【 資深玩家 】SCIST 2025 聯合寒訓",
+		"topic": "透過 Discord bot 學習應用開發實務,經驗分享",
+		"desc":"2025 1/24 ~ 1/26"
+	  },
+	  {
+		"title": "師大附中 網管小組",
+		"topic": "網頁安全基礎",
+		"desc":"2024 11/15"
+	  },
+	  {
+		"title": "2024 HITCON CTF Ｘ 菁英人才交流活動",
+		"topic": "THJCC 受邀講者",
+		"desc":"2024 11/10"
+	  },
+	  {
+		"title": "2024 南七校聯合迎新",
+		"topic": "資訊安全經驗分享講者",
+		"desc":"2024 10/27"
+	  },
+	  {
+		"title": "嘉義高中 資訊研究社 115 屆",
+		"topic": "資訊安全實務",
+		"desc":"2024 9/25 ~ 1/8"
+	  },
+	  {
+		"title": "教育部資安人才培育計畫 零日餅乾社 夏日資安工作坊",
+		"topic": "資訊安全實務",
+		"desc":"2024 8/26"
+	  },
+	  {
+		"title": "HITCON CMT 2024",
+		"topic": "Lightning Talk 講者",
+		"desc":"2024 8/24"
+	  },
+	  {
+		"title": "JNIC 嘉中&嘉女&南二中 聯合資訊體驗營",
+		"topic": "資訊安全實務",
+		"desc":"2024 8/10 ~ 8/11"
+	  },
+	  {
+		"title": "正修科技大學 資訊工程資訊工系",
+		"topic": "資安網路攻防競賽體驗",
+		"desc":"2024 6/21"
+	  },
+	  {
+		"title": "南四校資訊社聯合社課（台南一中、台南二中、台南女中、南大附中）",
+		"topic": "Discord Bot 開發",
+		"desc":"2024 6/9"
+	  },
+	  {
+		"title": "教育部資安人才培育計畫 一日資訊體驗營（台中場）",
+		"topic": "資訊安全實務",
+		"desc":"2024 6/8"
+	  },
+	  {
+		"title": "台南二中 資訊研究社",
+		"topic": "資安與資訊社群經驗分享",
+		"desc":"2024 6/2"
+	  },
+	  {
+		"title": "教育部資安人才培育計畫 一日資訊體驗營（台北場）",
+		"topic": "資訊安全實務",
+		"desc":"2024 6/1"
+	  },
+	  {
+		"title": "新莊高中 電腦研習社",
+		"topic": "Linux 基礎",
+		"desc":"2024 5/30"
+	  },
+	  {
+		"title": "教育部資安人才培育計畫 一日資訊體驗營（台南場）",
+		"topic": "程式設計實務",
+		"desc":"2024 5/26"
+	  },
+	  {
+		"title": "南大附中 資訊研究社",
+		"topic": "社群經驗與發展",
+		"desc":"2024 5/1"
+	  },
+	  {
+		"title": "SCAICT 二月主題課程",
+		"topic": "Discord Bot 開發 從入門到放棄",
+		"desc":"2024 2/18 、 2/25"
+	  },
+	  {
+		"title": "知資為資知-2024中部電資聯合寒訓",
+		"topic": "資安實務",
+		"desc":"2024 1/24 ~ 1/26"
+	  },
+	  {
+		"title": "海青工商  資訊科",
+		"topic": "資訊安全入門選修課程",
+		"desc":"2023 12/15 ~ 2024 1/5"
+	  },
+	  {
+		"title": "新莊高中 電腦研習社",
+		"topic": "Discord Bot 開發",
+		"desc":"2023 9/21"
+	  }
+  ],
+  "communityConferences": [
+    {
+      "title": "南臺灣學生資訊社群 SCIST 資安季中賽",
+      "year": "2025",
+	  "position":"出題者"
+    },
+    {
+      "title": "THJCC 2024 Winter ",
+      "year": "2024",
+	  "position":"出題者"
+    },
+    {
+      "title": "延平高中 資訊學群體驗營",
+      "year": "2024",
+	  "position":"資訊領域分享 / CVE 漏洞付現 助教"
+    },
+    {
+      "title": "南臺灣學生資訊社群 SCIST",
+      "year": "2024 ~ 2024 (S5)",
+	  "position":"資安助教"
+    },
+    {
+      "title": "AIS3 Juniors 2024 新型態高中職資安課程",
+      "year": "2024",
+	  "position":"助教"
+    },
+    {
+      "title": "AIS3 2024 新型態高中職資安課程",
+      "year": "2024",
+	  "position":"A 組學員"
+    },
+    {
+      "title": "資通院 CTF種子培訓工作坊",
+      "year": "2024",
+	  "position":"學員 / CTF Rank 1"
+    },
+    {
+      "title": "教育部資安人才培育計畫 零日餅乾社",
+      "year": "2024",
+	  "position":"顧問"
+    },
+    {
+      "title": "臺灣高中聯合資安競賽THJCC 第一屆",
+      "year": "2024",
+	  "position":"創辨人 / 出題者"
+    },
+    {
+      "title": "學生計算機年會 SITCON ",
+      "year": "2024",
+	  "position":"Lightning Talk 主持人"
+    },
+    {
+      "title": "教育部資安人才培育計畫 一日資訊體驗營（雲林場）",
+      "year": "2024",
+	  "position":"助教"
+    },
+    {
+      "title": "中部高中電資社團聯合會議 SCAICT",
+      "year": "2024",
+	  "position":"資訊組"
+    },
+    {
+      "title": "南九校資訊社 x SCIST 2024 聯合寒訓資得其樂",
+      "year": "2024",
+	  "position":"活動規劃 / 主持人"
+    },
+    {
+      "title": "知資為資知-2024中部電資聯合寒訓",
+      "year": "2024",
+	  "position":"資訊組 / 隊輔 / CTF出題者"
+    }
+
+  ]
+}
