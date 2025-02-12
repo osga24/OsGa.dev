@@ -9,7 +9,8 @@ import {
   Github,
   Linkedin,
   Instagram,
-  Facebook
+  Facebook,
+  CakeSlice
 } from "lucide-react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
@@ -51,6 +52,12 @@ const LinktreePage: React.FC = () => {
       icon: <Mail className="w-5 h-5" />,
       label: 'Email',
       link: 'mailto:me@osga.lol'
+    },
+    {
+      icon: <CakeSlice className="w-5 h-5" />,
+      label: 'Cake.me',
+      value: '黃宥睿',
+      href: 'https://www.cake.me/me/osga'
     },
     {
       icon: <Linkedin className="w-5 h-5" />,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaDiscord } from 'react-icons/fa';
-import { Mail, Github, Linkedin, Instagram, Facebook } from 'lucide-react';
+import { Mail, Github, Linkedin, Instagram, Facebook, CakeSlice} from 'lucide-react';
 const ContactSection = () => {
   const contacts = [
     {
@@ -14,6 +14,12 @@ const ContactSection = () => {
       label: 'GitHub',
       value: '@OsGa24',
       href: 'https://github.com/OsGa24'
+    },
+    {
+      icon: <CakeSlice className="w-5 h-5" />,
+      label: 'Cake.me',
+      value: '黃宥睿',
+      href: 'https://www.cake.me/me/osga'
     },
     {
       icon: <Linkedin className="w-5 h-5" />,

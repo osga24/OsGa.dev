@@ -4,7 +4,6 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Menu, X, User, BookOpen, Link2, Mail } from 'lucide-react'
-
 const Navbar = () => {
 const [isOpen, setIsOpen] = useState(false)
 const [scrolled, setScrolled] = useState(false)

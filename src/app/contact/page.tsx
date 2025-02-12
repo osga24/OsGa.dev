@@ -7,7 +7,8 @@ import {
   Github,
   Linkedin,
   Instagram,
-  Facebook
+  Facebook,
+  CakeSlice
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -31,6 +32,12 @@ export default function ContactPage() {
       label: 'GitHub',
       value: '@OsGa24',
       href: 'https://github.com/OsGa24'
+    },
+    {
+      icon: <CakeSlice className="w-5 h-5" />,
+      label: 'Cake.me',
+      value: '黃宥睿',
+      href: 'https://www.cake.me/me/osga'
     },
     {
       icon: <Linkedin />,
