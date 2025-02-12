@@ -89,102 +89,141 @@
 	  {
 		"title": "【 資深玩家 】SCIST 2025 聯合寒訓",
 		"topic": "透過 Discord bot 學習應用開發實務,經驗分享",
-		"desc":"2025 1/24 ~ 1/26"
+		"desc":"2025 1/24 ~ 1/26",
+        "category": "dev"
 	  },
 	  {
 		"title": "師大附中 網管小組",
 		"topic": "網頁安全基礎",
-		"desc":"2024 11/15"
+		"desc":"2024 11/15",
+        "category": "sec"
 	  },
 	  {
 		"title": "2024 HITCON CTF Ｘ 菁英人才交流活動",
 		"topic": "THJCC 受邀講者",
-		"desc":"2024 11/10"
+		"desc":"2024 11/10",
+        "category": "conf"
+
+
 	  },
 	  {
 		"title": "2024 南七校聯合迎新",
 		"topic": "資訊安全經驗分享講者",
-		"desc":"2024 10/27"
+		"desc":"2024 10/27",
+        "category": "conf"
+
 	  },
 	  {
 		"title": "嘉義高中 資訊研究社 115 屆",
 		"topic": "資訊安全實務",
-		"desc":"2024 9/25 ~ 1/8"
+		"desc":"2024 9/25 ~ 1/8",
+        "category": "sec"
+
 	  },
 	  {
 		"title": "教育部資安人才培育計畫 零日餅乾社 夏日資安工作坊",
 		"topic": "資訊安全實務",
-		"desc":"2024 8/26"
+		"desc":"2024 8/26",
+        "category": "sec"
+
 	  },
 	  {
 		"title": "HITCON CMT 2024",
 		"topic": "Lightning Talk 講者",
-		"desc":"2024 8/24"
+		"desc":"2024 8/24",
+        "category": "conf"
+
 	  },
 	  {
 		"title": "JNIC 嘉中&嘉女&南二中 聯合資訊體驗營",
 		"topic": "資訊安全實務",
-		"desc":"2024 8/10 ~ 8/11"
+		"desc":"2024 8/10 ~ 8/11",
+        "category": "sec"
+
 	  },
 	  {
 		"title": "正修科技大學 資訊工程資訊工系",
 		"topic": "資安網路攻防競賽體驗",
-		"desc":"2024 6/21"
+		"desc":"2024 6/21",
+        "category": "sec"
+
 	  },
 	  {
 		"title": "南四校資訊社聯合社課（台南一中、台南二中、台南女中、南大附中）",
 		"topic": "Discord Bot 開發",
-		"desc":"2024 6/9"
+		"desc":"2024 6/9",
+        "category": "dev"
+
 	  },
 	  {
 		"title": "教育部資安人才培育計畫 一日資訊體驗營（台中場）",
 		"topic": "資訊安全實務",
-		"desc":"2024 6/8"
+		"desc":"2024 6/8",
+        "category": "sec"
+
 	  },
 	  {
 		"title": "台南二中 資訊研究社",
 		"topic": "資安與資訊社群經驗分享",
-		"desc":"2024 6/2"
+		"desc":"2024 6/2",
+        "category": "conf"
+
 	  },
 	  {
 		"title": "教育部資安人才培育計畫 一日資訊體驗營（台北場）",
 		"topic": "資訊安全實務",
-		"desc":"2024 6/1"
+		"desc":"2024 6/1",
+        "category": "sec"
+
 	  },
 	  {
 		"title": "新莊高中 電腦研習社",
 		"topic": "Linux 基礎",
-		"desc":"2024 5/30"
+		"desc":"2024 5/30",
+        "category": "sec"
+
 	  },
 	  {
 		"title": "教育部資安人才培育計畫 一日資訊體驗營（台南場）",
 		"topic": "程式設計實務",
-		"desc":"2024 5/26"
+		"desc":"2024 5/26",
+        "category": "dev"
+
 	  },
 	  {
 		"title": "南大附中 資訊研究社",
 		"topic": "社群經驗與發展",
-		"desc":"2024 5/1"
+		"desc":"2024 5/1",
+        "category": "conf"
+
 	  },
 	  {
 		"title": "SCAICT 二月主題課程",
 		"topic": "Discord Bot 開發 從入門到放棄",
-		"desc":"2024 2/18 、 2/25"
+		"desc":"2024 2/18 、 2/25",
+        "category": "dev"
+
 	  },
 	  {
 		"title": "知資為資知-2024中部電資聯合寒訓",
 		"topic": "資安實務",
-		"desc":"2024 1/24 ~ 1/26"
+		"desc":"2024 1/24 ~ 1/26",
+        "category": "sec"
+
 	  },
 	  {
 		"title": "海青工商  資訊科",
 		"topic": "資訊安全入門選修課程",
-		"desc":"2023 12/15 ~ 2024 1/5"
+		"desc":"2023 12/15 ~ 2024 1/5",
+        "category": "sec"
+
 	  },
 	  {
 		"title": "新莊高中 電腦研習社",
 		"topic": "Discord Bot 開發",
-		"desc":"2023 9/21"
+		"desc":"2023 9/21",
+        "category": "dev"
+
 	  }
   ],
   "communityConferences": [
@@ -201,7 +240,7 @@
     {
       "title": "延平高中 資訊學群體驗營",
       "year": "2024",
-	  "position":"資訊領域分享 / CVE 漏洞付現 助教"
+	  "position":"資訊領域分享 / CVE 漏洞復現 助教"
     },
     {
       "title": "南臺灣學生資訊社群 SCIST",

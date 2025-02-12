@@ -7,6 +7,12 @@ import Navbar from '@/components/Navbar';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import { User2, GraduationCap, Briefcase, Award, MicVocal, Users, Trophy, Contact } from 'lucide-react';
+import { Code, GlobeLock } from 'lucide-react';
+const categoryIcons = {
+	"dev": Code,
+	"sec": GlobeLock,
+	"conf":MicVocal
+};
 
 interface SectionTitleProps {
   children: React.ReactNode;
@@ -48,6 +54,7 @@ interface Presentation {
   desc: string;
   title: string;
   topic?: string;
+  category: string;
 }
 
 interface CommunityConference {
@@ -283,20 +290,27 @@ export default function Page() {
           </dl>
         </section>
 
-        <section className="mt-12 md:mt-16">
-          <SectionTitle icon="presentation">Presentation</SectionTitle>
-          <dl className="space-y-4 my-3 md:my-4">
-            {presentations.map(({ desc, title, topic }, index) => (
-              <div key={index} className="flex flex-col md:flex-row justify-between gap-1 md:gap-2">
-                <dt>
-                  <span className="flex text-xs md:text-base text-white">{title}</span>
-                  {topic && <span className="text-xs md:text-sm text-white/70">{topic}</span>}
-                </dt>
-                <dd className="text-left md:text-right text-xs md:text-base text-white">{desc}</dd>
-              </div>
-            ))}
-          </dl>
-        </section>
+		<section className="mt-12 md:mt-16">
+		  <SectionTitle icon="presentation">Presentation</SectionTitle>
+		  <dl className="space-y-4 my-3 md:my-4">
+			{presentations.map(({ desc, title, topic, category }, index) => {
+			  const IconComponent = categoryIcons[category];
+
+			  return (
+				<div key={index} className="flex flex-col md:flex-row justify-between gap-1 md:gap-2">
+				  <dt>
+					<span className="flex items-center gap-2 text-xs md:text-base text-white">
+					  {title}
+					  {IconComponent && <IconComponent className="text-green-200" size={14} />}
+					</span>
+					{topic && <span className="text-xs md:text-sm text-white/70">{topic}</span>}
+				  </dt>
+				  <dd className="text-left md:text-right text-xs md:text-base text-white">{desc}</dd>
+				</div>
+			  );
+			})}
+		  </dl>
+		</section>
 
         <section className="mt-12 md:mt-16">
           <SectionTitle icon="community">Community & Conference</SectionTitle>
