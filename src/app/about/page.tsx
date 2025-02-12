@@ -6,14 +6,9 @@ import experiencesData from '@/data/experiences.json';
 import Navbar from '@/components/Navbar';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
-import { User2, GraduationCap, Briefcase, Award, MicVocal, Users, Trophy, Contact } from 'lucide-react';
-import { Code, GlobeLock } from 'lucide-react';
+import { User2, GraduationCap, Briefcase, Award, MicVocal, Users, Trophy, Contact, Code, GlobeLock, LucideIcon } from 'lucide-react';
 
-const categoryIcons = {
-  "dev": Code,
-  "sec": GlobeLock,
-  "conf": MicVocal
-} as const;
+type PresentationCategory = 'dev' | 'sec' | 'conf';
 
 interface SectionTitleProps {
   children: React.ReactNode;
@@ -55,7 +50,7 @@ interface Presentation {
   desc: string;
   title: string;
   topic?: string;
-  category: 'dev' | 'sec' | 'conf';
+  category: PresentationCategory;
 }
 
 interface CommunityConference {
@@ -74,6 +69,13 @@ interface ExperiencesData {
   presentations: Presentation[];
   communityConferences: CommunityConference[];
 }
+
+const categoryIcons: { [K in PresentationCategory]: LucideIcon } = {
+  dev: Code,
+  sec: GlobeLock,
+  conf: MicVocal
+};
+
 const AnimatedSection = ({ children, delay = 0 }: AnimatedSectionProps) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
@@ -291,27 +293,26 @@ export default function Page() {
           </dl>
         </section>
 
-		<section className="mt-12 md:mt-16">
-		  <SectionTitle icon="presentation">Presentation</SectionTitle>
-		  <dl className="space-y-4 my-3 md:my-4">
-			{presentations.map(({ desc, title, topic, category }, index) => {
-			  // 這裡加上類型斷言
-			  const IconComponent = categoryIcons[category as keyof typeof categoryIcons];
+		 <section className="mt-12 md:mt-16">
+			  <SectionTitle icon="presentation">Presentation</SectionTitle>
+			  <dl className="space-y-4 my-3 md:my-4">
+				{presentations.map(({ desc, title, topic, category }, index) => {
+				  const IconComponent = categoryIcons[category];
 
-			  return (
-				<div key={index} className="flex flex-col md:flex-row justify-between gap-1 md:gap-2">
-				  <dt>
-					<span className="flex items-center gap-2 text-xs md:text-base text-white">
-					  {title}
-					  {IconComponent && <IconComponent className="text-green-300" size={16} />}
-					</span>
-					{topic && <span className="text-xs md:text-sm text-white/70">{topic}</span>}
-				  </dt>
-				  <dd className="text-left md:text-right text-xs md:text-base text-white">{desc}</dd>
-				</div>
-			  );
-			})}
-		  </dl>
+				  return (
+					<div key={index} className="flex flex-col md:flex-row justify-between gap-1 md:gap-2">
+					  <dt>
+						<span className="flex items-center gap-2 text-xs md:text-base text-white">
+						  {title}
+						  {IconComponent && <IconComponent className="text-green-300" size={16} />}
+						</span>
+						{topic && <span className="text-xs md:text-sm text-white/70">{topic}</span>}
+					  </dt>
+					  <dd className="text-left md:text-right text-xs md:text-base text-white">{desc}</dd>
+					</div>
+				  );
+				})}
+			  </dl>
 		</section>
 
 
