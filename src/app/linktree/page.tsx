@@ -120,7 +120,7 @@ const LinktreePage: React.FC = () => {
     },
     {
       name: "Fearnot",
-      avatar: "/friends/fearnot.avif",
+      avatar: "/friends/fearnot.png",
       link: "https://blog.fearnot221.com/",
       description: "SCIST S5 資安總召"
     },
