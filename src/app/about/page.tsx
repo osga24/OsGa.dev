@@ -8,15 +8,12 @@ import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import { User2, GraduationCap, Briefcase, Award, MicVocal, Users, Trophy, Contact } from 'lucide-react';
 import { Code, GlobeLock } from 'lucide-react';
-import { LucideIcon } from 'lucide-react';
-type CategoryType = 'dev' | 'sec' | 'conf';
 
-const categoryIcons: Record<Presentation['category'], LucideIcon> = {
-  dev: Code,
-  sec: GlobeLock,
-  conf: MicVocal
-};
-
+const categoryIcons = {
+  "dev": Code,
+  "sec": GlobeLock,
+  "conf": MicVocal
+} as const;
 
 interface SectionTitleProps {
   children: React.ReactNode;
@@ -297,8 +294,9 @@ export default function Page() {
 		<section className="mt-12 md:mt-16">
 		  <SectionTitle icon="presentation">Presentation</SectionTitle>
 		  <dl className="space-y-4 my-3 md:my-4">
-			{presentations.map(({ desc, title, topic, category }: Presentation, index) => {
-			  const IconComponent = categoryIcons[category];
+			{presentations.map(({ desc, title, topic, category }, index) => {
+			  // 這裡加上類型斷言
+			  const IconComponent = categoryIcons[category as keyof typeof categoryIcons];
 
 			  return (
 				<div key={index} className="flex flex-col md:flex-row justify-between gap-1 md:gap-2">
@@ -315,6 +313,8 @@ export default function Page() {
 			})}
 		  </dl>
 		</section>
+
+
         <section className="mt-12 md:mt-16">
           <SectionTitle icon="community">Community & Conference</SectionTitle>
           <dl className="space-y-4 my-3 md:my-4">
