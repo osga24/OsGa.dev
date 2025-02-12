@@ -56,7 +56,7 @@ const LinktreePage: React.FC = () => {
     {
       icon: <CakeSlice className="w-5 h-5" />,
       label: 'Cake.me',
-      href: 'https://www.cake.me/me/osga'
+      link: 'https://www.cake.me/me/osga'
     },
     {
       icon: <Linkedin className="w-5 h-5" />,
