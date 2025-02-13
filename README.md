@@ -1,4 +1,4 @@
-# OsGa Personal Website | OsGa 個人網站
+# [OsGa Personal Website | OsGa 個人網站](https://osga.dev)
 
 ![image](https://github.com/user-attachments/assets/bc5232d4-d8f7-4a44-9a39-c3c460b77489)
 
