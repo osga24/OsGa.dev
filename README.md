@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# OsGa Personal Website | OsGa 個人網站
 
-## Getting Started
+![image](https://github.com/user-attachments/assets/bc5232d4-d8f7-4a44-9a39-c3c460b77489)
 
-First, run the development server:
 
+A personal website project built with Next.js framework, showcasing personal experiences and consolidated links.
+
+這是一個使用 Next.js 框架開發的個人網站專案。本網站展示個人經歷以及統整連結。
+
+## Pages Overview | 頁面概括
+
+- Home Page | 主頁
+- About (CV) | 關於（CV）
+- Linktree | Linktree
+- Contact | Contact
+---
+Coming Soon | 待新增
+- Uses | 開發環境
+- Project | 專案
+
+## Tech Stack | 技術架構
+
+- **Frontend Framework | 前端框架**: Next.js 14
+- **Styling | 樣式**: Tailwind CSS
+- **Deployment | 部署**: Vercel
+
+## Getting Started | 開始使用
+
+### System Requirements | 系統需求
+
+- Node.js 18.0 or higher | Node.js 18.0 或更高版本
+- npm or yarn package manager | npm 或 yarn 套件管理器
+
+### Installation Steps | 安裝步驟
+
+1. Clone the repository | 複製專案儲存庫
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/osga-website.git
+cd osga-website
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies | 安裝相依套件
+```bash
+npm install
+# or | 或
+yarn install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Start the development server | 啟動開發伺服器
+```bash
+npm run dev
+# or | 或
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open your browser and visit `http://localhost:3000` to view the website.
+開啟瀏覽器訪問 `http://localhost:3000` 即可看到網站。
 
-## Learn More
+## Project Structure | 專案結構
 
-To learn more about Next.js, take a look at the following resources:
+```
+PROJECT_ROOT
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+├── public                          # Public assets directory | 公共資源目錄
+├── src                            # Source code directory | 源碼目錄
+│   ├── app                        # App directory | 應用程式目錄
+│   │   ├── about                  # About page | 關於頁面
+│   │   │   └── page.tsx
+│   │   ├── contact               # Contact page | 聯絡頁面
+│   │   │   └── page.tsx
+│   │   ├── globals.css           # Global styles | 全域樣式
+│   │   ├── layout.tsx            # Root layout | 根布局
+│   │   ├── linktree             # Linktree page | Linktree 頁面
+│   │   │   └── page.tsx
+│   │   └── page.tsx             # Home page | 首頁
+│   ├── components                # React components | React 元件
+│   │   ├── ContactSection.tsx    # Contact section component | 聯絡區塊元件
+│   │   ├── Footer.tsx           # Footer component | 頁尾元件
+│   │   └── Navbar.tsx           # Navigation bar component | 導航欄元件
+│   ├── data                      # Data directory | 資料目錄
+│   │   └── experiences.json     # Experience data | 經歷資料
+│   └── utils                     # Utility functions | 工具函式
+│       ├── TextAnimation.ts      # Text animation utility | 文字動畫工具
+│       └── smoothScroll.ts       # Smooth scroll utility | 平滑捲動工具
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment | 部署方式
 
-## Deploy on Vercel
+1. Create a new project on Vercel | 在 Vercel 建立新專案
+2. Connect GitHub repository | 連結 GitHub 儲存庫
+3. Deploy! | 部署！
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contact | 聯絡方式
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Website | 網站：[https://www.osga.dev](https://www.osga.dev)
+- Email | 電子郵件：osga@啥.tw
+- GitHub：[@osga24](https://github.com/osga24)
+
+## Changelog | 更新日誌
+
+### v1.0.0 (2024-02-13)
+- Initial release | 初始版本發布
+- Implemented basic features | 實作基本功能
+- Established documentation | 建立文件
