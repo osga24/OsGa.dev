@@ -87,6 +87,18 @@
   },
   "presentations": [
 	  {
+		"title": "學生計算機年會 SITCON ",
+		"topic": "開放式議程 【RE:從零開始帶你入門 CTF 競賽】",
+		"desc":"2025 3/8",
+        "category": "conf"
+	  },
+	  {
+		"title": "臺南二中 資訊研究社",
+		"topic": "網路安全介紹、網頁安全實作",
+		"desc":"2025 2/27 、 3/6",
+        "category": "sec"
+	  },
+	  {
 		"title": "【 資深玩家 】SCIST 2025 聯合寒訓",
 		"topic": "透過 Discord bot 學習應用開發實務,經驗分享",
 		"desc":"2025 1/24 ~ 1/26",
