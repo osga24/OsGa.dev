@@ -17,5 +17,5 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: "Space Mono", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-family: "Space Mono", monospace;
 }
