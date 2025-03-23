@@ -6,8 +6,8 @@ const ContactSection = () => {
     {
       icon: <Mail className="w-5 h-5" />,
       label: 'Email',
-      value: 'me@osga.lol',
-      href: 'mailto:me@osga.lol'
+      value: 'me@oscarhuang950324@gmail.com',
+      href: 'mailto:me@oscarhuang950324@gmail.com'
     },
     {
       icon: <Github className="w-5 h-5" />,
