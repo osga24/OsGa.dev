@@ -24,8 +24,8 @@ export default function ContactPage() {
     {
       icon: <Mail />,
       label: 'Email',
-      value: 'me@osga.lol',
-      href: 'mailto:me@osga.lol'
+      value: 'oscarhuang950324@gmail.com',
+      href: 'mailto:oscarhuang950324@gmail.com'
     },
     {
       icon: <Github />,

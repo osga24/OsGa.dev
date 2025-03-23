@@ -51,7 +51,7 @@ const LinktreePage: React.FC = () => {
     {
       icon: <Mail className="w-5 h-5" />,
       label: 'Email',
-      link: 'mailto:me@osga.lol'
+      link: 'mailto:oscarhuang950324@gmail.com'
     },
     {
       icon: <CakeSlice className="w-5 h-5" />,
