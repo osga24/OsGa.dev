@@ -3,11 +3,28 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import experiencesData from '@/data/experiences.json';
+import projectsData from '@/data/projects.json';
 import Navbar from '@/components/Navbar';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
-import { User2, GraduationCap, Briefcase, Award, MicVocal, Users, Trophy, Contact } from 'lucide-react';
-import { Code, GlobeLock } from 'lucide-react';
+import {
+  User2,
+  GraduationCap,
+  Briefcase,
+  Award,
+  MicVocal,
+  Users,
+  Trophy,
+  Contact,
+  Code,
+  GlobeLock,
+  Github,
+  ExternalLink,
+  Folder,
+  FolderGit,
+  Terminal,
+  Shield
+} from 'lucide-react';
 
 interface SectionTitleProps {
   children: React.ReactNode;
@@ -58,6 +75,13 @@ interface CommunityConference {
   position?: string;
 }
 
+interface Project {
+  title: string;
+  description: string;
+  github: string;
+  tech: string[];
+}
+
 interface ExperiencesData {
   education: Education[];
   working: Work[];
@@ -73,6 +97,23 @@ const categoryIcons = {
   dev: Code,
   sec: GlobeLock,
   conf: MicVocal
+};
+
+// 技術標籤對應的圖標
+const techIcons: Record<string, any> = {
+  "React": Code,
+  "Node.js": Terminal,
+  "MongoDB": Code,
+  "Python": Code,
+  "Docker": Folder,
+  "TypeScript": Code,
+  "Next.js": Code,
+  "TailwindCSS": Code,
+  "Electron": Code,
+  "WebSockets": Code,
+  "OWASP Top 10": Shield,
+  "Crypto API": Shield,
+  "Framer Motion": Code
 };
 
 const AnimatedSection = ({ children, delay = 0 }: AnimatedSectionProps) => (
@@ -94,6 +135,7 @@ const SectionTitle = ({ children, icon }: SectionTitleProps) => {
     contest: Trophy,
     presentation: MicVocal,
     community: Users,
+    projects: FolderGit,
     contact: Contact
   };
 
@@ -196,7 +238,7 @@ export default function Page() {
           <section>
             <SectionTitle icon="whoami">Whoami</SectionTitle>
             <p className="mb-4 text-xs md:text-base text-white/80 leading-relaxed">
-              Hi, I&apos;m OsGa, commonly known by the IDs OsGa or os24. I&apos;m a university student at National Yunlin University of Science and Technology with a passion for IT-related skills. I focus on cybersecurity, programming, and related fields, and I&apos;m actively involved in tech communities, often serving as a speaker at conferences and camps.
+              Hi, I&apos;m OsGa, commonly known by the IDs OsGa or os24. I&apos;m a university student at National Yunlin University of Science and Technology with a passion for IT-related skills. I&apos;m focus on cybersecurity, programming, and related fields, and I&apos;m actively involved in tech communities, often serving as a speaker at conferences and camps.
             </p>
           </section>
         </AnimatedSection>
@@ -321,6 +363,51 @@ export default function Page() {
                 </div>
               ))}
             </dl>
+          </section>
+
+          <section className="mt-12 md:mt-16">
+            <SectionTitle icon="projects">Projects</SectionTitle>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-3 md:my-4">
+              {projectsData.map((project: Project, index: number) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="relative group"
+                >
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block p-4 rounded-lg bg-gray-800/50 border border-gray-700 hover:border-green-300 transition-colors h-48 md:h-52 flex flex-col"
+                  >
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="font-semibold text-sm md:text-lg text-white flex items-center gap-2">
+                        <Folder className="w-4 h-4 md:w-5 md:h-5 text-green-300" />
+                        {project.title}
+                      </h3>
+                      <Github className="w-4 h-4 md:w-5 md:h-5 text-green-300 group-hover:text-green-200 transition-colors" />
+                    </div>
+                    <p className="text-xs md:text-sm text-white/80 mb-3 overflow-auto line-clamp-3">{project.description}</p>
+                    <div className="flex flex-wrap gap-2 mt-auto">
+                      {project.tech.map((tech, techIndex) => {
+                        const TechIcon = techIcons[tech] || Code;
+                        return (
+                          <span
+                            key={techIndex}
+                            className="px-2 py-1 text-xs rounded-full bg-gray-700 text-white/90 flex items-center gap-1"
+                          >
+                            <TechIcon className="w-3 h-3" />
+                            {tech}
+                          </span>
+                        );
+                      })}
+                    </div>
+                  </a>
+                </motion.div>
+              ))}
+            </div>
           </section>
 
           <section className="mt-12 md:mt-16">

@@ -1,13 +1,19 @@
 import React from 'react';
 import { FaDiscord } from 'react-icons/fa';
-import { Mail, Github, Linkedin, Instagram, Facebook, CakeSlice} from 'lucide-react';
+import { Mail, Github, Linkedin, Instagram, Facebook, CakeSlice,SquareArrowOutUpLeft} from 'lucide-react';
 const ContactSection = () => {
   const contacts = [
     {
+      icon: <SquareArrowOutUpLeft className="w-5 h-5" />,
+      label: 'website',
+      value: 'https://osga.dev',
+      href: 'https://osga.dev'
+    },
+    {
       icon: <Mail className="w-5 h-5" />,
       label: 'Email',
-      value: 'me@oscarhuang950324@gmail.com',
-      href: 'mailto:me@oscarhuang950324@gmail.com'
+      value: 'oscarhuang950324@gmail.com',
+      href: 'mailto:oscarhuang950324@gmail.com'
     },
     {
       icon: <Github className="w-5 h-5" />,

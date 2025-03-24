@@ -1,0 +1,26 @@
+[
+  {
+    "title": "OsGa.dev",
+    "description": "this is the OsGa personal website developed with Next.js.",
+    "github": "https://github.com/osga24/OsGa.dev",
+    "tech": ["Next.js","TailwindCSS"]
+  },
+  {
+    "title": "NYUST-ICS",
+    "description":"A tool specifically for NYUST students to convert DOCX course schedules into ICS format.",
+    "github": "https://github.com/osga24/NYUST-ICS",
+    "tech": ["Next.js","TypeScript"]
+  },
+  {
+    "title": "OhYeahSeC-CTF-Challenge",
+    "description": "A CTF challenge created as a static website, perfect for beginners to try out.",
+    "github": "https://github.com/osga24/OhYeahSeC-CTF-Challenge",
+    "tech": ["Next.js","TailwindCSS"]
+  },
+  {
+    "title": "QuickJump",
+    "description": "A directory switcher built with shell, featuring a sleek UI and portable operation. You can set jump points anytime and teleport to them just like in Minecraft!",
+    "github": "https://github.com/osga24/Quick-Jump",
+    "tech": ["shell 100.0%"]
+  }
+]
