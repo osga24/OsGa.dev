@@ -24,7 +24,6 @@ import {
 	Terminal,
 	Shield
 } from 'lucide-react';
-import { Nabla } from 'next/font/google';
 
 interface SectionTitleProps {
 	children: React.ReactNode;
@@ -99,7 +98,7 @@ const categoryIcons = {
 	conf: MicVocal
 };
 
-const techIcons: Record<string, any> = {
+const techIcons: Record<string, React.ComponentType<{size?: number}>> = {
 	"React": Code,
 	"Node.js": Terminal,
 	"MongoDB": Code,
