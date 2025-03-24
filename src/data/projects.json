@@ -19,7 +19,7 @@
   },
   {
     "title": "QuickJump",
-    "description": "A directory switcher built with shell, featuring a sleek UI and portable operation. You can set jump points anytime and teleport to them just like in Minecraft!",
+    "description": " A shell command that allows jumping to any directory conveniently. ",
     "github": "https://github.com/osga24/Quick-Jump",
     "tech": ["shell 100.0%"]
   }
