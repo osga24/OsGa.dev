@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import experiencesData from '@/data/experiences.json';
 import projectsData from '@/data/projects.json';
-import Navbar from '@/components/Navbar';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import {
@@ -19,7 +18,6 @@ import {
   Code,
   GlobeLock,
   Github,
-  ExternalLink,
   Folder,
   FolderGit,
   Terminal,
@@ -100,6 +98,7 @@ const categoryIcons = {
 };
 
 // 技術標籤對應的圖標
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const techIcons: Record<string, any> = {
   "React": Code,
   "Node.js": Terminal,
@@ -169,7 +168,7 @@ export default function Page() {
 
   return (
     <main className="min-h-screen text-white">
-      <Navbar/>
+      {/* Navbar component is imported in layout.tsx */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -398,7 +397,7 @@ export default function Page() {
                             key={techIndex}
                             className="px-2 py-1 text-xs rounded-full bg-gray-700 text-white/90 flex items-center gap-1"
                           >
-                            <TechIcon className="w-3 h-3" />
+                            <TechIcon size={12} />
                             {tech}
                           </span>
                         );
