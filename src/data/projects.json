@@ -1,26 +1,65 @@
 [
   {
+    "id": "osga-dev",
     "title": "OsGa.dev",
-    "description": "this is the OsGa personal website developed with Next.js.",
+    "description": "This is the OsGa personal website developed with Next.js.",
+    "longDescription": "就是現在這個網站，使用 Next.js 架構，用了很多看起來酷酷的動畫，我透過這個專案學習到很多有關於前端開發相關的技術",
     "github": "https://github.com/osga24/OsGa.dev",
-    "tech": ["Next.js","TailwindCSS"]
+    "src": "https://osga.dev",
+    "tech": ["Next.js", "TailwindCSS"],
+    "features": [
+		"吃咖喱飯不會拌的作者 🍛",
+		"持續更新的經歷 🔥",
+		"可以快速認識 OsGa 🤓",
+		"集結所有有關 OsGa 得資訊 🔗"
+    ],
+    "image": "/projects/osga_dev.png"
   },
   {
+    "id": "nyust-ics",
     "title": "NYUST-ICS",
-    "description":"A tool specifically for NYUST students to convert DOCX course schedules into ICS format.",
+    "description": "A tool specifically for NYUST students to convert DOCX course schedules into ICS format.",
+    "longDescription": "This utility was developed to help students at National Yunlin University of Science and Technology convert their course schedules from DOCX documents into standard ICS calendar format, making it easy to import class schedules into digital calendars.",
     "github": "https://github.com/osga24/NYUST-ICS",
-    "tech": ["Next.js","TypeScript"]
+    "src": "https://nyust-ics.osga.dev",
+    "tech": ["Next.js", "TypeScript"],
+    "features": [
+      "DOCX parsing and extraction of course schedule data",
+      "Automatic conversion to standard ICS format",
+      "User-friendly interface for file upload and download",
+      "Schedule visualization before export"
+    ],
+    "image": "/projects/nyust_ics.png"
   },
+{
+  "id": "ohyeahsec-ctf",
+  "title": "OhYeahSeC CTF Challenge",
+  "description": "An interactive CTF platform covering cryptography, web security, steganography, and more, perfect for cybersecurity learners.",
+  "longDescription": "OhYeahSeC CTF Challenge is a web-based Capture The Flag (CTF) platform designed for beginners in cybersecurity. Participants must apply cryptography, web security, code analysis, and other skills to uncover hidden flags. Built with the Next.js framework, this platform offers a modern user interface and a smooth experience, making it ideal for newcomers to cybersecurity or as a hands-on practice tool for security courses.",
+  "github": "https://github.com/osga24/OhYeahSeC-CTF-Challenge",
+  "src": "https://challenge.ohyeahsec.org",
+  "tech": ["Next.js", "TailwindCSS"],
+  "features": [
+    "Challenges covering cryptography, code analysis, web security, steganography, and more",
+    "Progressively increasing difficulty to guide learners step by step",
+    "Built-in hint system to help participants understand security concepts",
+    "Browser-based challenges with no additional setup required",
+    "Detailed learning guides and solution explanations to reinforce cybersecurity knowledge"
+  ],
+  "image": "/projects/ohyeahsec_challenge.png"
+},
   {
-    "title": "OhYeahSeC-CTF-Challenge",
-    "description": "A CTF challenge created as a static website, perfect for beginners to try out.",
-    "github": "https://github.com/osga24/OhYeahSeC-CTF-Challenge",
-    "tech": ["Next.js","TailwindCSS"]
-  },
-  {
+    "id": "quick-jump",
     "title": "QuickJump",
-    "description": " A shell command that allows jumping to any directory conveniently. ",
+    "description": "A shell command that allows jumping to any directory conveniently.",
+    "longDescription": "QuickJump is a lightweight shell utility that enhances navigation in terminal environments. It allows users to quickly 'jump' to frequently used directories without typing full paths, saving time and improving workflow efficiency.",
     "github": "https://github.com/osga24/Quick-Jump",
-    "tech": ["shell 100.0%"]
+    "src": null,
+    "tech": ["Shell"],
+    "features": [
+      "Bookmark frequently used directories",
+      "Easy integration with bash, zsh, and other shells"
+    ],
+    "image": ""
   }
 ]
