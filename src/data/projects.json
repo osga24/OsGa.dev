@@ -60,7 +60,7 @@
 			"Bookmark frequently used directories",
 			"Easy integration with bash, zsh, and other shells"
 		],
-		"image": null
+		"image": ""
 	},
 	{
 		"id": "SCIST-wc-scoreboard-2025",
@@ -73,7 +73,7 @@
 		"features": [
 		"NULL"
 		],
-		"image": null
+		"image": ""
 	},
 	{
 		"id": "SCIST-wc-web-2025",
@@ -99,7 +99,7 @@
 		"features": [
 		"NULL，明年如果需要在修改。"
 		],
-		"image": null
+		"image": ""
 	}
 ]
 
