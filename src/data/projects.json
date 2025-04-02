@@ -1,65 +1,105 @@
 [
-  {
-    "id": "osga-dev",
-    "title": "OsGa.dev",
-    "description": "This is the OsGa personal website developed with Next.js.",
-    "longDescription": "就是現在這個網站，使用 Next.js 架構，用了很多看起來酷酷的動畫，我透過這個專案學習到很多有關於前端開發相關的技術",
-    "github": "https://github.com/osga24/OsGa.dev",
-    "src": "https://osga.dev",
-    "tech": ["Next.js", "TailwindCSS"],
-    "features": [
-		"吃咖喱飯不會拌的作者 🍛",
-		"持續更新的經歷 🔥",
-		"可以快速認識 OsGa 🤓",
-		"集結所有有關 OsGa 得資訊 🔗"
-    ],
-    "image": "/projects/osga_dev.png"
-  },
-  {
-    "id": "nyust-ics",
-    "title": "NYUST-ICS",
-    "description": "A tool specifically for NYUST students to convert DOCX course schedules into ICS format.",
-    "longDescription": "This utility was developed to help students at National Yunlin University of Science and Technology convert their course schedules from DOCX documents into standard ICS calendar format, making it easy to import class schedules into digital calendars.",
-    "github": "https://github.com/osga24/NYUST-ICS",
-    "src": "https://nyust-ics.osga.dev",
-    "tech": ["Next.js", "TypeScript"],
-    "features": [
-      "DOCX parsing and extraction of course schedule data",
-      "Automatic conversion to standard ICS format",
-      "User-friendly interface for file upload and download",
-      "Schedule visualization before export"
-    ],
-    "image": "/projects/nyust_ics.png"
-  },
-{
-  "id": "ohyeahsec-ctf",
-  "title": "OhYeahSeC CTF Challenge",
-  "description": "An interactive CTF platform covering cryptography, web security, steganography, and more, perfect for cybersecurity learners.",
-  "longDescription": "OhYeahSeC CTF Challenge is a web-based Capture The Flag (CTF) platform designed for beginners in cybersecurity. Participants must apply cryptography, web security, code analysis, and other skills to uncover hidden flags. Built with the Next.js framework, this platform offers a modern user interface and a smooth experience, making it ideal for newcomers to cybersecurity or as a hands-on practice tool for security courses.",
-  "github": "https://github.com/osga24/OhYeahSeC-CTF-Challenge",
-  "src": "https://challenge.ohyeahsec.org",
-  "tech": ["Next.js", "TailwindCSS"],
-  "features": [
-    "Challenges covering cryptography, code analysis, web security, steganography, and more",
-    "Progressively increasing difficulty to guide learners step by step",
-    "Built-in hint system to help participants understand security concepts",
-    "Browser-based challenges with no additional setup required",
-    "Detailed learning guides and solution explanations to reinforce cybersecurity knowledge"
-  ],
-  "image": "/projects/ohyeahsec_challenge.png"
-},
-  {
-    "id": "quick-jump",
-    "title": "QuickJump",
-    "description": "A shell command that allows jumping to any directory conveniently.",
-    "longDescription": "QuickJump is a lightweight shell utility that enhances navigation in terminal environments. It allows users to quickly 'jump' to frequently used directories without typing full paths, saving time and improving workflow efficiency.",
-    "github": "https://github.com/osga24/Quick-Jump",
-    "src": null,
-    "tech": ["Shell"],
-    "features": [
-      "Bookmark frequently used directories",
-      "Easy integration with bash, zsh, and other shells"
-    ],
-    "image": ""
-  }
+	{
+		"id": "osga-dev",
+		"title": "OsGa.dev",
+		"description": "This is the OsGa personal website developed with Next.js.",
+		"longDescription": "就是現在這個網站，使用 Next.js 架構，用了很多看起來酷酷的動畫，我透過這個專案學習到很多有關於前端開發相關的技術",
+		"github": "https://github.com/osga24/OsGa.dev",
+		"src": "https://osga.dev",
+		"tech": ["Next.js", "TailwindCSS"],
+		"features": [
+			"吃咖喱飯不會拌的作者 🍛",
+			"持續更新的經歷 🔥",
+			"可以快速認識 OsGa 🤓",
+			"集結所有有關 OsGa 得資訊 🔗"
+		],
+		"image": "/projects/osga_dev.png"
+	},
+	{
+		"id": "nyust-ics",
+		"title": "NYUST-ICS",
+		"description": "A tool specifically for NYUST students to convert DOCX course schedules into ICS format.",
+		"longDescription": "This utility was developed to help students at National Yunlin University of Science and Technology convert their course schedules from DOCX documents into standard ICS calendar format, making it easy to import class schedules into digital calendars.",
+		"github": "https://github.com/osga24/NYUST-ICS",
+		"src": "https://nyust-ics.osga.dev",
+		"tech": ["Next.js", "TypeScript"],
+		"features": [
+			"DOCX parsing and extraction of course schedule data",
+			"Automatic conversion to standard ICS format",
+			"User-friendly interface for file upload and download",
+			"Schedule visualization before export"
+		],
+		"image": "/projects/nyust_ics.png"
+	},
+	{
+		"id": "ohyeahsec-ctf",
+		"title": "OhYeahSeC CTF Challenge",
+		"description": "An interactive CTF platform covering cryptography, web security, steganography, and more, perfect for cybersecurity learners.",
+		"longDescription": "OhYeahSeC CTF Challenge is a web-based Capture The Flag (CTF) platform designed for beginners in cybersecurity. Participants must apply cryptography, web security, code analysis, and other skills to uncover hidden flags. Built with the Next.js framework, this platform offers a modern user interface and a smooth experience, making it ideal for newcomers to cybersecurity or as a hands-on practice tool for security courses.",
+		"github": "https://github.com/osga24/OhYeahSeC-CTF-Challenge",
+		"src": "https://challenge.ohyeahsec.org",
+		"tech": ["Next.js", "TailwindCSS"],
+		"features": [
+			"Challenges covering cryptography, code analysis, web security, steganography, and more",
+			"Progressively increasing difficulty to guide learners step by step",
+			"Built-in hint system to help participants understand security concepts",
+			"Browser-based challenges with no additional setup required",
+			"Detailed learning guides and solution explanations to reinforce cybersecurity knowledge"
+		],
+		"image": "/projects/ohyeahsec_challenge.png"
+	},
+	{
+		"id": "quick-jump",
+		"title": "QuickJump",
+		"description": "A shell command that allows jumping to any directory conveniently.",
+		"longDescription": "QuickJump is a lightweight shell utility that enhances navigation in terminal environments. It allows users to quickly 'jump' to frequently used directories without typing full paths, saving time and improving workflow efficiency.",
+		"github": "https://github.com/osga24/Quick-Jump",
+		"src": null,
+		"tech": ["Shell"],
+		"features": [
+			"Bookmark frequently used directories",
+			"Easy integration with bash, zsh, and other shells"
+		],
+		"image": null
+	},
+	{
+		"id": "SCIST-wc-scoreboard-2025",
+		"title": "2025 SCSIT WC Web",
+		"description": "這是為 SCIST 寒訓活動時製作的一個計分板，活動組幹部可以透過 Discord bot 進行分數添加，小隊員們可以直接即時瀏覽網站看到目前分數排行",
+		"longDescription": "本專案為 SCIST 寒訓活動設計的即時計分系統，目的是提升活動競賽的流暢度與互動性。系統前端為計分排行榜網站，讓所有小隊員能即時查看各隊得分狀況；後端則整合 WebSocket 技術實現即時資料更新，確保分數變動能即時同步到所有使用者端。此外，活動組幹部可透過 Discord 機器人直接操作分數加減，系統自動更新並廣播至前端介面，無需額外後台操作，大幅提升使用效率。此專案整合後端 API 設計、即時通訊技術與 Discord Bot 控制。",
+		"github": "https://github.com/scist-tw/wc_scoreboard",
+		"src": null,
+		"tech": ["Next.js","TailwindCSS","Websocket"],
+		"features": [
+		"NULL"
+		],
+		"image": null
+	},
+	{
+		"id": "SCIST-wc-web-2025",
+		"title": "2025 SCSIT WC Web",
+		"description": "為【 資深玩家 】SCIST 2025 聯合寒訓所製作的官網，內包含營隊內的所有資訊以及介紹。",
+		"longDescription": "本專案為【資深玩家】SCIST 2025 聯合寒訓量身打造的官方網站，由團隊成員共同開發，旨在清楚呈現營隊的課程資訊、師資陣容、報名方式與活動理念。網站使用 Next.js 架構打造，結合 TailwindCSS 打造出具備一致性與現代感的 UI 設計，並透過動畫效果提升使用者互動體驗與頁面流暢度。整體網站支援響應式設計，適用於各種裝置，展現出高度的可讀性與易用性。強化了營隊的品牌形象與網路曝光。",
+		"github": "https://github.com/scist-tw/wc.scist-tw.github.io",
+		"src": "https://wc.scist.org/",
+		"tech": ["Next.js", "TailwindCSS"],
+		"features": [
+		"NULL"
+		],
+		"image": "/projects/scist_wc2025_web.png"
+	},
+	{
+		"id": "SCIST-wc-bot-2025",
+		"title": "2025 SCSIT WC Discord Bot",
+		"description": "為【 資深玩家 】SCIST 2025 聯合寒訓所製作的 Discord 機器人，結合三天營隊的活動、資訊等多功能得一台 Bot",
+		"longDescription": "這是一台由多位成員協作開發，專為營隊活動設計的多功能 Discord 機器人。專案採用 Python 的 discord.py 套件作為基礎框架，並結合物件導向程式設計（OOP）以模組化方式管理指令與事件，提升系統可讀性與可維護性。機器人整合多項實用功能，支援活動管理、自動化訊息推播、互動式指令等，旨在提升營隊參與者的交流效率與整體體驗，是一項兼具技術挑戰與團隊合作精神的專案成果。",
+		"github": "https://github.com/scist-tw/wc_bot",
+		"src": null,
+		"tech": ["Discord Bot"],
+		"features": [
+		"NULL，明年如果需要在修改。"
+		],
+		"image": null
+	}
 ]
+
