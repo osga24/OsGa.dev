@@ -64,7 +64,7 @@
 	},
 	{
 		"id": "SCIST-wc-scoreboard-2025",
-		"title": "2025 SCSIT WC Web",
+		"title": "2025 SCSIT WC scoreboard",
 		"description": "這是為 SCIST 寒訓活動時製作的一個計分板，活動組幹部可以透過 Discord bot 進行分數添加，小隊員們可以直接即時瀏覽網站看到目前分數排行",
 		"longDescription": "本專案為 SCIST 寒訓活動設計的即時計分系統，目的是提升活動競賽的流暢度與互動性。系統前端為計分排行榜網站，讓所有小隊員能即時查看各隊得分狀況；後端則整合 WebSocket 技術實現即時資料更新，確保分數變動能即時同步到所有使用者端。此外，活動組幹部可透過 Discord 機器人直接操作分數加減，系統自動更新並廣播至前端介面，無需額外後台操作，大幅提升使用效率。此專案整合後端 API 設計、即時通訊技術與 Discord Bot 控制。",
 		"github": "https://github.com/scist-tw/wc_scoreboard",

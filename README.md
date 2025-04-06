@@ -1,4 +1,4 @@
-# [OsG.dev](https://osga.dev)
+# [OsGa.dev](https://osga.dev)
 
 ![image](https://github.com/user-attachments/assets/bc5232d4-d8f7-4a44-9a39-c3c460b77489)
 
