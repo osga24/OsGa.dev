@@ -95,6 +95,12 @@
 	},
 	"presentations": [
 		{
+			"title": "SCINT 基礎能力課程",
+			"topic": "Linux 設定、套件使用",
+			"desc": "2025 5/17、5/24",
+			"category": "dev"
+		},
+		{
 			"title": "南大附中 資訊研究社",
 			"topic": "網路安全介紹",
 			"desc": "2025 4/2",

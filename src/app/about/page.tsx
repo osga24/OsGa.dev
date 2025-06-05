@@ -2,7 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import Navbar from '@/components/Navbar';
+// import Navbar from '@/components/Navbar';
 import experiencesData from '@/data/experiences.json';
 import projectsData from '@/data/projects.json';
 import ContactSection from '@/components/ContactSection';
@@ -167,7 +167,7 @@ export default function Page() {
 
 	return (
 		<main className="min-h-screen text-white">
-			<Navbar/>
+			{/* <Navbar/> */}
 			<motion.div
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
