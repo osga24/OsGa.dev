@@ -95,6 +95,12 @@
 	},
 	"presentations": [
 		{
+			"title": "資安院 CTF 資安種子培訓交流會高雄場",
+			"topic": "CTF 協作工具與實戰模擬演練",
+			"desc": "2025 8/8",
+			"category": "sec"
+		},
+		{
 			"title": "SCINT 基礎能力課程",
 			"topic": "Linux 設定、套件使用",
 			"desc": "2025 5/17、5/24",
@@ -240,6 +246,11 @@
 		}
 	],
 	"communityConferences": [
+		{
+			"title": "臺灣駭客年會 HITCON",
+			"year": "2025",
+			"position": "活動組組員"
+		},
 		{
 			"title": "SITCON Camp",
 			"year": "2025",
