@@ -132,22 +132,12 @@ export default function ContactPage() {
 									<div className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 bg-gray-600/30 rounded-full border-2 sm:border-3 lg:border-4 border-purple-400/50 flex items-center justify-center overflow-hidden">
 										{/* 照片佔位符 */}
 										<Image 
-											src="/path-to-your-photo.jpg" 
+											src="/contact_avatar.png" 
 											alt="Oscar Huang"
 											width={160}
 											height={160}
 											className="w-full h-full object-cover"
-											onError={(e) => {
-												// 如果圖片載入失敗，顯示預設圖示
-												e.currentTarget.style.display = 'none';
-												if (e.currentTarget.nextElementSibling) {
-													(e.currentTarget.nextElementSibling as HTMLElement).style.display = 'flex';
-												}
-											}}
 										/>
-										<div className="w-full h-full bg-purple-500/20 rounded-full flex items-center justify-center">
-											<span className="text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-purple-300">YR</span>
-										</div>
 									</div>
 								</div>
 								
