@@ -148,10 +148,16 @@ const LinktreePage: React.FC = () => {
       link: "https://yuan-tw.net/",
       description: "NCSE Network-資訊技術工程師"
     },
+    {
+      name: "Yuto 不是芋頭",
+      avatar: "/friends/yuto.png",
+      link: "https://blog.yuto0226.dev",
+      description: "熱愛電腦科學的人"
+    },
 
   ];
+	return (
 
-  return (
     <div className="relative min-h-screen bg-[#2c2a24] pt-20 pb-10">
       <Navbar />
       <div className="flex justify-center items-center px-6">
