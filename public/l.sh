@@ -46,8 +46,10 @@ else
 fi
 
 echo "[設定] 將 $USER 加入 docker 群組"
-sudo usermod -aG docker $USER
-newgrp docker
+sudo usermod -aG docker "$USER"
+echo "[提示] 請先重新登入終端機，或手動執行： newgrp docker"
+echo "[提示] 然後再重新執行此腳本，以便 docker 指令免 sudo"
+exit 0
 
 echo "[啟動] Docker 服務"
 if command -v systemctl >/dev/null 2>&1; then
@@ -95,24 +97,6 @@ for i in {1..40}; do
 	fi
 done
 
-echo "[連線] SSH 登入 $SSH_USER@$SSH_HOST -p $SSH_PORT"
-exec sshpass -p "$SSH_PASS" ssh -o StrictHostKeyChecking=no -p "$SSH_PORT" "$SSH_USER@$SSH_HOST"
-
-EONG
-for i in {1..40}; do
-	if nc -z "$SSH_HOST" "$SSH_PORT" >/dev/null 2>&1; then
-		echo " ... OK"
-		break
-	fi
-	echo -n "."
-	sleep 1
-	if [ "$i" -eq 40 ]; then
-		echo
-		echo "[警告] 連接埠已開，改用實際握手再試"
-	fi
-done
-
-# 實際握手重試（更穩）
 echo -n "[等待] SSH 實際握手"
 for i in {1..40}; do
 	if sshpass -p "$SSH_PASS" ssh -o StrictHostKeyChecking=no -o ConnectTimeout=2 -p "$SSH_PORT" \
@@ -129,6 +113,5 @@ for i in {1..40}; do
 	fi
 done
 
-# 登入
 echo "[連線] SSH 登入 $SSH_USER@$SSH_HOST -p $SSH_PORT"
 exec sshpass -p "$SSH_PASS" ssh -o StrictHostKeyChecking=no -p "$SSH_PORT" "$SSH_USER@$SSH_HOST"
