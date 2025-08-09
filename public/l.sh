@@ -45,7 +45,6 @@ else
 	fi
 fi
 
-# 將當前使用者加入 docker 群組
 echo "[設定] 將 $USER 加入 docker 群組"
 sudo usermod -aG docker $USER
 newgrp docker
