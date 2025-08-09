@@ -37,10 +37,11 @@ else
 	exit 1
 fi
 
-# ---- 安裝 Docker ------------------------------------------------------------
+# ---- 安裝 Docker（apt 版本） ------------------------------------------------
 if ! command -v docker >/dev/null 2>&1; then
-	echo "[安裝中] Docker CE (官方腳本)"
-	curl -fsSL https://get.docker.com | sudo sh
+	echo "[安裝中] Docker (docker.io) 與 docker-compose"
+	sudo apt-get update -y
+	sudo apt-get install -y docker.io docker-compose
 else
 	echo "[OK] Docker 已安裝"
 fi
@@ -74,46 +75,19 @@ for i in {1..20}; do
 	fi
 done
 
-# ---- 安裝 Docker Compose Plugin --------------------------------------------
-if ! docker compose version >/dev/null 2>&1; then
-	echo "[安裝中] Docker Compose Plugin"
-	if command -v apt-get >/dev/null 2>&1; then
-		sudo apt-get update -y
-		sudo apt-get install -y docker-compose-plugin
-	elif command -v dnf >/dev/null 2>&1; then
-		sudo dnf install -y docker-compose-plugin
-	elif command -v yum >/dev/null 2>&1; then
-		sudo yum install -y docker-compose-plugin
-	else
-		echo "[錯誤] 無法偵測套件管理器，請手動安裝 docker-compose-plugin"
-		exit 1
-	fi
-else
-	echo "[OK] Docker Compose Plugin 已安裝"
-fi
-
-# ---- 啟動專案 ---------------------------------------------------------------
+# ---- 啟動專案（docker-compose CLI） -----------------------------------------
 if [ ! -f docker-compose.yml ]; then
 	echo "[錯誤] 當前資料夾沒有 docker-compose.yml，無法啟動"
 	exit 1
 fi
 
-echo "[執行] docker compose up --build -d"
-docker compose up --build -d
+echo "[執行] docker-compose up --build -d"
+docker-compose up --build -d
 
 # ---- 安裝 sshpass -----------------------------------------------------------
 if ! command -v sshpass >/dev/null 2>&1; then
 	echo "[安裝中] sshpass"
-	if command -v apt-get >/dev/null 2>&1; then
-		sudo apt-get install -y sshpass
-	elif command -v dnf >/dev/null 2>&1; then
-		sudo dnf install -y sshpass
-	elif command -v yum >/dev/null 2>&1; then
-		sudo yum install -y sshpass
-	else
-		echo "[錯誤] 無法安裝 sshpass，請手動安裝後再試"
-		exit 1
-	fi
+	sudo apt-get install -y sshpass
 fi
 
 # ---- 等待 SSH 服務可用（port 9487） ----
