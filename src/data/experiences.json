@@ -99,6 +99,12 @@
 	},
 	"presentations": [
 		{
+			"title": "當個電神 嘉中&嘉女&南女中 聯合資訊體驗營 ",
+			"topic": "資安入門",
+			"desc": "2025 8/9",
+			"category": "sec"
+		},
+		{
 			"title": "資安院 CTF 資安種子培訓交流會高雄場",
 			"topic": "CTF 協作工具與實戰模擬演練",
 			"desc": "2025 8/8",
@@ -250,6 +256,16 @@
 		}
 	],
 	"communityConferences": [
+		{
+			"title": "MOPCON",
+			"year": "2025",
+			"position": "開發組組員"
+		},
+		{
+			"title": "AIS3 Juniors 2024 新型態高中職資安課程",
+			"year": "2025",
+			"position": "助教"
+		},
 		{
 			"title": "臺灣駭客年會 HITCON",
 			"year": "2025",
