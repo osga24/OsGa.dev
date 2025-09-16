@@ -42,6 +42,10 @@
 	"contests": {
 		"2025": [
 			{
+				"title": "CDX 資安攻防推廣交流賽 初賽第二 / 決賽佳作",
+				"desc": ""
+			},
+			{
 				"title": "ITSA 生成式 AI 應用網頁設計競賽 決賽佳作",
 				"desc": ""
 			},
@@ -262,7 +266,7 @@
 			"position": "開發組組員"
 		},
 		{
-			"title": "AIS3 Juniors 2024 新型態高中職資安課程",
+			"title": "AIS3 Juniors 2025 新型態高中職資安課程",
 			"year": "2025",
 			"position": "助教"
 		},
