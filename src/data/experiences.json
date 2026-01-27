@@ -15,14 +15,39 @@
 	],
 	"working": [
 		{
-			"company": "NYUST Library & IT Services – Cybersecurity Team",
-			"title": "Part-Time Assistant,",
-			"date": "2024 - Now"
+			"company": "國立雲林科技大學 諮商中心",
+			"title": "網管開發工讀生",
+			"date": "2025 - NOW"
+		},
+		{
+			"company": "國立雲林科技大學 114 程式設計概念與方法",
+			"title": "助教",
+			"date": "2025 - 2026"
+		},
+		{
+			"company": "國立雲林科技大學 工業管理系",
+			"title": "網管開發工讀生",
+			"date": "2025 - NOW"
+		},
+		{
+			"company": "國立雲林科技大學 網路管理小組",
+			"title": "系統組組長",
+			"date": "2025 - NOW"
+		},
+		{
+			"company": "三甲科技 2025 資安人才培訓計畫",
+			"title": "結業",
+			"date": "2025 - 2026"
+		},
+		{
+			"company": "國立雲林科技大學 圖資處",
+			"title": "資安組 工讀生",
+			"date": "2024 - 2025"
 		},
 		{
 			"company": "行政院網路攻防演練",
 			"title": "攻擊手",
-			"date": "2025 - Now"
+			"date": "2025 - 2026"
 		}
 	],
 	"certifications": [
@@ -40,7 +65,21 @@
 		}
 	],
 	"contests": {
+		"2026": [
+			{
+				"title": "AIS3 HACKATHON 銅質獎",
+				"desc": "Amazing 詐！"
+			}
+		],
 		"2025": [
+			{
+				"title": "2025 第30屆大專校院資訊應用服務創新競賽 [台灣大AI紅隊 eKYC滲透創新組(TWM-AI Red Team)]",
+				"desc": "Oh Yeah 百變怪，就決定是你了！"
+			},
+			{
+				"title": "2025 HITCON CTF 精英交流賽 / Rank 6",
+				"desc": "Blue Goblin"
+			},
 			{
 				"title": "CDX 資安攻防推廣交流賽 初賽第二 / 決賽佳作",
 				"desc": ""
@@ -102,6 +141,18 @@
 		]
 	},
 	"presentations": [
+		{
+			"title": "新竹女中資訊研究社",
+			"topic": "資訊安全介紹",
+			"desc": "2026 01/21",
+			"category": "sec"
+		},
+		{
+			"title": "嘉義高中 資訊研究社 116 屆",
+			"topic": "資訊安全實務",
+			"desc": "2025 9/25 ~ 1/8",
+			"category": "sec"
+		},
 		{
 			"title": "當個電神 嘉中&嘉女&南女中 聯合資訊體驗營 ",
 			"topic": "資安入門",
@@ -260,6 +311,16 @@
 		}
 	],
 	"communityConferences": [
+		{
+			"title": "學生計算機年會 SITCON ",
+			"year": "2026",
+			"position": "Hour Of Code 台中場助教"
+		},
+		{
+			"title": "學生計算機年會 SITCON ",
+			"year": "2026",
+			"position": "開發組副組長"
+		},
 		{
 			"title": "MOPCON",
 			"year": "2025",
