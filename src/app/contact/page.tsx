@@ -31,8 +31,8 @@ export default function ContactPage() {
 		{
 			icon: <Mail />,
 			label: 'Email',
-			value: 'oscarhuang950324@gmail.com',
-			href: 'mailto:oscarhuang950324@gmail.com',
+			value: 'hi@osga.dev',
+			href: 'mailto:hi@osga.dev',
 			bgColor: 'bg-red-500/20',
 			hoverColor: 'hover:bg-red-500/30'
 		},
@@ -120,7 +120,7 @@ export default function ContactPage() {
 				<div className="max-w-6xl mx-auto">
 					{/* Bento Grid Layout */}
 					<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 h-auto">
-						
+
 						{/* 個人照片與介紹區塊 - 跨多列 */}
 						<motion.div
 							variants={itemVariants}
@@ -131,8 +131,8 @@ export default function ContactPage() {
 								<div className="flex-shrink-0">
 									<div className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 bg-gray-600/30 rounded-full border-2 sm:border-3 lg:border-4 border-purple-400/50 flex items-center justify-center overflow-hidden">
 										{/* 照片佔位符 */}
-										<Image 
-											src="/contact_avatar.png" 
+										<Image
+											src="/contact_avatar.png"
 											alt="Oscar Huang"
 											width={160}
 											height={160}
@@ -140,7 +140,7 @@ export default function ContactPage() {
 										/>
 									</div>
 								</div>
-								
+
 								{/* 文字內容區域 */}
 								<div className="flex-1 text-center sm:text-left">
 									<h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-purple-300 mb-1 sm:mb-2">
@@ -150,7 +150,7 @@ export default function ContactPage() {
 										黃宥睿
 									</h2>
 									<p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-2xl leading-relaxed">
-										I&apos;m open to new opportunities, collaborations, or just a friendly chat. 
+										I&apos;m open to new opportunities, collaborations, or just a friendly chat.
 										Feel free to reach out through any of the platforms below.
 									</p>
 								</div>
