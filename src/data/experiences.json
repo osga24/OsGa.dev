@@ -146,6 +146,12 @@
   },
   "presentations": [
     {
+      "title": "學生計算機年會 SITCON ",
+      "topic": "ESPRESSO【十倍開發！解脫雙手拋棄滑鼠的開發環境】",
+      "desc": "2026 3/28",
+      "category": "conf"
+    },
+    {
       "title": "SCIST x SCAICT 2026 聯合寒訓 - 閃電四連編",
       "topic": "講師",
       "desc": "2026 02/05 ~ 2/8",
