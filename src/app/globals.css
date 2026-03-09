@@ -19,3 +19,25 @@ body {
   background: var(--background);
   font-family: "Space Mono", monospace;
 }
+
+@media print {
+  @page {
+    margin: 8mm;
+    size: A4;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #111827 !important;
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  .cv-print-hidden {
+    display: none !important;
+  }
+}

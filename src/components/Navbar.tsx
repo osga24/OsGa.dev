@@ -3,7 +3,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X, User, BookOpen, Link2, Mail, CodeXml } from 'lucide-react'
+import { Menu, X, FileText, BookOpen, Link2, Mail, CodeXml } from 'lucide-react'
 const Navbar = () => {
 const [isOpen, setIsOpen] = useState(false)
 const [scrolled, setScrolled] = useState(false)
@@ -18,7 +18,7 @@ return () => window.removeEventListener('scroll', handleScroll)
 }, [])
 
 const navigation = [
-{ name: 'About me (CV)', href: '/about', icon: User },
+{ name: 'CV', href: '/cv', icon: FileText },
 { name: 'Blog', href: 'https://blog.osga.dev', icon: BookOpen },
 { name: 'Projects', href: '/projects', icon: CodeXml },
 { name: 'LinkTree', href: '/linktree', icon: Link2 },
