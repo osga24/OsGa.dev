@@ -11,6 +11,7 @@ import {
   Link2,
   Mail,
   CodeXml,
+  User,
 } from "lucide-react";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,6 +27,7 @@ const Navbar = () => {
   }, []);
 
   const navigation = [
+    { name: "About", href: "/about", icon: User },
     { name: "CV", href: "/cv.pdf", icon: FileText },
     { name: "Blog", href: "https://blog.osga.dev", icon: BookOpen },
     { name: "Projects", href: "/projects", icon: CodeXml },
