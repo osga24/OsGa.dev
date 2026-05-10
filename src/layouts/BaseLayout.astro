@@ -40,6 +40,7 @@ const { title, description, lang = "en" } = Astro.props;
 				--icon-hover: #495954;
 				--line: rgba(73, 89, 84, 0.22);
 				--ease: cubic-bezier(0.2, 0.65, 0.3, 0.9);
+				--theme-duration: 0.32s;
 			}
 
 			:root[data-theme="dark"] {
@@ -66,6 +67,9 @@ const { title, description, lang = "en" } = Astro.props;
 				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 				background: var(--bg);
 				color: var(--text);
+				transition:
+					background-color var(--theme-duration) var(--ease),
+					color var(--theme-duration) var(--ease);
 			}
 
 			main {
@@ -108,6 +112,7 @@ const { title, description, lang = "en" } = Astro.props;
 				white-space: nowrap;
 				letter-spacing: -0.06em;
 				will-change: font-size;
+				transition: color var(--theme-duration) var(--ease);
 			}
 
 			:global(.wordmark-spacer) {
@@ -150,12 +155,57 @@ const { title, description, lang = "en" } = Astro.props;
 				font-size: 1rem;
 				line-height: 1.6;
 				color: var(--muted);
+				transition: color var(--theme-duration) var(--ease);
+			}
+
+			:root::view-transition-group(root) {
+				animation-duration: 560ms;
+			}
+
+			:root::view-transition-image-pair(root) {
+				isolation: auto;
+			}
+
+			:root::view-transition-old(root),
+			:root::view-transition-new(root) {
+				animation: none;
+				mix-blend-mode: normal;
+				display: block;
+			}
+
+			:global(.tagline),
+			:global(.eyebrow),
+			:global(.section-title),
+			:global(.period),
+			:global(.company),
+			:global(.experience-body p),
+			:global(.experience-card h3),
+			:global(.locale-switcher a) {
+				transition:
+					color var(--theme-duration) var(--ease),
+					border-color var(--theme-duration) var(--ease);
+			}
+
+			:global(.experience-card) {
+				transition: border-color var(--theme-duration) var(--ease);
 			}
 
 			@media (prefers-reduced-motion: reduce) {
+				body,
 				.page-stack,
 				:global(.wordmark-spacer),
-				:global(.reveal-content) {
+				:global(.reveal-content),
+				:global(.wordmark),
+				:global(.lead),
+				:global(.tagline),
+				:global(.eyebrow),
+				:global(.section-title),
+				:global(.period),
+				:global(.company),
+				:global(.experience-body p),
+				:global(.experience-card h3),
+				:global(.experience-card),
+				:global(.locale-switcher a) {
 					transition: none;
 				}
 			}
