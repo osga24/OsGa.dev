@@ -2,8 +2,9 @@
 import bannerDark from "../assets/bannerDark.jpg";
 import bannerLight from "../assets/bannerLight.jpg";
 import ProfileInfo from "./ProfileInfo.astro";
+import QuickLinks from "./QuickLinks.astro";
 import SocialLinks from "./SocialLinks.astro";
-import type { InfoSection, SocialLink } from "../i18n/content";
+import type { InfoSection, QuickLink, SocialLink } from "../i18n/content";
 
 type Props = {
 	title: string;
@@ -11,9 +12,10 @@ type Props = {
 	intro: string;
 	socialLinks: readonly SocialLink[];
 	infoSections: readonly InfoSection[];
+	quickLinks: readonly QuickLink[];
 };
 
-const { title, tagline, intro, socialLinks, infoSections } = Astro.props;
+const { title, tagline, intro, socialLinks, infoSections, quickLinks } = Astro.props;
 ---
 
 <section>
@@ -28,6 +30,7 @@ const { title, tagline, intro, socialLinks, infoSections } = Astro.props;
 		<SocialLinks links={socialLinks} />
 		<p class="lead">{intro}</p>
 		<ProfileInfo sections={infoSections} />
+		<QuickLinks links={quickLinks} />
 	</div>
 </section>
 

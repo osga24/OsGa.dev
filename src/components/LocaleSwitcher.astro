@@ -18,14 +18,19 @@ const { label, href } = Astro.props;
 	}
 
 	.locale-switcher a {
+		display: inline-block;
 		color: var(--muted);
 		text-decoration: none;
 		font-size: 0.88rem;
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
+		transition:
+			color var(--theme-duration, 0.32s) var(--ease),
+			transform 0.2s ease;
 	}
 
 	.locale-switcher a:hover {
 		color: var(--icon-hover);
+		transform: scale(1.08);
 	}
 </style>

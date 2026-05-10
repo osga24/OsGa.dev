@@ -8,6 +8,7 @@ export type {
 	HeroContent,
 	InfoSection,
 	Locale,
+	QuickLink,
 	SeoContent,
 	SiteContent,
 	SocialLink,

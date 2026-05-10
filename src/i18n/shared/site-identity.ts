@@ -24,4 +24,14 @@ export const siteIdentityContent: SiteIdentityContent = {
       icon: "simple-icons:instagram",
     },
   ],
+  quickLinks: [
+    {
+      label: "Blog",
+      href: "/blog",
+    },
+    {
+      label: "Resume",
+      href: "/resume",
+    },
+  ],
 };

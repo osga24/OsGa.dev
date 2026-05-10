@@ -8,6 +8,11 @@ export type SocialLink = {
 	icon: string;
 };
 
+export type QuickLink = {
+	label: string;
+	href: string;
+};
+
 export type InfoItem = {
 	label: string;
 	value: string;
@@ -22,6 +27,7 @@ export type InfoSection = {
 export type SiteIdentityContent = {
 	title: string;
 	socialLinks: readonly SocialLink[];
+	quickLinks: readonly QuickLink[];
 };
 
 export type SeoContent = {

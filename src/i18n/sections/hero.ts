@@ -22,8 +22,7 @@ export const heroContent = {
     ],
   },
   en: {
-    tagline:
-      "#CTF Player #FullStackDevelopment #PenetrationTesting #ActiveInTechCommunities",
+    tagline: "#CTF Player #Development #PenTest #TechCommunities",
     intro:
       "Hi, I'm OsGa — passionate and experienced in web/system development, service operations, and cybersecurity. Active in CTF competitions and tech communities.",
     infoSections: [
