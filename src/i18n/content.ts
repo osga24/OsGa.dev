@@ -1,4 +1,5 @@
 import { certificationsContent } from "./sections/certifications";
+import { competitionsContent } from "./sections/competitions";
 import { experienceContent } from "./sections/experience";
 import { heroContent } from "./sections/hero";
 import { seoContent } from "./sections/seo";
@@ -9,6 +10,9 @@ import { siteIdentityContent } from "./shared/site-identity";
 export type {
 	CertificationItem,
 	CertificationsContent,
+	CompetitionCategory,
+	CompetitionItem,
+	CompetitionsContent,
 	ExperienceContent,
 	ExperienceItem,
 	HeroContent,
@@ -25,6 +29,7 @@ export const contentByLocale: Record<Locale, SiteContent> = {
 	"zh-TW": {
 		...siteIdentityContent,
 		...certificationsContent["zh-TW"],
+		...competitionsContent["zh-TW"],
 		...experienceContent["zh-TW"],
 		...seoContent["zh-TW"],
 		...heroContent["zh-TW"],
@@ -33,6 +38,7 @@ export const contentByLocale: Record<Locale, SiteContent> = {
 	en: {
 		...siteIdentityContent,
 		...certificationsContent.en,
+		...competitionsContent.en,
 		...experienceContent.en,
 		...seoContent.en,
 		...heroContent.en,

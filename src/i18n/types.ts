@@ -64,6 +64,22 @@ export type CertificationsContent = {
   certificationItems: readonly CertificationItem[];
 };
 
+export type CompetitionItem = {
+  year: string;
+  content: string;
+  teamName?: string;
+};
+
+export type CompetitionCategory = {
+  label: string;
+  items: readonly CompetitionItem[];
+};
+
+export type CompetitionsContent = {
+  competitionsTitle: string;
+  competitionCategories: readonly CompetitionCategory[];
+};
+
 export type UiContent = {
   switchLocaleLabel: string;
   switchLocaleHref: string;
@@ -76,4 +92,5 @@ export type SiteContent = SiteIdentityContent &
   HeroContent &
   ExperienceContent &
   CertificationsContent &
+  CompetitionsContent &
   UiContent;

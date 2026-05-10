@@ -1,0 +1,111 @@
+---
+import type { CompetitionCategory } from "../i18n/content";
+
+type Props = {
+  title: string;
+  categories: readonly CompetitionCategory[];
+};
+
+const { title, categories } = Astro.props;
+---
+
+<section class="competitions reveal-content" aria-labelledby="competitions-title">
+  <div class="competitions-header">
+    <h2 id="competitions-title" class="competitions-title">{title}</h2>
+  </div>
+
+  <div class="competitions-groups">
+    {categories.map((category) => (
+      <section class="competitions-group">
+        <p class="competitions-label meta-kicker">{category.label}</p>
+        <div class="competitions-list divided-list">
+          {category.items.map((item) => (
+            <article class="competition-item">
+              <div class="competition-meta">
+                <p class="competition-year">{item.year}</p>
+              </div>
+              <div class="competition-body">
+                <p class="competition-content">{item.content}</p>
+                {item.teamName && <p class="competition-team">(Team: {item.teamName})</p>}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+</section>
+
+<style>
+  .competitions {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .competitions-header {
+    margin-bottom: 1.25rem;
+  }
+
+  .competitions-title {
+    margin: 0;
+    font-size: clamp(1.35rem, 4vw, 1.8rem);
+    line-height: 1.1;
+  }
+
+  .competitions-group + .competitions-group {
+    margin-top: 1.5rem;
+  }
+
+  .competitions-label {
+    padding-bottom: 0.55rem;
+    margin-bottom: 0.2rem;
+    /* border-bottom: 1px solid var(--line); */
+  }
+
+  .competitions-list {
+    margin-top: 0.35rem;
+  }
+
+  .competitions-list .competition-item {
+    /* border-bottom: 1px solid var(--line); */
+    display: grid;
+    grid-template-columns: 4.25rem 1fr;
+    gap: 0.75rem;
+    padding: 0.9rem 0 1rem;
+    align-items: start;
+  }
+
+  .competition-year,
+  .competition-team {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+
+  .competition-content {
+    margin: 0;
+    white-space: pre-line;
+    line-height: 1.7;
+  }
+
+  .competition-team {
+    margin-top: 0.45rem;
+  }
+
+  @media (max-width: 720px) {
+    .competitions-list .competition-item {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .competitions {
+      margin-top: 0;
+    }
+
+    .competitions-header {
+      margin-bottom: 1rem;
+    }
+  }
+</style>

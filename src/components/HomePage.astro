@@ -1,5 +1,6 @@
 ---
 import Certifications from "./Certifications.astro";
+import CompetitionsSection from "./CompetitionsSection.astro";
 import ExperienceSection from "./ExperienceSection.astro";
 import HeroSection from "./HeroSection.astro";
 import LocaleSwitcher from "./LocaleSwitcher.astro";
@@ -41,6 +42,11 @@ const { content } = Astro.props;
 <Certifications
 	title={content.certificationsTitle}
 	items={content.certificationItems}
+/>
+
+<CompetitionsSection
+	title={content.competitionsTitle}
+	categories={content.competitionCategories}
 />
 
 <style>
