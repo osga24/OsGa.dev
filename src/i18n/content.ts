@@ -6,6 +6,7 @@ import { siteIdentityContent } from "./shared/site-identity";
 
 export type {
 	HeroContent,
+	InfoSection,
 	Locale,
 	SeoContent,
 	SiteContent,

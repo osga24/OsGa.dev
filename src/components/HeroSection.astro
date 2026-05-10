@@ -1,17 +1,19 @@
 ---
 import bannerDark from "../assets/bannerDark.jpg";
 import bannerLight from "../assets/bannerLight.jpg";
+import ProfileInfo from "./ProfileInfo.astro";
 import SocialLinks from "./SocialLinks.astro";
-import type { SocialLink } from "../i18n/content";
+import type { InfoSection, SocialLink } from "../i18n/content";
 
 type Props = {
 	title: string;
 	tagline: string;
 	intro: string;
 	socialLinks: readonly SocialLink[];
+	infoSections: readonly InfoSection[];
 };
 
-const { title, tagline, intro, socialLinks } = Astro.props;
+const { title, tagline, intro, socialLinks, infoSections } = Astro.props;
 ---
 
 <section>
@@ -25,6 +27,7 @@ const { title, tagline, intro, socialLinks } = Astro.props;
 		<p class="tagline">{tagline}</p>
 		<SocialLinks links={socialLinks} />
 		<p class="lead">{intro}</p>
+		<ProfileInfo sections={infoSections} />
 	</div>
 </section>
 

@@ -1,0 +1,85 @@
+---
+import type { InfoSection } from "../i18n/content";
+
+type Props = {
+	sections: readonly InfoSection[];
+};
+
+const { sections } = Astro.props;
+---
+
+<div class="profile-info">
+	{sections.map((section) => (
+		<section class="info-section">
+			{section.title && <p class="info-title">{section.title}</p>}
+			<ul class="info-list">
+				{section.items.map((item) => (
+					<li class="info-item">
+						<span class="info-label">{item.label}</span>
+						{item.href ? (
+							<a class="info-value" href={item.href}>{item.value}</a>
+						) : (
+							<span class="info-value">{item.value}</span>
+						)}
+					</li>
+				))}
+			</ul>
+		</section>
+	))}
+</div>
+
+<style>
+	.profile-info {
+		margin-top: 1.25rem;
+		width: 100%;
+	}
+
+	.info-section + .info-section {
+		margin-top: 1.25rem;
+	}
+
+	.info-title {
+		margin: 0 0 0.55rem;
+		font-size: 0.86rem;
+		color: var(--muted);
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+	}
+
+	.info-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		border-top: 1px solid var(--line);
+	}
+
+	.info-item {
+		display: grid;
+		grid-template-columns: minmax(4.75rem, 6rem) 1fr;
+		gap: 0.75rem;
+		padding: 0.7rem 0;
+		border-bottom: 1px solid var(--line);
+		align-items: start;
+	}
+
+	.info-label {
+		color: var(--muted);
+	}
+
+	.info-value {
+		color: var(--text);
+		text-decoration: none;
+		word-break: break-word;
+	}
+
+	a.info-value:hover {
+		color: var(--icon-hover);
+	}
+
+	@media (max-width: 520px) {
+		.info-item {
+			grid-template-columns: 1fr;
+			gap: 0.2rem;
+		}
+	}
+</style>

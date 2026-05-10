@@ -8,6 +8,17 @@ export type SocialLink = {
 	icon: string;
 };
 
+export type InfoItem = {
+	label: string;
+	value: string;
+	href?: string;
+};
+
+export type InfoSection = {
+	title?: string;
+	items: readonly InfoItem[];
+};
+
 export type SiteIdentityContent = {
 	title: string;
 	socialLinks: readonly SocialLink[];
@@ -21,6 +32,7 @@ export type SeoContent = {
 export type HeroContent = {
 	tagline: string;
 	intro: string;
+	infoSections: readonly InfoSection[];
 };
 
 export type UiContent = {
