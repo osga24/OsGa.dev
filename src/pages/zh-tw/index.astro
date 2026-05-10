@@ -1,0 +1,19 @@
+---
+import HomePage from "../../components/HomePage.astro";
+import { contentByLocale } from "../../i18n/content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const content = contentByLocale["zh-TW"];
+---
+
+<BaseLayout
+	title={content.seoTitle}
+	description={content.seoDescription}
+	lang="zh-TW"
+>
+	<HomePage content={content} />
+</BaseLayout>
+
+<script>
+	import "../../scripts/home-wordmark-intro";
+</script>

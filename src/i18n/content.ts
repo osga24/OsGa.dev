@@ -42,7 +42,7 @@ export const contentByLocale = {
 		experienceIntro:
 			"先做成同頁的簡單版本，之後你可以把這裡替換成真實公司、職稱、年份與成果。",
 		switchLocaleLabel: "EN",
-		switchLocaleHref: "/en",
+		switchLocaleHref: "/",
 		themeLightLabel: "淺色",
 		themeDarkLabel: "深色",
 		socialLinks: [
@@ -101,7 +101,7 @@ export const contentByLocale = {
 		experienceIntro:
 			"A simple same-page version for now. You can replace this with real companies, titles, years, and outcomes later.",
 		switchLocaleLabel: "中文",
-		switchLocaleHref: "/",
+		switchLocaleHref: "/zh-tw",
 		themeLightLabel: "Light",
 		themeDarkLabel: "Dark",
 		socialLinks: [
