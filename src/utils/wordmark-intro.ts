@@ -29,14 +29,20 @@ const createScrambledText = (length: number) =>
 		SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)],
 	).join("");
 
-const toFontSize = (progress: number) => {
+const getLengthScale = (length: number) => clamp(4 / length, 0.58, 1);
+
+const toFontSize = (progress: number, textLength: number) => {
 	const value = clamp(progress, 0, LAST_STEP);
 	const index = Math.floor(value);
 	const nextIndex = Math.min(index + 1, LAST_STEP);
 	const t = value - index;
 	const size = lerp(ANIMATION_STEPS[index], ANIMATION_STEPS[nextIndex], t);
+	const lengthScale = getLengthScale(textLength);
+	const progressRatio = LAST_STEP === 0 ? 1 : value / LAST_STEP;
+	const dynamicScale = lerp(lengthScale, 1, progressRatio);
+	const adjustedSize = size * dynamicScale;
 
-	return `clamp(${(size * 0.3).toFixed(2)}rem, ${(size * 3.5).toFixed(2)}vw, ${size.toFixed(2)}rem)`;
+	return `clamp(${(adjustedSize * 0.3).toFixed(2)}rem, ${(adjustedSize * 3.5).toFixed(2)}vw, ${adjustedSize.toFixed(2)}rem)`;
 };
 
 export const initWordmarkIntro = ({
@@ -69,7 +75,7 @@ export const initWordmarkIntro = ({
 	if (!(wordmark instanceof HTMLElement) || reducedMotion.matches || shouldSkipIntro) {
 		if (wordmark instanceof HTMLElement) {
 			wordmark.textContent = finalText;
-			wordmark.style.fontSize = toFontSize(LAST_STEP);
+			wordmark.style.fontSize = toFontSize(LAST_STEP, finalText.length);
 		}
 
 		reveal();
@@ -77,7 +83,10 @@ export const initWordmarkIntro = ({
 	}
 
 	wordmark.textContent = createScrambledText(finalText.length);
-	wordmark.style.fontSize = toFontSize(0);
+	wordmark.style.fontSize = toFontSize(0, finalText.length);
+	wordmark.style.display = "block";
+	wordmark.style.width = "100%";
+	wordmark.style.textAlign = "center";
 
 	let hasRevealed = false;
 
@@ -97,10 +106,16 @@ export const initWordmarkIntro = ({
 		},
 	});
 
+	timeline.call(() => {
+		wordmark.style.display = "";
+		wordmark.style.width = "";
+		wordmark.style.textAlign = "";
+	});
+
 	timeline.to(wordmark, {
 		duration: SCALE_DURATION,
 		ease: "power3.out",
-		fontSize: toFontSize(LAST_STEP),
+		fontSize: toFontSize(LAST_STEP, finalText.length),
 		onUpdate() {
 			if (!hasRevealed && this.progress() >= REVEAL_PROGRESS) {
 				hasRevealed = true;
@@ -108,7 +123,7 @@ export const initWordmarkIntro = ({
 			}
 		},
 		onComplete() {
-			wordmark.style.fontSize = toFontSize(LAST_STEP);
+			wordmark.style.fontSize = toFontSize(LAST_STEP, finalText.length);
 			if (!hasRevealed) {
 				reveal();
 			}
