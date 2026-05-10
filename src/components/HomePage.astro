@@ -1,5 +1,4 @@
 ---
-import ExperienceTimeline from "./ExperienceTimeline.astro";
 import HeroSection from "./HeroSection.astro";
 import LocaleSwitcher from "./LocaleSwitcher.astro";
 import ThemeToggle from "./ThemeToggle.astro";
@@ -28,13 +27,6 @@ const { content } = Astro.props;
 	tagline={content.tagline}
 	intro={content.intro}
 	socialLinks={content.socialLinks}
-/>
-
-<ExperienceTimeline
-	eyebrow={content.experienceEyebrow}
-	title={content.experienceTitle}
-	intro={content.experienceIntro}
-	items={content.experience}
 />
 
 <style>
