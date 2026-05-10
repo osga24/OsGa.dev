@@ -1,4 +1,6 @@
 ---
+import bannerDark from "../assets/bannerDark.jpg";
+import bannerLight from "../assets/bannerLight.jpg";
 import SocialLinks from "./SocialLinks.astro";
 import type { SocialLink } from "../i18n/content";
 
@@ -13,6 +15,10 @@ const { title, tagline, intro, socialLinks } = Astro.props;
 ---
 
 <section>
+	<div class="banner-frame reveal-content" aria-hidden="true">
+		<img class="banner-image banner-image-light" src={bannerLight.src} alt="" />
+		<img class="banner-image banner-image-dark" src={bannerDark.src} alt="" />
+	</div>
 	<h1 class="wordmark" id="wordmark">{title}</h1>
 	<div class="wordmark-spacer" aria-hidden="true"></div>
 	<div class="reveal-content">
@@ -25,6 +31,46 @@ const { title, tagline, intro, socialLinks } = Astro.props;
 <style>
 	section {
 		width: 100%;
+	}
+
+	.banner-frame {
+		display: grid;
+		width: 100%;
+		margin: 0 0 1.5rem;
+	}
+
+	.banner-image {
+		grid-area: 1 / 1;
+		display: block;
+		width: 100%;
+		height: auto;
+		transition: opacity var(--theme-duration, 0.32s) var(--ease);
+	}
+
+	.banner-image-light {
+		opacity: 1;
+	}
+
+	.banner-image-dark {
+		opacity: 0;
+	}
+
+	:global(:root[data-theme="light"] .banner-image-light),
+	:global(:root:not([data-theme]) .banner-image-light) {
+		opacity: 1;
+	}
+
+	:global(:root[data-theme="light"] .banner-image-dark),
+	:global(:root:not([data-theme]) .banner-image-dark) {
+		opacity: 0;
+	}
+
+	:global(:root[data-theme="dark"] .banner-image-light) {
+		opacity: 0;
+	}
+
+	:global(:root[data-theme="dark"] .banner-image-dark) {
+		opacity: 1;
 	}
 
 	.tagline {
