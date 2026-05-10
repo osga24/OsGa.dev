@@ -1,0 +1,148 @@
+---
+type Props = {
+	title: string;
+	description: string;
+};
+
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<title>{title}</title>
+		<style>
+			:root {
+				--bg: #e7e1d7;
+				--text: #161514;
+				--muted: #6d675f;
+				--icon: #9a9389;
+				--icon-hover: #5c554d;
+				--ease: cubic-bezier(0.2, 0.65, 0.3, 0.9);
+			}
+
+			* {
+				box-sizing: border-box;
+			}
+
+			html,
+			body {
+				margin: 0;
+				min-height: 100%;
+			}
+
+			body {
+				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+				background: var(--bg);
+				color: var(--text);
+			}
+
+			main {
+				display: flex;
+				width: 100%;
+				min-height: 100vh;
+				overflow: hidden;
+			}
+
+			.page-shell {
+				display: flex;
+				flex: 1;
+				background: var(--bg);
+			}
+
+			.page-stage {
+				flex: 1;
+				display: flex;
+				justify-content: center;
+				padding: 15vh 1.5rem;
+				overflow-y: auto;
+			}
+
+			.page-stack {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				width: 100%;
+				max-width: 32rem;
+				transition: transform 0.6s var(--ease);
+			}
+
+			:global(.wordmark) {
+				margin: 0;
+				font-weight: 700;
+				font-size: clamp(1.13rem, 13.13vw, 3.75rem);
+				line-height: 1;
+				white-space: nowrap;
+				letter-spacing: -0.06em;
+				will-change: font-size;
+			}
+
+			:global(.wordmark-spacer) {
+				overflow: hidden;
+				transition: height 0.6s var(--ease);
+			}
+
+			:global(.reveal-content) {
+				transition:
+					opacity 1s var(--ease),
+					transform 1s var(--ease),
+					filter 1s var(--ease);
+			}
+
+			:global(body:not(.is-expanded) .wordmark-spacer) {
+				height: 0;
+			}
+
+			:global(body:not(.is-expanded) .reveal-content) {
+				opacity: 0;
+				transform: translateY(0.5rem);
+				filter: blur(4px);
+				pointer-events: none;
+			}
+
+			:global(body.is-expanded .wordmark-spacer) {
+				height: 0.4rem;
+			}
+
+			:global(body.is-expanded .reveal-content) {
+				opacity: 1;
+				transform: translateY(0);
+				filter: blur(0);
+				pointer-events: auto;
+			}
+
+			:global(.lead) {
+				margin: 1rem 0 0;
+				max-width: 32rem;
+				font-size: 1rem;
+				line-height: 1.6;
+				color: var(--muted);
+			}
+
+			@media (prefers-reduced-motion: reduce) {
+				.page-stack,
+				:global(.wordmark-spacer),
+				:global(.reveal-content) {
+					transition: none;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<div class="page-shell">
+				<div class="page-stage">
+					<div class="page-stack">
+						<slot />
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+---
+import SocialLinks from "./SocialLinks.astro";
+
+type SocialLink = {
+	label: string;
+	href: string;
+	icon: "github" | "x" | "linkedin";
+};
+
+type Props = {
+	title: string;
+	tagline: string;
+	intro: string;
+	socialLinks: readonly SocialLink[];
+};
+
+const { title, tagline, intro, socialLinks } = Astro.props;
+---
+
+<section>
+	<h1 class="wordmark" id="wordmark">{title}</h1>
+	<div class="wordmark-spacer" aria-hidden="true"></div>
+	<div class="reveal-content">
+		<p class="tagline">{tagline}</p>
+		<SocialLinks links={socialLinks} />
+		<p class="lead">{intro}</p>
+	</div>
+</section>
+
+<style>
+	section {
+		width: 100%;
+	}
+
+	.tagline {
+		margin: 0.35rem 0 0;
+		font-size: 1rem;
+		line-height: 1.4;
+		color: var(--muted);
+	}
+</style>
