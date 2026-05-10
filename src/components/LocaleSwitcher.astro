@@ -1,0 +1,33 @@
+---
+type Props = {
+	label: string;
+	href: string;
+};
+
+const { label, href } = Astro.props;
+---
+
+<nav class="locale-switcher reveal-content" aria-label="Language switcher">
+	<a href={href} data-skip-intro>{label}</a>
+</nav>
+
+<style>
+	.locale-switcher {
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+		margin-bottom: 3rem;
+	}
+
+	.locale-switcher a {
+		color: var(--muted);
+		text-decoration: none;
+		font-size: 0.88rem;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	.locale-switcher a:hover {
+		color: var(--text);
+	}
+</style>

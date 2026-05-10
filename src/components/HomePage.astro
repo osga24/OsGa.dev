@@ -1,0 +1,31 @@
+---
+import ExperienceTimeline from "./ExperienceTimeline.astro";
+import HeroSection from "./HeroSection.astro";
+import LocaleSwitcher from "./LocaleSwitcher.astro";
+import type { SiteContent } from "../i18n/content";
+
+type Props = {
+	content: SiteContent;
+};
+
+const { content } = Astro.props;
+---
+
+<LocaleSwitcher
+	label={content.switchLocaleLabel}
+	href={content.switchLocaleHref}
+/>
+
+<HeroSection
+	title={content.title}
+	tagline={content.tagline}
+	intro={content.intro}
+	socialLinks={content.socialLinks}
+/>
+
+<ExperienceTimeline
+	eyebrow={content.experienceEyebrow}
+	title={content.experienceTitle}
+	intro={content.experienceIntro}
+	items={content.experience}
+/>

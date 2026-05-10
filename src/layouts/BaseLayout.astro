@@ -2,12 +2,13 @@
 type Props = {
 	title: string;
 	description: string;
+	lang?: string;
 };
 
-const { title, description } = Astro.props;
+const { title, description, lang = "en" } = Astro.props;
 ---
 
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -70,6 +71,7 @@ const { title, description } = Astro.props;
 				align-items: flex-start;
 				width: 100%;
 				max-width: 32rem;
+				gap: 5rem;
 				transition: transform 0.6s var(--ease);
 			}
 
@@ -85,14 +87,14 @@ const { title, description } = Astro.props;
 
 			:global(.wordmark-spacer) {
 				overflow: hidden;
-				transition: height 0.6s var(--ease);
+				transition: height 0.35s var(--ease);
 			}
 
 			:global(.reveal-content) {
 				transition:
-					opacity 1s var(--ease),
-					transform 1s var(--ease),
-					filter 1s var(--ease);
+					opacity 0.45s var(--ease),
+					transform 0.45s var(--ease),
+					filter 0.45s var(--ease);
 			}
 
 			:global(body:not(.is-expanded) .wordmark-spacer) {

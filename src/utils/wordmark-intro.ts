@@ -1,9 +1,10 @@
 const ANIMATION_STEPS = [16, 13, 10, 8, 6.5, 5.2, 4.2, 3.75] as const;
 const LAST_STEP = ANIMATION_STEPS.length - 1;
-const STIFFNESS = 20;
-const DAMPING = 15;
-const MASS = 3;
-const REVEAL_PROGRESS = 0.72;
+const STIFFNESS = 34;
+const DAMPING = 16;
+const MASS = 2.2;
+const SKIP_INTRO_STORAGE_KEY = "skip-wordmark-intro-once";
+const REVEAL_PROGRESS = 0.9;
 
 type InitWordmarkIntroOptions = {
   wordmark: HTMLElement | null;
@@ -40,9 +41,21 @@ export const initWordmarkIntro = ({
     body.classList.add("is-expanded");
   };
 
+  const shouldSkipIntro = (() => {
+    try {
+      const value = window.sessionStorage.getItem(SKIP_INTRO_STORAGE_KEY);
+      if (value === "true") {
+        window.sessionStorage.removeItem(SKIP_INTRO_STORAGE_KEY);
+        return true;
+      }
+    } catch {}
+
+    return false;
+  })();
+
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-  if (!(wordmark instanceof HTMLElement) || reducedMotion.matches) {
+  if (!(wordmark instanceof HTMLElement) || reducedMotion.matches || shouldSkipIntro) {
     if (wordmark instanceof HTMLElement) {
       wordmark.textContent = finalText;
       wordmark.style.fontSize = toFontSize(LAST_STEP);
@@ -78,7 +91,7 @@ export const initWordmarkIntro = ({
     }
 
     const isSettled =
-      Math.abs(velocity) < 0.01 && Math.abs(LAST_STEP - current) < 0.01;
+      Math.abs(velocity) < 0.03 && Math.abs(LAST_STEP - current) < 0.03;
 
     if (!isSettled) {
       requestAnimationFrame(tick);

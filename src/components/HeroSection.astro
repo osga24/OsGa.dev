@@ -1,11 +1,6 @@
 ---
 import SocialLinks from "./SocialLinks.astro";
-
-type SocialLink = {
-	label: string;
-	href: string;
-	icon: "github" | "x" | "linkedin";
-};
+import type { SocialLink } from "../i18n/content";
 
 type Props = {
 	title: string;

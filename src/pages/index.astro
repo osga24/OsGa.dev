@@ -1,16 +1,17 @@
 ---
-import HeroSection from "../components/home/HeroSection.astro";
-import { siteConfig } from "../data/site";
+import HomePage from "../components/HomePage.astro";
+import { contentByLocale } from "../i18n/content";
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const content = contentByLocale["zh-TW"];
 ---
 
-<BaseLayout title={siteConfig.title} description={siteConfig.description}>
-	<HeroSection
-		title={siteConfig.title}
-		tagline={siteConfig.tagline}
-		intro={siteConfig.intro}
-		socialLinks={siteConfig.socialLinks}
-	/>
+<BaseLayout
+	title={content.seoTitle}
+	description={content.seoDescription}
+	lang="zh-TW"
+>
+	<HomePage content={content} />
 </BaseLayout>
 
 <script>
