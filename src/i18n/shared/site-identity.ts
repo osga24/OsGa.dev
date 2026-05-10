@@ -27,11 +27,11 @@ export const siteIdentityContent: SiteIdentityContent = {
   quickLinks: [
     {
       label: "Blog",
-      href: "/blog",
+      href: "https://blog.osga.dev",
     },
     {
       label: "Resume",
-      href: "/resume",
+      href: "/cv.pdf",
     },
   ],
 };
