@@ -1,7 +1,9 @@
 import { certificationsContent } from "./sections/certifications";
+import { communityConferenceContent } from "./sections/community-conference";
 import { competitionsContent } from "./sections/competitions";
 import { experienceContent } from "./sections/experience";
 import { heroContent } from "./sections/hero";
+import { presentationsContent } from "./sections/presentations";
 import { seoContent } from "./sections/seo";
 import { uiContent } from "./sections/ui";
 import type { Locale, SiteContent } from "./types";
@@ -10,6 +12,8 @@ import { siteIdentityContent } from "./shared/site-identity";
 export type {
 	CertificationItem,
 	CertificationsContent,
+	CommunityConferenceContent,
+	CommunityConferenceItem,
 	CompetitionCategory,
 	CompetitionItem,
 	CompetitionsContent,
@@ -18,6 +22,9 @@ export type {
 	HeroContent,
 	InfoSection,
 	Locale,
+	PresentationCategory,
+	PresentationItem,
+	PresentationsContent,
 	QuickLink,
 	SeoContent,
 	SiteContent,
@@ -29,19 +36,23 @@ export const contentByLocale: Record<Locale, SiteContent> = {
 	"zh-TW": {
 		...siteIdentityContent,
 		...certificationsContent["zh-TW"],
+		...communityConferenceContent["zh-TW"],
 		...competitionsContent["zh-TW"],
 		...experienceContent["zh-TW"],
 		...seoContent["zh-TW"],
 		...heroContent["zh-TW"],
+		...presentationsContent["zh-TW"],
 		...uiContent["zh-TW"],
 	},
 	en: {
 		...siteIdentityContent,
 		...certificationsContent.en,
+		...communityConferenceContent.en,
 		...competitionsContent.en,
 		...experienceContent.en,
 		...seoContent.en,
 		...heroContent.en,
+		...presentationsContent.en,
 		...uiContent.en,
 	},
 };

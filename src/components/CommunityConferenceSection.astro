@@ -1,0 +1,105 @@
+---
+import type { CommunityConferenceItem } from "../i18n/content";
+
+type Props = {
+	title: string;
+	items: readonly CommunityConferenceItem[];
+};
+
+const { title, items } = Astro.props;
+---
+
+<section
+	class="community-conference reveal-content"
+	aria-labelledby="community-conference-title"
+>
+	<div class="community-conference-header">
+		<h2 id="community-conference-title" class="community-conference-title">
+			{title}
+		</h2>
+	</div>
+
+	<div class="community-conference-list divided-list">
+		{items.map((item) => (
+			<article class="community-conference-item">
+				<div class="community-conference-overview">
+					<h3>{item.content}</h3>
+					<p class="community-conference-role">{item.role}</p>
+				</div>
+				<div class="community-conference-meta">
+					<p class="community-conference-year">{item.year}</p>
+				</div>
+			</article>
+		))}
+	</div>
+</section>
+
+<style>
+	.community-conference {
+		width: 100%;
+		margin-top: 0.5rem;
+	}
+
+	.community-conference-header {
+		margin-bottom: 1.25rem;
+	}
+
+	.community-conference-title {
+		margin: 0;
+		font-size: clamp(1.35rem, 4vw, 1.8rem);
+		line-height: 1.1;
+	}
+
+	.community-conference-item {
+		/* border-bottom: 1px solid var(--line); */
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
+		padding: 1rem 0 1.05rem;
+		align-items: flex-start;
+	}
+
+	.community-conference-overview h3 {
+		margin: 0;
+		font-size: 1rem;
+		line-height: 1.6;
+	}
+
+	.community-conference-overview {
+		flex: 1;
+		min-width: 0;
+	}
+
+	.community-conference-year,
+	.community-conference-role {
+		font-size: 0.9rem;
+		margin: 0;
+		color: var(--muted);
+	}
+
+	.community-conference-meta {
+		flex: 0 0 auto;
+		text-align: right;
+		white-space: nowrap;
+	}
+
+	.community-conference-role {
+		margin-top: 0.25rem;
+	}
+
+	@media (max-width: 720px) {
+		.community-conference-item {
+			gap: 0.75rem;
+		}
+	}
+
+	@media (max-width: 520px) {
+		.community-conference {
+			margin-top: 0;
+		}
+
+		.community-conference-header {
+			margin-bottom: 1rem;
+		}
+	}
+</style>

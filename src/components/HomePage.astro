@@ -1,9 +1,11 @@
 ---
 import Certifications from "./Certifications.astro";
+import CommunityConferenceSection from "./CommunityConferenceSection.astro";
 import CompetitionsSection from "./CompetitionsSection.astro";
 import ExperienceSection from "./ExperienceSection.astro";
 import HeroSection from "./HeroSection.astro";
 import LocaleSwitcher from "./LocaleSwitcher.astro";
+import PresentationsSection from "./PresentationsSection.astro";
 import ThemeToggle from "./ThemeToggle.astro";
 import type { SiteContent } from "../i18n/content";
 
@@ -47,6 +49,16 @@ const { content } = Astro.props;
 <CompetitionsSection
 	title={content.competitionsTitle}
 	categories={content.competitionCategories}
+/>
+
+<PresentationsSection
+	title={content.presentationsTitle}
+	categories={content.presentationCategories}
+/>
+
+<CommunityConferenceSection
+	title={content.communityConferenceTitle}
+	items={content.communityConferenceItems}
 />
 
 <style>

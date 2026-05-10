@@ -1,0 +1,128 @@
+---
+import type { PresentationCategory } from "../i18n/content";
+
+type Props = {
+	title: string;
+	categories: readonly PresentationCategory[];
+};
+
+const { title, categories } = Astro.props;
+---
+
+<section class="presentations reveal-content" aria-labelledby="presentations-title">
+	<div class="presentations-header">
+		<h2 id="presentations-title" class="presentations-title">{title}</h2>
+	</div>
+
+	<div class="presentations-groups">
+		{categories.map((category) => (
+			<section class="presentations-group">
+				<p class="presentations-label meta-kicker">{category.label}</p>
+				<div class="presentations-list divided-list">
+					{category.items.map((item) => (
+						<article class="presentation-item">
+							<div class="presentation-body">
+								<p class="presentation-content">{item.content}</p>
+								{item.desc && <p class="presentation-desc">{item.desc}</p>}
+								{item.topic && (
+									<p class="presentation-team">{item.topic}</p>
+								)}
+							</div>
+							<div class="presentation-meta">
+								<p class="presentation-date">{item.date}</p>
+							</div>
+						</article>
+					))}
+				</div>
+			</section>
+		))}
+	</div>
+</section>
+
+<style>
+	.presentations {
+		width: 100%;
+		margin-top: 0.5rem;
+	}
+
+	.presentations-header {
+		margin-bottom: 1.25rem;
+	}
+
+	.presentations-title {
+		margin: 0;
+		font-size: clamp(1.35rem, 4vw, 1.8rem);
+		line-height: 1.1;
+	}
+
+	.presentations-group + .presentations-group {
+		margin-top: 1.5rem;
+	}
+
+	.presentations-label {
+		padding-bottom: 0.55rem;
+		margin-bottom: 0.2rem;
+	}
+
+	.presentations-list {
+		margin-top: 0.35rem;
+	}
+
+	.presentations-list .presentation-item {
+		display: flex;
+		justify-content: space-between;
+		gap: 0.75rem;
+		padding: 0.9rem 0 1rem;
+		align-items: flex-start;
+	}
+
+	.presentation-date,
+	.presentation-desc,
+	.presentation-team {
+		margin: 0;
+		color: var(--muted);
+		font-size: 0.92rem;
+	}
+
+	.presentation-meta {
+		flex: 0 0 auto;
+		text-align: right;
+		white-space: nowrap;
+	}
+
+	.presentation-body {
+		flex: 1;
+		min-width: 0;
+	}
+
+	.presentation-content {
+		margin: 0;
+		white-space: pre-line;
+		line-height: 1.7;
+	}
+
+	.presentation-desc {
+		margin-top: 0.35rem;
+		line-height: 1.6;
+	}
+
+	.presentation-team {
+		margin-top: 0.45rem;
+	}
+
+	@media (max-width: 720px) {
+		.presentations-list .presentation-item {
+			gap: 0.65rem;
+		}
+	}
+
+	@media (max-width: 520px) {
+		.presentations {
+			margin-top: 0;
+		}
+
+		.presentations-header {
+			margin-bottom: 1rem;
+		}
+	}
+</style>

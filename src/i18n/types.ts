@@ -80,6 +80,33 @@ export type CompetitionsContent = {
   competitionCategories: readonly CompetitionCategory[];
 };
 
+export type PresentationItem = {
+  date: string;
+  content: string;
+  topic: string;
+};
+
+export type PresentationCategory = {
+  label: string;
+  items: readonly PresentationItem[];
+};
+
+export type PresentationsContent = {
+  presentationsTitle: string;
+  presentationCategories: readonly PresentationCategory[];
+};
+
+export type CommunityConferenceItem = {
+  year: string;
+  content: string;
+  role: string;
+};
+
+export type CommunityConferenceContent = {
+  communityConferenceTitle: string;
+  communityConferenceItems: readonly CommunityConferenceItem[];
+};
+
 export type UiContent = {
   switchLocaleLabel: string;
   switchLocaleHref: string;
@@ -93,4 +120,6 @@ export type SiteContent = SiteIdentityContent &
   ExperienceContent &
   CertificationsContent &
   CompetitionsContent &
+  PresentationsContent &
+  CommunityConferenceContent &
   UiContent;
