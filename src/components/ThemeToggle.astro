@@ -1,4 +1,6 @@
 ---
+import { Icon } from "astro-icon/components";
+
 type Props = {
 	lightLabel: string;
 	darkLabel: string;
@@ -16,15 +18,10 @@ const { lightLabel, darkLabel } = Astro.props;
 	aria-label="Toggle theme"
 >
 	<span class="theme-icon theme-icon-sun" aria-hidden="true">
-		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-			<circle cx="12" cy="12" r="4" />
-			<path d="M12 2.5v2.2M12 19.3v2.2M21.5 12h-2.2M4.7 12H2.5M18.7 5.3l-1.5 1.5M6.8 17.2l-1.5 1.5M18.7 18.7l-1.5-1.5M6.8 6.8L5.3 5.3" />
-		</svg>
+		<Icon name="lucide:sun-medium" />
 	</span>
 	<span class="theme-icon theme-icon-moon" aria-hidden="true">
-		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-			<path d="M20 14.2A7.8 7.8 0 0 1 9.8 4 8.8 8.8 0 1 0 20 14.2Z" />
-		</svg>
+		<Icon name="lucide:moon-star" />
 	</span>
 	<span class="sr-only" data-theme-toggle-label>{darkLabel}</span>
 </button>
@@ -144,7 +141,7 @@ const { lightLabel, darkLabel } = Astro.props;
 			color var(--theme-duration, 0.32s) ease;
 	}
 
-	.theme-icon svg {
+	.theme-icon :global(svg) {
 		width: 1rem;
 		height: 1rem;
 		display: block;
