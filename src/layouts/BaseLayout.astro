@@ -17,14 +17,39 @@ const { title, description, lang = "en" } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
 		<title>{title}</title>
+		<script is:inline>
+			try {
+				const savedTheme = window.localStorage.getItem("theme-preference");
+				const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+					? "dark"
+					: "light";
+				document.documentElement.dataset.theme = savedTheme ?? systemTheme;
+			} catch {
+				document.documentElement.dataset.theme = "light";
+			}
+		</script>
 		<style>
-			:root {
-				--bg: #e7e1d7;
-				--text: #161514;
-				--muted: #6d675f;
-				--icon: #9a9389;
-				--icon-hover: #5c554d;
+			:root,
+			:root[data-theme="light"] {
+				color-scheme: light;
+				--accent: #495954;
+				--bg: #f7f1e3;
+				--text: #1f2422;
+				--muted: #666b67;
+				--icon: #7a837f;
+				--icon-hover: #495954;
+				--line: rgba(73, 89, 84, 0.22);
 				--ease: cubic-bezier(0.2, 0.65, 0.3, 0.9);
+			}
+
+			:root[data-theme="dark"] {
+				color-scheme: dark;
+				--bg: #151515;
+				--text: #f1ede4;
+				--muted: #a59f93;
+				--icon: #8f978f;
+				--icon-hover: #c7d1cc;
+				--line: rgba(199, 209, 204, 0.18);
 			}
 
 			* {
@@ -53,7 +78,7 @@ const { title, description, lang = "en" } = Astro.props;
 			.page-shell {
 				display: flex;
 				flex: 1;
-				background: var(--bg);
+				background: transparent;
 			}
 
 			.page-stage {

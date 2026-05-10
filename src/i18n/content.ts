@@ -23,6 +23,8 @@ export type SiteContent = {
 	experienceIntro: string;
 	switchLocaleLabel: string;
 	switchLocaleHref: string;
+	themeLightLabel: string;
+	themeDarkLabel: string;
 	socialLinks: readonly SocialLink[];
 	experience: readonly ExperienceItem[];
 };
@@ -41,6 +43,8 @@ export const contentByLocale = {
 			"先做成同頁的簡單版本，之後你可以把這裡替換成真實公司、職稱、年份與成果。",
 		switchLocaleLabel: "EN",
 		switchLocaleHref: "/en",
+		themeLightLabel: "淺色",
+		themeDarkLabel: "深色",
 		socialLinks: [
 			{
 				label: "GitHub",
@@ -98,6 +102,8 @@ export const contentByLocale = {
 			"A simple same-page version for now. You can replace this with real companies, titles, years, and outcomes later.",
 		switchLocaleLabel: "中文",
 		switchLocaleHref: "/",
+		themeLightLabel: "Light",
+		themeDarkLabel: "Dark",
 		socialLinks: [
 			{
 				label: "GitHub",

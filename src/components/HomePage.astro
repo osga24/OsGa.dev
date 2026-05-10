@@ -2,6 +2,7 @@
 import ExperienceTimeline from "./ExperienceTimeline.astro";
 import HeroSection from "./HeroSection.astro";
 import LocaleSwitcher from "./LocaleSwitcher.astro";
+import ThemeToggle from "./ThemeToggle.astro";
 import type { SiteContent } from "../i18n/content";
 
 type Props = {
@@ -11,10 +12,16 @@ type Props = {
 const { content } = Astro.props;
 ---
 
-<LocaleSwitcher
-	label={content.switchLocaleLabel}
-	href={content.switchLocaleHref}
-/>
+<div class="page-actions">
+	<ThemeToggle
+		lightLabel={content.themeLightLabel}
+		darkLabel={content.themeDarkLabel}
+	/>
+	<LocaleSwitcher
+		label={content.switchLocaleLabel}
+		href={content.switchLocaleHref}
+	/>
+</div>
 
 <HeroSection
 	title={content.title}
@@ -29,3 +36,13 @@ const { content } = Astro.props;
 	intro={content.experienceIntro}
 	items={content.experience}
 />
+
+<style>
+	.page-actions {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+</style>
