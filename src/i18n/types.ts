@@ -15,7 +15,7 @@ export type QuickLink = {
 
 export type InfoItem = {
   label: string;
-  value: string;
+  value: string | readonly string[];
   href?: string;
 };
 

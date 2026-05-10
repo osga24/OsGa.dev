@@ -195,7 +195,7 @@ const presentationsLocalizedContent: Record<
     presentationsTitle: "Presentation",
     categoryLabels: {
       conf: "研討會 / 年會",
-      sec: "資安教學",
+      sec: "資訊安全",
       dev: "開發分享",
     },
   },

@@ -15,7 +15,11 @@ export const heroContent = {
           },
           {
             label: "Bio",
-            value: "國立雲林科技大學 資訊管理系（人工智慧技優專班）",
+            value: [
+              "國立雲林科技大學 資訊管理系（人工智慧技優專班）",
+              "資訊安全研究社 1st - 社長",
+              "網管小組 26th 成員 / 27th 系統組組長",
+            ],
           },
         ],
       },
@@ -35,8 +39,11 @@ export const heroContent = {
           },
           {
             label: "Bio",
-            value:
+            value: [
               "National Yunlin University of Science and Technology - IM(AI)",
+              "YunHack 1st - Leader",
+              "YunNET 26th Member / 27th System leader",
+            ],
           },
         ],
       },

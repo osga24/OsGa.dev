@@ -13,16 +13,26 @@ const { sections } = Astro.props;
 		<section class="info-section">
 			{section.title && <p class="info-title meta-kicker">{section.title}</p>}
 			<ul class="info-list divided-list">
-				{section.items.map((item) => (
-					<li class="info-item">
-						<span class="info-label">{item.label}</span>
-						{item.href ? (
-							<a class="info-value" href={item.href}>{item.value}</a>
-						) : (
-							<span class="info-value">{item.value}</span>
-						)}
-					</li>
-				))}
+				{section.items.map((item) => {
+					const values = Array.isArray(item.value) ? item.value : [item.value];
+
+					return (
+						<li class="info-item">
+							<span class="info-label">{item.label}</span>
+							{item.href ? (
+								<a class="info-value" href={item.href}>{values[0]}</a>
+							) : values.length === 1 ? (
+								<span class="info-value">{values[0]}</span>
+							) : (
+								<ul class="info-value-list">
+									{values.map((value) => (
+										<li class="info-value-list-item">{value}</li>
+									))}
+								</ul>
+							)}
+						</li>
+					);
+				})}
 			</ul>
 		</section>
 	))}
@@ -51,6 +61,16 @@ const { sections } = Astro.props;
 		color: var(--text);
 		text-decoration: none;
 		word-break: break-word;
+	}
+
+	.info-value-list {
+		margin: 0;
+		padding-left: 1.1rem;
+		color: var(--text);
+	}
+
+	.info-value-list-item + .info-value-list-item {
+		margin-top: 0.25rem;
 	}
 
 	a.info-value:hover {
