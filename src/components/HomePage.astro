@@ -39,4 +39,11 @@ const { content } = Astro.props;
 		justify-content: space-between;
 		gap: 1rem;
 	}
+
+	@media (max-width: 520px) {
+		.page-actions {
+			flex-wrap: wrap;
+			row-gap: 0.85rem;
+		}
+	}
 </style>

@@ -46,4 +46,16 @@ const { links } = Astro.props;
 		border-color: var(--icon-hover);
 		transform: scale(1.05);
 	}
+
+	@media (max-width: 520px) {
+		.quick-links {
+			gap: 0.7rem;
+			margin-top: 1rem;
+		}
+
+		.quick-links a {
+			min-width: calc(30% - 0.35rem);
+			padding: 0.8rem 0.7rem;
+		}
+	}
 </style>

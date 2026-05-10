@@ -194,6 +194,45 @@ const { title, description, lang = "en" } = Astro.props;
 				transition: border-color var(--theme-duration) var(--ease);
 			}
 
+			@media (max-width: 720px) {
+				.page-stage {
+					padding: 8vh 1rem 3rem;
+				}
+
+				.page-stack {
+					gap: 3rem;
+				}
+
+				:global(.wordmark) {
+					white-space: normal;
+					word-break: break-word;
+				}
+
+				:global(.lead) {
+					font-size: 0.95rem;
+				}
+			}
+
+			@media (max-width: 520px) {
+				.page-stage {
+					padding: 6vh 0.9rem 2.5rem;
+				}
+
+				.page-stack {
+					gap: 2.25rem;
+				}
+
+				:global(.tagline) {
+					font-size: 0.92rem;
+				}
+
+				:global(.lead) {
+					margin-top: 0.85rem;
+					font-size: 0.92rem;
+					line-height: 1.7;
+				}
+			}
+
 			@media (prefers-reduced-motion: reduce) {
 				body,
 				.page-stack,
