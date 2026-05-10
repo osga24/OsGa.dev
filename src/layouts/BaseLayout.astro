@@ -1,4 +1,7 @@
 ---
+import "@fontsource/jetbrains-mono/400.css";
+import "@fontsource/jetbrains-mono/700.css";
+
 type Props = {
 	title: string;
 	description: string;
@@ -64,7 +67,7 @@ const { title, description, lang = "en" } = Astro.props;
 			}
 
 			body {
-				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+				font-family: "JetBrains Mono", monospace;
 				background: var(--bg);
 				color: var(--text);
 				transition:
