@@ -8,7 +8,7 @@ const { label, href } = Astro.props;
 ---
 
 <nav class="locale-switcher reveal-content" aria-label="Language switcher">
-	<a href={href} data-skip-intro>{label}</a>
+	<a class="interactive-link hover-scale" href={href} data-skip-intro>{label}</a>
 </nav>
 
 <style>
@@ -24,13 +24,6 @@ const { label, href } = Astro.props;
 		font-size: 0.88rem;
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
-		transition:
-			color var(--theme-duration, 0.32s) var(--ease),
-			transform 0.2s ease;
-	}
-
-	.locale-switcher a:hover {
-		color: var(--icon-hover);
-		transform: scale(1.08);
+		--hover-scale: 1.08;
 	}
 </style>

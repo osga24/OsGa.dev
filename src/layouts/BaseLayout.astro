@@ -1,6 +1,7 @@
 ---
 import "@fontsource/jetbrains-mono/400.css";
 import "@fontsource/jetbrains-mono/700.css";
+import "../styles/global.css";
 
 type Props = {
 	title: string;
@@ -102,7 +103,7 @@ const { title, description, lang = "en" } = Astro.props;
 				flex-direction: column;
 				align-items: flex-start;
 				width: 100%;
-				max-width: 32rem;
+				max-width: 40rem;
 				gap: 5rem;
 				transition: transform 0.6s var(--ease);
 			}
@@ -154,7 +155,7 @@ const { title, description, lang = "en" } = Astro.props;
 
 			:global(.lead) {
 				margin: 1rem 0 0;
-				max-width: 32rem;
+				max-width: none;
 				font-size: 1rem;
 				line-height: 1.6;
 				white-space: pre-line;

@@ -11,8 +11,8 @@ const { sections } = Astro.props;
 <div class="profile-info">
 	{sections.map((section) => (
 		<section class="info-section">
-			{section.title && <p class="info-title">{section.title}</p>}
-			<ul class="info-list">
+			{section.title && <p class="info-title meta-kicker">{section.title}</p>}
+			<ul class="info-list divided-list">
 				{section.items.map((item) => (
 					<li class="info-item">
 						<span class="info-label">{item.label}</span>
@@ -38,21 +38,6 @@ const { sections } = Astro.props;
 		margin-top: 1.25rem;
 	}
 
-	.info-title {
-		margin: 0 0 0.55rem;
-		font-size: 0.86rem;
-		color: var(--muted);
-		text-transform: uppercase;
-		letter-spacing: 0.08em;
-	}
-
-	.info-list {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		border-top: 1px solid var(--line);
-	}
-
 	.info-item {
 		display: grid;
 		grid-template-columns: minmax(4.75rem, 6rem) 1fr;
@@ -60,10 +45,6 @@ const { sections } = Astro.props;
 		padding: 0.7rem 0;
 		border-bottom: 1px solid var(--line);
 		align-items: start;
-	}
-
-	.info-label {
-		color: var(--muted);
 	}
 
 	.info-value {

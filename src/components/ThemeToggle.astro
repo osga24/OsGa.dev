@@ -11,7 +11,7 @@ const { lightLabel, darkLabel } = Astro.props;
 
 <button
 	type="button"
-	class="theme-toggle reveal-content"
+	class="theme-toggle interactive-link hover-scale reveal-content"
 	data-theme-toggle
 	data-light-label={lightLabel}
 	data-dark-label={darkLabel}
@@ -118,18 +118,11 @@ const { lightLabel, darkLabel } = Astro.props;
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		transition:
-			border-color 0.2s ease,
-			color 0.2s ease,
-			background-color 0.2s ease,
-			box-shadow 0.2s ease,
-			transform 0.2s ease;
+		--hover-scale: 1.08;
 	}
 
 	.theme-toggle:hover {
 		color: var(--icon-hover);
-		border-color: var(--icon-hover);
-		transform: scale(1.08);
 	}
 
 	.theme-icon {

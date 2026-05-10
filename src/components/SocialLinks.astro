@@ -11,7 +11,13 @@ const { links } = Astro.props;
 
 <div class="socials" aria-label="Social links">
 	{links.map((link) => (
-		<a href={link.href} target="_blank" rel="noreferrer" aria-label={link.label}>
+		<a
+			class="interactive-link hover-scale"
+			href={link.href}
+			target="_blank"
+			rel="noreferrer"
+			aria-label={link.label}
+		>
 			<Icon name={link.icon} aria-hidden="true" />
 		</a>
 	))}
@@ -34,27 +40,13 @@ const { links } = Astro.props;
 		border-radius: 999px;
 		color: var(--icon);
 		text-decoration: none;
-		transition:
-			border-color var(--theme-duration, 0.32s) ease,
-			color 0.2s ease,
-			transform 0.2s ease;
-	}
-
-	.socials a:hover {
-		color: var(--icon-hover);
-		transform: scale(1.12);
+		--hover-scale: 1.12;
 	}
 
 	.socials :global(svg) {
 		width: 1rem;
 		height: 1rem;
 		display: block;
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.socials a {
-			transition: none;
-		}
 	}
 
 	@media (max-width: 520px) {

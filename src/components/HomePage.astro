@@ -1,4 +1,6 @@
 ---
+import Certifications from "./Certifications.astro";
+import ExperienceSection from "./ExperienceSection.astro";
 import HeroSection from "./HeroSection.astro";
 import LocaleSwitcher from "./LocaleSwitcher.astro";
 import ThemeToggle from "./ThemeToggle.astro";
@@ -29,6 +31,16 @@ const { content } = Astro.props;
 	socialLinks={content.socialLinks}
 	infoSections={content.infoSections}
 	quickLinks={content.quickLinks}
+/>
+
+<ExperienceSection
+	title={content.experienceTitle}
+	items={content.experienceItems}
+/>
+
+<Certifications
+	title={content.certificationsTitle}
+	items={content.certificationItems}
 />
 
 <style>

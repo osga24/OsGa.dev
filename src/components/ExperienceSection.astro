@@ -1,0 +1,94 @@
+---
+import type { ExperienceItem } from "../i18n/content";
+
+type Props = {
+	title: string;
+	intro: string;
+	items: readonly ExperienceItem[];
+};
+
+const { title, intro, items } = Astro.props;
+---
+
+<section class="experience reveal-content" aria-labelledby="experience-title">
+	<div class="experience-header">
+		<h2 id="experience-title" class="experience-title">{title}</h2>
+	</div>
+
+	<div class="experience-list divided-list">
+		{items.map((item) => (
+			<article class="experience-item">
+				<div class="experience-meta">
+					<p class="experience-period">{item.period}</p>
+				</div>
+				<div class="experience-overview">
+					<h3>{item.role}</h3>
+					<p class="experience-org">{item.org}</p>
+				</div>
+			</article>
+		))}
+	</div>
+</section>
+
+<style>
+	.experience {
+		width: 100%;
+		margin-top: 0.5rem;
+	}
+
+	.experience-header {
+		margin-bottom: 1.25rem;
+	}
+
+	.experience-title {
+		margin: 0;
+		font-size: clamp(1.35rem, 4vw, 1.8rem);
+		line-height: 1.1;
+	}
+
+
+	.experience-item {
+		border-bottom: 1px solid var(--line);
+	}
+
+	.experience-item {
+		display: grid;
+		grid-template-columns: 8rem 1fr;
+		gap: 1rem;
+		padding: 1rem 0 1.05rem;
+		align-items: start;
+	}
+
+	.experience-overview h3 {
+		margin: 0;
+		font-size: 1rem;
+	}
+
+	.experience-period,
+	.experience-org {
+		font-size: 0.9rem;
+		margin: 0;
+		color: var(--muted);
+	}
+
+	.experience-org {
+		margin-top: 0.25rem;
+	}
+
+	@media (max-width: 720px) {
+		.experience-item {
+			grid-template-columns: 1fr;
+			gap: 0.55rem;
+		}
+	}
+
+	@media (max-width: 520px) {
+		.experience {
+			margin-top: 0;
+		}
+
+		.experience-header {
+			margin-bottom: 1rem;
+		}
+	}
+</style>

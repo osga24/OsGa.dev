@@ -1,0 +1,94 @@
+---
+import type { CertificationItem } from "../i18n/content";
+
+type Props = {
+	title: string;
+	items: readonly CertificationItem[];
+};
+
+const { title, items } = Astro.props;
+---
+
+<section class="certifications reveal-content" aria-labelledby="certifications-title">
+	<div class="certifications-header">
+		<h2 id="certifications-title" class="certifications-title">{title}</h2>
+	</div>
+
+	<div class="certifications-list divided-list">
+		{items.map((item) => (
+			<article class="certification-item">
+				<div class="certification-meta">
+					<p class="certification-date">{item.date}</p>
+				</div>
+				<div class="certification-overview">
+					<h3>{item.name}</h3>
+					<p class="certification-issuer">{item.issuer}</p>
+					<p class="certification-issuer">Certificate ID: {item.id}</p>
+				</div>
+			</article>
+		))}
+	</div>
+</section>
+
+<style>
+	.certifications {
+		width: 100%;
+		margin-top: 0.5rem;
+	}
+
+	.certifications-header {
+		margin-bottom: 1.25rem;
+	}
+
+	.certifications-title {
+		margin: 0;
+		font-size: clamp(1.35rem, 4vw, 1.8rem);
+		line-height: 1.1;
+	}
+
+
+	.certification-item {
+		border-bottom: 1px solid var(--line);
+	}
+
+	.certification-item {
+		display: grid;
+		grid-template-columns: 8rem 1fr;
+		gap: 1rem;
+		padding: 1rem 0 1.05rem;
+		align-items: start;
+	}
+
+	.certification-overview h3 {
+		margin: 0;
+		font-size: 1rem;
+	}
+
+	.certification-date,
+	.certification-issuer {
+		font-size: 0.9rem;
+		margin: 0;
+		color: var(--muted);
+	}
+
+	.certification-issuer {
+		margin-top: 0.25rem;
+	}
+
+	@media (max-width: 720px) {
+		.certification-item {
+			grid-template-columns: 1fr;
+			gap: 0.55rem;
+		}
+	}
+
+	@media (max-width: 520px) {
+		.certifications {
+			margin-top: 0;
+		}
+
+		.certifications-header {
+			margin-bottom: 1rem;
+		}
+	}
+</style>

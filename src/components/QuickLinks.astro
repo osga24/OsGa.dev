@@ -10,7 +10,7 @@ const { links } = Astro.props;
 
 <nav class="quick-links" aria-label="Quick links">
 	{links.map((link) => (
-		<a href={link.href}>{link.label}</a>
+		<a class="interactive-link hover-scale" href={link.href}>{link.label}</a>
 	))}
 </nav>
 
@@ -35,16 +35,7 @@ const { links } = Astro.props;
 		font-size: 0.92rem;
 		line-height: 1;
 		text-align: center;
-		transition:
-			color var(--theme-duration, 0.32s) var(--ease),
-			border-color var(--theme-duration, 0.32s) var(--ease),
-			transform 0.2s ease;
-	}
-
-	.quick-links a:hover {
-		color: var(--icon-hover);
-		border-color: var(--icon-hover);
-		transform: scale(1.05);
+		--hover-scale: 1.05;
 	}
 
 	@media (max-width: 520px) {
