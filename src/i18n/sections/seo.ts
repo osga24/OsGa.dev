@@ -7,6 +7,7 @@ export const seoContent = {
   },
   en: {
     seoTitle: "OsGa.dev",
-    seoDescription: "OsGa's Personal site",
+    seoDescription:
+      "A guy into cybersecurity, network operations, development, and penetration testing.",
   },
 } satisfies Localized<SeoContent>;
