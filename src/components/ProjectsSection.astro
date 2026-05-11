@@ -10,7 +10,6 @@ type Props = {
   stackLabel: string;
   highlightsLabel: string;
   linkFallbackLabel: string;
-  imagePlaceholderLabel: string;
   githubButtonLabel: string;
 };
 
@@ -22,7 +21,6 @@ const {
   stackLabel,
   highlightsLabel,
   linkFallbackLabel,
-  imagePlaceholderLabel,
   githubButtonLabel,
 } = Astro.props;
 ---
@@ -49,20 +47,16 @@ const {
         </summary>
 
         <div class="project-details">
-          <div class="project-media">
-            {item.imageSrc ? (
+          {item.imageSrc && (
+            <div class="project-media">
               <img
                 class="project-image"
                 src={item.imageSrc}
                 alt={item.imageAlt ?? `${item.title} preview`}
                 loading="lazy"
               />
-            ) : (
-              <div class="project-image project-image-placeholder" aria-hidden="true">
-                <span>{imagePlaceholderLabel}</span>
-              </div>
-            )}
-          </div>
+            </div>
+          )}
 
           <p class="project-description">{item.description}</p>
 
@@ -191,26 +185,10 @@ const {
     width: 100%;
     aspect-ratio: 16 / 9;
     display: block;
-    border: 1px solid var(--text);
     object-fit: cover;
     background:
       linear-gradient(135deg, color-mix(in srgb, var(--line) 70%, transparent), transparent),
       color-mix(in srgb, var(--surface, #fff) 88%, var(--line));
-  }
-
-  .project-image-placeholder {
-    display: grid;
-    place-items: center;
-    color: var(--muted);
-    font-size: 0.88rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-
-  .project-image-placeholder span {
-    padding: 0.55rem 0.8rem;
-    border: 1px dashed var(--line);
-    border-radius: 999px;
   }
 
   .project-block + .project-block {
