@@ -18,27 +18,32 @@ const presentationItemsByCategory = {
       date: "2026-03-28",
       content: "學生計算機年會 SITCON",
       topic: "ESPRESSO【十倍開發！解脫雙手拋棄滑鼠的開發環境】",
+      href: "https://sitcon.org/2026/agenda/c1d927/",
     },
     {
       date: "2025-11-09",
       content: "MOPCON 2025",
       topic:
         "Lightning Talk - 身為一個資訊社群服務當然要自己做吧！關於我轉身到 SITCON 2026 開發組這檔事",
+      href: "https://mopcon.org/2025/agenda/",
     },
     {
       date: "2025-03-08",
       content: "學生計算機年會 SITCON",
       topic: "開放式議程【RE:從零開始帶你入門 CTF 競賽】",
+      href: "https://sitcon.org/2025/agenda/c47604/",
     },
     {
       date: "2024-11-10",
       content: "2024 HITCON CTF × 菁英人才交流活動",
       topic: "受邀講者（THJCC）",
+      href: "https://www.facebook.com/share/p/1HyxyNMsBW/",
     },
     {
       date: "2024-08-24",
       content: "HITCON CMT 2024",
       topic: "Lightning Talk - 關於在充滿賽棍的環境舉辦 CTF 比賽",
+      href: "https://www.facebook.com/share/p/1DgBKwJEmF/",
     },
   ],
   sec: [
@@ -46,6 +51,7 @@ const presentationItemsByCategory = {
       date: "2026-04-25",
       content: "資安防護實戰CTF 資安人才培育課程（台南場）",
       topic: "Rookie 挑戰 HITCON CTF",
+      href: "https://moda.gov.tw/ACS/press/news/press/19558",
     },
     {
       date: "2026-01-21",
@@ -61,6 +67,7 @@ const presentationItemsByCategory = {
       date: "2025-10-25",
       content: "SCIST 南臺灣學生資訊社群",
       topic: "Linux",
+      href: "https://youtu.be/MLkI7XySgzg?si=9b-yAOShIB8PGy9J",
     },
     {
       date: "2025-09-25 - 2026-01-08",
@@ -76,6 +83,7 @@ const presentationItemsByCategory = {
       date: "2025-08-08",
       content: "資安院 CTF 資安種子培訓交流會高雄場",
       topic: "CTF 協作工具與實戰模擬演練",
+      href: "https://www.facebook.com/share/p/1KajSCCauf/",
     },
     {
       date: "2025-04-02",

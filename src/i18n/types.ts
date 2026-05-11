@@ -84,6 +84,7 @@ export type PresentationItem = {
   date: string;
   content: string;
   topic: string;
+  href?: string;
 };
 
 export type PresentationCategory = {

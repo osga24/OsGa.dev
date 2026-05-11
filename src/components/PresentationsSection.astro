@@ -23,7 +23,21 @@ const { title, categories } = Astro.props;
 						<article class="presentation-item">
 							<div class="presentation-main">
 								<p class="presentation-date">{item.date}</p>
-								<p class="presentation-content">{item.content}</p>
+								<p class="presentation-content">
+									{item.href ? (
+										<a
+											class="presentation-link interactive-link"
+											href={item.href}
+											target="_blank"
+											rel="noreferrer"
+										>
+											{item.content}
+											<span class="presentation-link-mark" aria-hidden="true">#</span>
+										</a>
+									) : (
+										item.content
+									)}
+								</p>
 							</div>
 							{item.desc && <p class="presentation-desc">{item.desc}</p>}
 							{item.topic && <p class="presentation-team">{item.topic}</p>}
@@ -82,6 +96,18 @@ const { title, categories } = Astro.props;
 		min-width: min(22rem, 100%);
 		white-space: pre-line;
 		line-height: 1.7;
+	}
+
+	.presentation-link {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.presentation-link-mark {
+		margin-left: 0.24rem;
+		color: var(--muted);
+		font-size: 0.82em;
+		vertical-align: text-top;
 	}
 
 	.presentation-desc {
