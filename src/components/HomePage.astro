@@ -3,6 +3,7 @@ import Certifications from "./Certifications.astro";
 import CommunityConferenceSection from "./CommunityConferenceSection.astro";
 import CompetitionsSection from "./CompetitionsSection.astro";
 import ExperienceSection from "./ExperienceSection.astro";
+import Footer from "./Footer.astro";
 import HeroSection from "./HeroSection.astro";
 import LocaleSwitcher from "./LocaleSwitcher.astro";
 import PresentationsSection from "./PresentationsSection.astro";
@@ -60,6 +61,8 @@ const { content } = Astro.props;
 	title={content.communityConferenceTitle}
 	items={content.communityConferenceItems}
 />
+
+<Footer title={content.title} quickLinks={content.quickLinks} />
 
 <style>
 	.page-actions {
