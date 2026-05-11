@@ -43,6 +43,11 @@ const presentationItemsByCategory = {
   ],
   sec: [
     {
+      date: "2026-04-25",
+      content: "資安防護實戰CTF 資安人才培育課程（台南場）",
+      topic: "Rookie 挑戰 HITCON CTF",
+    },
+    {
       date: "2026-01-21",
       content: "新竹女中資訊研究社",
       topic: "資訊安全介紹",

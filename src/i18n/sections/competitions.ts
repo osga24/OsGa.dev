@@ -74,7 +74,7 @@ const competitionItemsByCategory: Record<
     },
     {
       year: "2025",
-      content: "ITSA 生成式 AI 應用網頁設計競賽 決賽佳作",
+      content: "ITSA 生成式 AI 應用網頁設計競賽 佳作",
     },
   ],
   other: [
