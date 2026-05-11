@@ -24,7 +24,7 @@ const presentationItemsByCategory = {
       date: "2025-11-09",
       content: "MOPCON 2025",
       topic:
-        "Lightning Talk - 身為一個資訊社群服務當然要自己做吧！關於我轉身到 SITCON 2026 開發組這檔事",
+        "Lightning Talk - 身為一個資訊社群服務當然要自己做吧！關於我轉生到 SITCON 2026 開發組這檔事",
       href: "https://mopcon.org/2025/agenda/",
     },
     {
@@ -174,13 +174,13 @@ const presentationItemsByCategory = {
     },
     {
       date: "2024-06-09",
-      content: "南四校資訊社聯合社課（台南一中、台南二中、台南女中、南大附中）",
+      content: "南四校資訊社聯合社課",
       topic: "Discord Bot 開發",
     },
     {
       date: "2024-05-26",
-      content: "教育部資安人才培育計畫 一日資訊體驗營（台南場）",
-      topic: "程式設計實務",
+      content: "教育部資安人才培育計畫 一日資訊體驗營",
+      topic: "程式設計實務（台南場）",
     },
     {
       date: "2024-05-01",
