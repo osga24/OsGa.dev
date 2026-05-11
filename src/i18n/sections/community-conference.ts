@@ -22,7 +22,7 @@ const communityConferenceItems: readonly CommunityConferenceItem[] = [
   },
   {
     year: "2025",
-    content: "AIS3 Juniors 2025 新型態高中職資安課程",
+    content: "AIS3 Juniors 2025",
     role: "助教",
   },
   {
@@ -57,7 +57,7 @@ const communityConferenceItems: readonly CommunityConferenceItem[] = [
   },
   {
     year: "2024",
-    content: "AIS3 Juniors 2024 新型態高中職資安課程",
+    content: "AIS3 Juniors 2024",
     role: "助教",
   },
   {

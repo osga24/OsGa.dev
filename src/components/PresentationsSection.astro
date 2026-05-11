@@ -21,16 +21,12 @@ const { title, categories } = Astro.props;
 				<div class="presentations-list divided-list">
 					{category.items.map((item) => (
 						<article class="presentation-item">
-							<div class="presentation-body">
-								<p class="presentation-content">{item.content}</p>
-								{item.desc && <p class="presentation-desc">{item.desc}</p>}
-								{item.topic && (
-									<p class="presentation-team">{item.topic}</p>
-								)}
-							</div>
-							<div class="presentation-meta">
+							<div class="presentation-main">
 								<p class="presentation-date">{item.date}</p>
+								<p class="presentation-content">{item.content}</p>
 							</div>
+							{item.desc && <p class="presentation-desc">{item.desc}</p>}
+							{item.topic && <p class="presentation-team">{item.topic}</p>}
 						</article>
 					))}
 				</div>
@@ -69,51 +65,45 @@ const { title, categories } = Astro.props;
 	}
 
 	.presentations-list .presentation-item {
-		display: flex;
-		justify-content: space-between;
-		gap: 0.75rem;
+		display: block;
 		padding: 0.9rem 0 1rem;
-		align-items: flex-start;
 	}
 
-	.presentation-date,
-	.presentation-desc,
-	.presentation-team {
-		margin: 0;
-		color: var(--muted);
-		font-size: 0.92rem;
-	}
-
-	.presentation-meta {
-		flex: 0 0 auto;
-		text-align: right;
-		white-space: nowrap;
-	}
-
-	.presentation-body {
-		flex: 1;
-		min-width: 0;
+	.presentation-main {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.3rem 0.75rem;
 	}
 
 	.presentation-content {
 		margin: 0;
+		flex: 1;
+		min-width: min(22rem, 100%);
 		white-space: pre-line;
 		line-height: 1.7;
 	}
 
 	.presentation-desc {
-		margin-top: 0.35rem;
+		margin: 0.35rem 0 0;
+		color: var(--muted);
+		font-size: 0.92rem;
 		line-height: 1.6;
 	}
 
 	.presentation-team {
-		margin-top: 0.45rem;
+		margin: 0.4rem 0 0;
+		color: var(--muted);
+		font-size: 0.9rem;
+		line-height: 1.6;
 	}
 
-	@media (max-width: 720px) {
-		.presentations-list .presentation-item {
-			gap: 0.65rem;
-		}
+	.presentation-date {
+		margin: 0;
+		flex-shrink: 0;
+		white-space: nowrap;
+		color: var(--muted);
+		font-size: 0.92rem;
 	}
 
 	@media (max-width: 520px) {

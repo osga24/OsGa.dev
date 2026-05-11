@@ -59,12 +59,12 @@ const presentationItemsByCategory = {
     },
     {
       date: "2025-09-25 - 2026-01-08",
-      content: "嘉義高中 資訊研究社 116 屆",
+      content: "嘉義高中 資訊研究社 117 屆",
       topic: "資訊安全實務",
     },
     {
       date: "2025-08-09",
-      content: "當個電神 嘉中&嘉女&南女中 聯合資訊體驗營",
+      content: "當個電神 聯合資訊體驗營",
       topic: "資安入門",
     },
     {
@@ -99,12 +99,12 @@ const presentationItemsByCategory = {
     },
     {
       date: "2024-08-26",
-      content: "教育部資安人才培育計畫 零日餅乾社 夏日資安工作坊",
+      content: "教育部資安人才培育計畫 夏日資安工作坊",
       topic: "資訊安全實務",
     },
     {
       date: "2024-08-10 - 2024-08-11",
-      content: "JNIC 嘉中&嘉女&南二中 聯合資訊體驗營",
+      content: "JNIC 聯合資訊體驗營",
       topic: "資訊安全實務",
     },
     {
@@ -114,8 +114,8 @@ const presentationItemsByCategory = {
     },
     {
       date: "2024-06-08",
-      content: "教育部資安人才培育計畫 一日資訊體驗營（台中場）",
-      topic: "資訊安全實務",
+      content: "教育部資安人才培育計畫 一日資訊體驗營",
+      topic: "資訊安全實務（台中場）",
     },
     {
       date: "2024-06-02",
@@ -124,8 +124,8 @@ const presentationItemsByCategory = {
     },
     {
       date: "2024-06-01",
-      content: "教育部資安人才培育計畫 一日資訊體驗營（台北場）",
-      topic: "資訊安全實務",
+      content: "教育部資安人才培育計畫 一日資訊體驗營",
+      topic: "資訊安全實務（台北場）",
     },
     {
       date: "2024-05-30",

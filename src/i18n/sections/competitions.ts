@@ -51,7 +51,7 @@ const competitionItemsByCategory: Record<
     },
     {
       year: "2024",
-      content: "AIS3 MyFirstCTF / Silver 23.146.248.115Award (Rank 7)<",
+      content: "AIS3 MyFirstCTF / 銀質獎",
     },
     {
       year: "2024",
