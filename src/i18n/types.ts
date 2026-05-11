@@ -108,11 +108,36 @@ export type CommunityConferenceContent = {
   communityConferenceItems: readonly CommunityConferenceItem[];
 };
 
+export type ProjectItem = {
+  title: string;
+  summary: string;
+  description: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  stack?: readonly string[];
+  highlights?: readonly string[];
+  href?: string;
+  hrefLabel?: string;
+  githubHref?: string;
+};
+
+export type ProjectsContent = {
+  projectsTitle: string;
+  projectItems: readonly ProjectItem[];
+};
+
 export type UiContent = {
   switchLocaleLabel: string;
   switchLocaleHref: string;
   themeLightLabel: string;
   themeDarkLabel: string;
+  projectExpandLabel: string;
+  projectCollapseLabel: string;
+  projectStackLabel: string;
+  projectHighlightsLabel: string;
+  projectLinkFallbackLabel: string;
+  projectImagePlaceholderLabel: string;
+  projectGithubButtonLabel: string;
 };
 
 export type SiteContent = SiteIdentityContent &
@@ -122,5 +147,6 @@ export type SiteContent = SiteIdentityContent &
   CertificationsContent &
   CompetitionsContent &
   PresentationsContent &
+  ProjectsContent &
   CommunityConferenceContent &
   UiContent;

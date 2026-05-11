@@ -1,0 +1,295 @@
+---
+import { Icon } from "astro-icon/components";
+import type { ProjectItem } from "../i18n/content";
+
+type Props = {
+  title: string;
+  items: readonly ProjectItem[];
+  expandLabel: string;
+  collapseLabel: string;
+  stackLabel: string;
+  highlightsLabel: string;
+  linkFallbackLabel: string;
+  imagePlaceholderLabel: string;
+  githubButtonLabel: string;
+};
+
+const {
+  title,
+  items,
+  expandLabel,
+  collapseLabel,
+  stackLabel,
+  highlightsLabel,
+  linkFallbackLabel,
+  imagePlaceholderLabel,
+  githubButtonLabel,
+} = Astro.props;
+---
+
+<section class="projects reveal-content" aria-labelledby="projects-title">
+  <div class="projects-header">
+    <h2 id="projects-title" class="projects-title">{title}</h2>
+  </div>
+
+  <div class="projects-list divided-list">
+    {items.map((item) => (
+      <details class="project-card">
+        <summary class="project-summary">
+          <div class="project-heading">
+            <h3>{item.title}</h3>
+            <p class="project-brief">{item.summary}</p>
+          </div>
+          <span
+            class="project-toggle"
+            aria-hidden="true"
+            data-expand-label={expandLabel}
+            data-collapse-label={collapseLabel}
+          ></span>
+        </summary>
+
+        <div class="project-details">
+          <div class="project-media">
+            {item.imageSrc ? (
+              <img
+                class="project-image"
+                src={item.imageSrc}
+                alt={item.imageAlt ?? `${item.title} preview`}
+                loading="lazy"
+              />
+            ) : (
+              <div class="project-image project-image-placeholder" aria-hidden="true">
+                <span>{imagePlaceholderLabel}</span>
+              </div>
+            )}
+          </div>
+
+          <p class="project-description">{item.description}</p>
+
+          {item.stack && item.stack.length > 0 && (
+            <div class="project-block">
+              <p class="meta-kicker">{stackLabel}</p>
+              <ul class="project-tags">
+                {item.stack.map((tag) => (
+                  <li>{tag}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {item.highlights && item.highlights.length > 0 && (
+            <div class="project-block">
+              <p class="meta-kicker">{highlightsLabel}</p>
+              <ul class="project-highlights">
+                {item.highlights.map((highlight) => (
+                  <li>{highlight}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {(item.href || item.githubHref) && (
+            <div class="project-links">
+              {item.href && (
+                <a class="project-button interactive-link" href={item.href} target="_blank" rel="noreferrer">
+                  {item.hrefLabel ?? linkFallbackLabel}
+                </a>
+              )}
+              {item.githubHref && (
+                <a class="project-button interactive-link" href={item.githubHref} target="_blank" rel="noreferrer">
+                  <Icon name="simple-icons:github" aria-hidden="true" />
+                  <span>{githubButtonLabel}</span>
+                </a>
+              )}
+            </div>
+          )}
+        </div>
+      </details>
+    ))}
+  </div>
+</section>
+
+<style>
+  .projects {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .projects-header {
+    margin-bottom: 1.25rem;
+  }
+
+  .projects-title {
+    margin: 0;
+    font-size: clamp(1.35rem, 4vw, 1.8rem);
+    line-height: 1.1;
+  }
+
+  .project-card {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .project-summary {
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 0;
+    cursor: pointer;
+  }
+
+  .project-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .project-heading {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .project-heading h3 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .project-brief,
+  .project-description {
+    margin: 0.3rem 0 0;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .project-toggle {
+    flex: 0 0 auto;
+    color: var(--muted);
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .project-toggle::before {
+    content: attr(data-expand-label);
+  }
+
+  .project-card[open] .project-toggle {
+    color: var(--icon-hover);
+  }
+
+  .project-card[open] .project-toggle::before {
+    content: attr(data-collapse-label);
+  }
+
+  .project-details {
+    padding: 0 0 1rem;
+  }
+
+  .project-media {
+    margin-bottom: 1rem;
+  }
+
+  .project-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: block;
+    border: 1px solid var(--text);
+    object-fit: cover;
+    background:
+      linear-gradient(135deg, color-mix(in srgb, var(--line) 70%, transparent), transparent),
+      color-mix(in srgb, var(--surface, #fff) 88%, var(--line));
+  }
+
+  .project-image-placeholder {
+    display: grid;
+    place-items: center;
+    color: var(--muted);
+    font-size: 0.88rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .project-image-placeholder span {
+    padding: 0.55rem 0.8rem;
+    border: 1px dashed var(--line);
+    border-radius: 999px;
+  }
+
+  .project-block + .project-block {
+    margin-top: 1rem;
+  }
+
+  .project-tags,
+  .project-highlights {
+    margin: 0;
+    padding-left: 1.1rem;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    padding-left: 0;
+    list-style: none;
+    margin-top: 0.2rem;
+  }
+
+  .project-tags li {
+    border: 1px solid var(--line);
+    padding: 0.2rem 0.65rem;
+    font-size: 0.84rem;
+    color: var(--muted);
+  }
+
+  .project-highlights {
+    margin-top: 0.2rem;
+  }
+
+  .project-highlights li + li {
+    margin-top: 0.35rem;
+  }
+
+  .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem 1.1rem;
+    margin-top: 1rem;
+  }
+
+  .project-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-width: 5.5rem;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.92rem;
+    line-height: 1;
+    text-align: center;
+    color: var(--muted);
+    --hover-scale: 1.05;
+  }
+
+  .project-button :global(svg) {
+    width: 0.95rem;
+    height: 0.95rem;
+    display: block;
+    flex: 0 0 auto;
+  }
+
+  @media (max-width: 520px) {
+    .projects {
+      margin-top: 0;
+    }
+
+    .projects-header {
+      margin-bottom: 1rem;
+    }
+
+    .project-summary {
+      gap: 0.75rem;
+    }
+  }
+</style>

@@ -7,6 +7,7 @@ import Footer from "./Footer.astro";
 import HeroSection from "./HeroSection.astro";
 import LocaleSwitcher from "./LocaleSwitcher.astro";
 import PresentationsSection from "./PresentationsSection.astro";
+import ProjectsSection from "./ProjectsSection.astro";
 import ThemeToggle from "./ThemeToggle.astro";
 import type { SiteContent } from "../i18n/content";
 
@@ -40,6 +41,18 @@ const { content } = Astro.props;
 <ExperienceSection
 	title={content.experienceTitle}
 	items={content.experienceItems}
+/>
+
+<ProjectsSection
+	title={content.projectsTitle}
+	items={content.projectItems}
+	expandLabel={content.projectExpandLabel}
+	collapseLabel={content.projectCollapseLabel}
+	stackLabel={content.projectStackLabel}
+	highlightsLabel={content.projectHighlightsLabel}
+	linkFallbackLabel={content.projectLinkFallbackLabel}
+	imagePlaceholderLabel={content.projectImagePlaceholderLabel}
+	githubButtonLabel={content.projectGithubButtonLabel}
 />
 
 <Certifications

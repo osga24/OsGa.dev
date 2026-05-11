@@ -4,6 +4,7 @@ import { competitionsContent } from "./sections/competitions";
 import { experienceContent } from "./sections/experience";
 import { heroContent } from "./sections/hero";
 import { presentationsContent } from "./sections/presentations";
+import { projectsContent } from "./sections/projects";
 import { seoContent } from "./sections/seo";
 import { uiContent } from "./sections/ui";
 import type { Locale, SiteContent } from "./types";
@@ -25,6 +26,8 @@ export type {
 	PresentationCategory,
 	PresentationItem,
 	PresentationsContent,
+	ProjectItem,
+	ProjectsContent,
 	QuickLink,
 	SeoContent,
 	SiteContent,
@@ -42,6 +45,7 @@ export const contentByLocale: Record<Locale, SiteContent> = {
 		...seoContent["zh-TW"],
 		...heroContent["zh-TW"],
 		...presentationsContent["zh-TW"],
+		...projectsContent["zh-TW"],
 		...uiContent["zh-TW"],
 	},
 	en: {
@@ -53,6 +57,7 @@ export const contentByLocale: Record<Locale, SiteContent> = {
 		...seoContent.en,
 		...heroContent.en,
 		...presentationsContent.en,
+		...projectsContent.en,
 		...uiContent.en,
 	},
 };
