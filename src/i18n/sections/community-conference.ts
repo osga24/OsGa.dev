@@ -87,7 +87,7 @@ export const communityConferenceContent: Record<
   CommunityConferenceContent
 > = {
   "zh-TW": {
-    communityConferenceTitle: "Community & Conference",
+    communityConferenceTitle: "社群 & 研討會",
     communityConferenceItems,
   },
   en: {

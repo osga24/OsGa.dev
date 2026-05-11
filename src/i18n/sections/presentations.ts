@@ -205,7 +205,7 @@ const presentationsLocalizedContent: Record<
   PresentationsLocalizedContent
 > = {
   "zh-TW": {
-    presentationsTitle: "Presentation",
+    presentationsTitle: "發表經驗",
     categoryLabels: {
       conf: "研討會 / 年會",
       sec: "資訊安全",
