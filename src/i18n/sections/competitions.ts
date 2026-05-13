@@ -37,20 +37,6 @@ const competitionItemsByCategory: Record<
     },
     {
       year: "2024",
-      content: "CGGC網路守護者挑戰賽",
-      teamName: "測試隊伍",
-    },
-    {
-      year: "2024",
-      content: "神盾盃—資安競賽",
-      teamName: "從缺",
-    },
-    {
-      year: "2024",
-      content: "AIS3 Pre-exam / Rank 109",
-    },
-    {
-      year: "2024",
       content: "AIS3 MyFirstCTF / 銀質獎",
     },
     {
