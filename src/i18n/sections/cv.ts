@@ -1,5 +1,3 @@
-import type { Locale } from "../types";
-
 export type CvLink = {
   label: string;
   href: string;
@@ -76,7 +74,7 @@ const contacts: readonly CvLink[] = [
   },
 ];
 
-export const cvContent: Record<Locale, CvContent> = {
+export const cvContent: Record<"zh-TW", CvContent> = {
   "zh-TW": {
     name: "黃宥睿",
     nameAlt: "Yo-Rei Huang / OsGa",
@@ -129,9 +127,9 @@ export const cvContent: Record<Locale, CvContent> = {
         period: "2025 - 2026",
         role: "紅隊演練攻擊手",
         bullets: [
-          "以紅隊隊員身分參與行政院網路攻防演練，於授權封閉環境中執行攻擊方任務。",
-          "聚焦攻擊路徑探索、弱點挖掘、漏洞利用與後滲透階段的技術演練。",
-          "從攻擊者視角驗證系統防護成效，協助理解弱點風險、偵測缺口與防禦改善方向。",
+          "於授權攻防演練環境中進行安全測試，協助驗證系統防護成效與潛在風險。",
+          "運用滲透測試方法進行弱點檢測、攻擊路徑分析與風險整理。",
+          "彙整測試結果與改善建議，協助提升偵測、防護與應變能力。",
         ],
       },
     ],
@@ -144,7 +142,7 @@ export const cvContent: Record<Locale, CvContent> = {
       {
         name: "NYUST ICS",
         href: "https://nyust-ics.osga.dev",
-        desc: "雲科大課表轉換工具，可將 DOCX 課表解析為 ICS 行事曆檔，支援課程時間解析、連續課程合併、預覽與瀏覽器端處理，降低手動建立行事曆的成本。",
+        desc: "雲科大課表轉換工具，可將 DOCX 課表解析為 ICS 行事曆檔，支援課程時間解析、預覽與瀏覽器端處理，降低手動建立行事曆的成本。",
       },
       {
         name: "QuickJump",
@@ -168,11 +166,12 @@ export const cvContent: Record<Locale, CvContent> = {
           "AIS3 EOF 進階資安攻防演練 最佳藍色小精靈獎",
           "AIS3 HACKATHON 銅質獎",
           "大專校院資訊應用服務創新競賽 台灣大 AI 紅隊 eKYC 滲透創新組",
+          "ITSA 生成式 AI 應用網頁設計競賽 佳作",
         ],
       },
       {
         year: "2024",
-        items: ["AIS3 MyFirstCTF 銀質獎"],
+        items: ["AIS3 MyFirstCTF 銀質獎", "picoCTF Rank 281 / 6957"],
       },
       {
         year: "2023",
@@ -184,12 +183,13 @@ export const cvContent: Record<Locale, CvContent> = {
       },
     ],
     community: [
-      "於 SITCON、MOPCON、SCIST / SCAICT、AIS3 相關活動及資訊社群，擔任 CTF、Linux、Web 安全、Discord Bot 開發與開發工作流主題講者 / 講師。",
+      "創辦並擔任雲科大資訊安全研究社（YunHack）首屆社長，亦為校內網路管理小組（YunNET）成員 / 系統組組長，推動校內資安與網路維運社群發展。",
+      "累積 30+ 場技術演講與工作坊，主題涵蓋 CTF、Linux、Web 安全、Discord Bot 開發與開發工作流，曾在 SITCON 2025 / 2026、MOPCON 2025、HITCON CTF、資安署等場合分享。",
       "擔任 SITCON 2026 開發組副組長、TWNOG 7 Infra 組、MOPCON 2025 開發組、HITCON 活動組、SITCON Camp 2025 隊輔組組長。",
-      "擔任 AIS3 Juniors 助教、SCIST 資安助教 / 出題者、THJCC 創辦人 / 出題者，參與資安教育、題目設計與社群推廣。",
+      "擔任 AIS3 Juniors 助教、SCIST 資安助教 / 出題者、THJCC 創辦人 / 出題者，長期投入資安教育、題目設計與社群推廣。",
     ],
     certifications:
-      "Cisco Certified Support Technician Cybersecurity；Information Technology Specialist: Cybersecurity（皆於 2024/04/13 取得）",
+      "Cisco Certified Support Technician Cybersecurity；Information Technology Specialist: Cybersecurity",
     skills: [
       {
         label: "資安",
@@ -207,151 +207,9 @@ export const cvContent: Record<Locale, CvContent> = {
           "Linux 系統管理、Docker 服務部署、監控、日誌調查、備份還原、TCP/IP、DNS、DHCP、NAT、防火牆策略、路由器 / 交換器設定",
       },
       {
-        label: "DevOps / 工具鏈",
+        label: "DevOps / 開發流程自動化",
         value:
-          "自動化腳本、服務部署、內部工具開發、Git / GitHub 工作流、CI/CD 基礎、維運流程改善",
-      },
-    ],
-  },
-
-  en: {
-    name: "Yo-Rei Huang / OsGa",
-    nameAlt: "黃宥睿",
-    headline:
-      "Penetration Testing | Full-Stack Development | DevOps | Network Operations",
-    location: "Taiwan, GMT+8",
-    contacts,
-    sectionLabels: {
-      summary: "Summary",
-      education: "Education",
-      experience: "Experience",
-      projects: "Selected Projects",
-      achievements: "Selected Achievements",
-      community: "Speaking, Teaching & Community",
-      skills: "Skills",
-      certifications: "Certifications",
-    },
-    summary:
-      "Information Management student at National Yunlin University of Science and Technology, focusing on cybersecurity, full-stack development, and infrastructure operations. Interested in penetration testing, DevOps, network operations, and web application development. Experienced in CTF competitions, campus network and system operations, internal tooling, cybersecurity education, technical speaking, and attack-defense exercises. Able to combine offensive security thinking, software development, and operations experience to solve practical security and engineering problems.",
-    education: [
-      {
-        org: "National Yunlin University of Science and Technology",
-        period: "2024 - Present",
-        detail: "B.S., Department of Information Management, AI Elite Program",
-      },
-    ],
-    experience: [
-      {
-        org: "National Yunlin University of Science and Technology - Network Operations & Development",
-        period: "2025 - Present",
-        role: "System Team Leader / Network Development Student Assistant",
-        bullets: [
-          "Lead the system team within the campus Network Management Team, coordinating daily operations, task allocation, and cross-unit technical support.",
-          "Operate and maintain campus network services, servers, Linux systems, and internal services, including deployment and troubleshooting.",
-          "Build internal tools and automation scripts to streamline service deployment, daily operations, monitoring, and routine maintenance tasks.",
-          "Maintain and develop websites and services for university units, improving stability, maintainability, and user experience.",
-        ],
-      },
-      {
-        org: "National Yunlin University of Science and Technology - Cybersecurity & Penetration Testing",
-        period: "2024 - 2025",
-        role: "Cybersecurity Division Student Assistant",
-        bullets: [
-          "Assisted with vulnerability scanning for university services and performed initial risk analysis on discovered issues.",
-          "Tested web services and system configurations to help identify root causes and remediation directions.",
-          "Supported vulnerability remediation and security hardening for university units to improve service security.",
-        ],
-      },
-      {
-        org: "Executive Yuan Cyber Range Exercise",
-        period: "2025 - 2026",
-        role: "Red Team Member",
-        bullets: [
-          "Participated as a red team member in the Executive Yuan cyber range attack-defense exercise within an authorized and controlled environment.",
-          "Focused on attack path exploration, vulnerability discovery, exploitation, and post-exploitation practice.",
-          "Validated defensive controls from an attacker’s perspective and helped identify security risks, detection gaps, and improvement opportunities.",
-        ],
-      },
-    ],
-    projects: [
-      {
-        name: "SITCON 2026",
-        href: "https://sitcon.org/2026",
-        desc: "Contributed to official websites and event systems, including the main website, field game, CFP pages, and sponsorship materials. Built with Astro, Next.js, Go, and Three.js.",
-      },
-      {
-        name: "NYUST ICS",
-        href: "https://nyust-ics.osga.dev",
-        desc: "A NYUST course schedule converter that parses DOCX schedules into ICS calendar files. Supports course-time parsing, consecutive-session merging, preview, and browser-side processing to reduce manual calendar setup work.",
-      },
-      {
-        name: "QuickJump",
-        href: "https://github.com/osga24/Quick-Jump",
-        desc: "A Bash / Zsh command-line utility for quickly jumping to frequently used directories through custom hotkeys, with shell integration, autocompletion, JSON configuration, and installation scripts.",
-      },
-    ],
-    achievements: [
-      {
-        year: "2026",
-        items: [
-          "56th National Skills Competition, Cyber Security Regional: Central Region Honorable Mention",
-          "ITSA Generative AI Application Web Design Competition: 3rd Place",
-        ],
-      },
-      {
-        year: "2025",
-        items: [
-          "HITCON CTF Elite Exchange Competition: Rank 6",
-          "CDX Cybersecurity Attack & Defense Exchange: Preliminary 2nd Place / Final Honorable Mention",
-          "AIS3 EOF Advanced Attack-Defense Exercise: Best Blue Team Spirit Award",
-          "AIS3 HACKATHON: Bronze Award",
-          "Information Application Services Innovation Contest: Taiwan Mobile AI Red Team eKYC Penetration Innovation Track",
-        ],
-      },
-      {
-        year: "2024",
-        items: ["AIS3 MyFirstCTF: Silver Award"],
-      },
-      {
-        year: "2023",
-        items: [
-          "53rd National Skills Competition, Cyber Security Regional: Central Region Honorable Mention",
-        ],
-      },
-      {
-        year: "2022",
-        items: [
-          "52nd National Skills Competition, Information Network Cabling: South Region Gold Medal / National 4th Place",
-        ],
-      },
-    ],
-    community: [
-      "Speaker / instructor on CTF, Linux, web security, Discord bot development, and developer workflows at SITCON, MOPCON, SCIST / SCAICT, AIS3-related activities, and student tech communities.",
-      "SITCON 2026 Development Team Deputy Lead; TWNOG 7 Infra Team; MOPCON 2025 Development Team; HITCON Event Staff; SITCON Camp 2025 Counselor Team Lead.",
-      "AIS3 Juniors Teaching Assistant; SCIST Cybersecurity TA / Problem Setter; THJCC Founder / Problem Setter, contributing to cybersecurity education, challenge design, and community development.",
-    ],
-    certifications:
-      "Cisco Certified Support Technician Cybersecurity; Information Technology Specialist: Cybersecurity, both obtained on Apr. 13, 2024",
-    skills: [
-      {
-        label: "Security",
-        value:
-          "CTF, web security, penetration testing basics, vulnerability scanning, vulnerability analysis, attack-defense exercises, cybersecurity training, challenge design",
-      },
-      {
-        label: "Development",
-        value:
-          "Python, TypeScript, JavaScript, Shell, Next.js, Astro, FastAPI, Express.js, Go",
-      },
-      {
-        label: "Infrastructure / Network",
-        value:
-          "Linux administration, Docker service deployment, monitoring, log investigation, backup and recovery, TCP/IP, DNS, DHCP, NAT, firewall policy, router / switch configuration",
-      },
-      {
-        label: "DevOps / Tooling",
-        value:
-          "Automation scripts, service deployment, internal tooling, Git / GitHub workflows, CI/CD basics, operations workflow improvement",
+          "自動化腳本、部署流程設計、CI/CD 、Git / GitHub 、內部工具開發、維運流程優化",
       },
     ],
   },

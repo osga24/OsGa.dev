@@ -3,6 +3,9 @@ import "@fontsource/inter/400.css";
 import "@fontsource/inter/500.css";
 import "@fontsource/inter/600.css";
 import "@fontsource/inter/700.css";
+import "@fontsource/jetbrains-mono/400.css";
+import "@fontsource/jetbrains-mono/500.css";
+import "@fontsource/jetbrains-mono/700.css";
 
 type Props = {
 	title: string;
@@ -24,12 +27,15 @@ const { title, description, lang = "en" } = Astro.props;
 		<style>
 			:root {
 				color-scheme: light;
-				--accent: #38564b;
-				--accent-soft: #6f8a7f;
+				--accent: #243a31;
+				--accent-soft: #4f6a5e;
 				--rule: #d2cfc6;
 				--ink: #1d1d1b;
 				--muted: #5c5f5a;
 				--paper: #ffffff;
+				--mono: "JetBrains Mono", ui-monospace, monospace;
+				--sans: "Inter", "Noto Sans TC", "PingFang TC",
+					"Microsoft JhengHei", system-ui, sans-serif;
 				--fs-xs: 9px;
 				--fs-sm: 9.5px;
 				--fs-md: 11px;
@@ -48,7 +54,7 @@ const { title, description, lang = "en" } = Astro.props;
 			}
 
 			body {
-				font-family: "Inter", sans-serif;
+				font-family: var(--sans);
 				color: var(--ink);
 				background: #ffffff;
 				padding: 2rem 1rem 3rem;
@@ -63,7 +69,7 @@ const { title, description, lang = "en" } = Astro.props;
 			@media print {
 				@page {
 					size: A4;
-					margin: 0;
+					margin: 10mm 12mm;
 				}
 
 				body {
