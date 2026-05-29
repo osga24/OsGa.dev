@@ -31,7 +31,7 @@ export const siteIdentityContent: SiteIdentityContent = {
     },
     {
       label: "Resume",
-      href: "/cv.pdf",
+      href: "/resume",
     },
   ],
 };

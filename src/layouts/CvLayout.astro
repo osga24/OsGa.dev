@@ -1,0 +1,85 @@
+---
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
+import "@fontsource/jetbrains-mono/400.css";
+import "@fontsource/jetbrains-mono/500.css";
+import "@fontsource/jetbrains-mono/700.css";
+
+type Props = {
+	title: string;
+	description: string;
+	lang?: string;
+};
+
+const { title, description, lang = "en" } = Astro.props;
+---
+
+<html lang={lang}>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content={description} />
+		<title>{title}</title>
+		<style>
+			:root {
+				color-scheme: light;
+				--accent: #243a31;
+				--accent-soft: #4f6a5e;
+				--rule: #d2cfc6;
+				--ink: #1d1d1b;
+				--muted: #5c5f5a;
+				--paper: #ffffff;
+				--mono: "JetBrains Mono", ui-monospace, monospace;
+				--sans: "Inter", "Noto Sans TC", "PingFang TC",
+					"Microsoft JhengHei", system-ui, sans-serif;
+				--fs-xs: 9px;
+				--fs-sm: 9.5px;
+				--fs-md: 11px;
+				--fs-lg: 13px;
+			}
+
+			* {
+				box-sizing: border-box;
+			}
+
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				min-height: 100%;
+			}
+
+			body {
+				font-family: var(--sans);
+				color: var(--ink);
+				background: #ffffff;
+				padding: 2rem 1rem 3rem;
+			}
+
+			@media (max-width: 840px) {
+				body {
+					padding: 1rem 0.75rem 2rem;
+				}
+			}
+
+			@media print {
+				@page {
+					size: A4;
+					margin: 10mm 12mm;
+				}
+
+				body {
+					padding: 0;
+					background: #ffffff;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
