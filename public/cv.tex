@@ -1,0 +1,118 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[a4paper,margin=1.2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tabularx}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=blue,
+  linkcolor=black
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\setlist[itemize]{
+  leftmargin=1.05em,
+  itemsep=0pt,
+  topsep=1pt,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+\titleformat{\section}{\normalsize\bfseries}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{5pt}{2pt}
+
+\newcommand{\entry}[4]{
+  \textbf{#1} \hfill {\small #2}\\
+  {\small \textit{#3}}\\[-3pt]
+  {\small #4}\vspace{-2pt}
+}
+
+\newcommand{\compactentry}[3]{
+  \textbf{#1} \hfill {\small #2}\\[-3pt]
+  {\small #3}\vspace{-2pt}
+}
+
+\begin{document}
+
+%==================== HEADER ====================
+{\Large \textbf{Yo-Rei Huang / OsGa} \hfill \normalsize 黃宥睿}\\[-1pt]
+\textbf{CTF Player \textbar\ Developer \textbar\ Cybersecurity Student}\\[-1pt]
+Taiwan, GMT+8 \textbar\
+\href{mailto:hi@osga.dev}{hi@osga.dev} \textbar\
+\href{https://osga.dev}{osga.dev} \textbar\
+\href{https://github.com/OsGa24}{github.com/OsGa24} \textbar\
+\href{https://www.linkedin.com/in/osga}{linkedin.com/in/osga}
+
+%==================== SUMMARY ====================
+\section*{Summary}
+Cybersecurity-focused Information Management student at NYUST. Active CTF player and developer with experience in campus network/system operations, web tooling, CTF education, technical speaking, and attack-defense exercises.
+
+%==================== EDUCATION ====================
+\section*{Education}
+\compactentry
+{National Yunlin University of Science and Technology}
+{2024 -- Present}
+{B.S., Department of Information Management, AI Elite Program}
+
+%==================== EXPERIENCE ====================
+\section*{Experience}
+\entry
+{National Yunlin University of Science and Technology}
+{2025 -- Present}
+{System Team Leader / Network Development Student Assistant}
+{Led system-side work in the Network Management Team; supported campus network services, system administration, internal tooling, troubleshooting, and technical operations across multiple university units.}
+
+\entry
+{National Yunlin University of Science and Technology}
+{2024 -- 2026}
+{Cybersecurity Division Student Assistant / Programming Teaching Assistant}
+{Supported cybersecurity operations at the Library and Information Center; assisted programming course instruction, hands-on practice, and student debugging.}
+
+\entry
+{Executive Yuan Cyber Range Exercise}
+{2025 -- 2026}
+{Red Team Member}
+{Participated in cyber attack-and-defense exercises, focusing on attacker-side thinking, vulnerability discovery, and attack-path exploration.}
+
+%==================== PROJECTS ====================
+\section*{Selected Projects}
+\begin{itemize}
+  \item \textbf{\href{https://sitcon.org/2026}{SITCON 2026}} --- Contributed to official websites and event systems, including the main site, field game, CFP pages, and sponsorship materials. Built with Astro, Next.js, Go, and Three.js.
+  \item \textbf{\href{https://nyust-ics.osga.dev}{NYUST ICS}} --- NYUST course schedule converter that parses DOCX files into ICS calendar files, with course-time parsing, consecutive-session merging, preview, and browser-side processing.
+  \item \textbf{\href{https://github.com/osga24/Quick-Jump}{QuickJump}} --- Bash/Zsh utility for jumping to frequently used directories through custom hotkeys, with shell integration, autocompletion, JSON config, and install scripts.
+\end{itemize}
+
+%==================== ACHIEVEMENTS ====================
+\section*{Selected Achievements}
+\begin{itemize}
+  \item \textbf{2026} --- 56th National Skills Competition, Cyber Security Regional: Central Region Honorable Mention; ITSA Generative AI Application Web Design Competition: 3rd Place
+  \item \textbf{2025} --- HITCON CTF Elite Exchange Competition: Rank 6; CDX Cybersecurity Attack \& Defense Exchange Competition: Preliminary 2nd / Final Honorable Mention; AIS3 EOF: Best Blue Team Spirit Award; AIS3 HACKATHON: Bronze Award; Information Application Services Innovation Contest: TWM AI Red Team eKYC Track
+  \item \textbf{2024} --- AIS3 MyFirstCTF: Silver Award
+  \item \textbf{2023} --- 53rd National Skills Competition, Cyber Security Regional: Central Region Honorable Mention
+  \item \textbf{2022} --- 52nd National Skills Competition, Information Network Cabling: South Region Gold Medal / National 4th Place
+\end{itemize}
+
+%==================== COMMUNITY & TEACHING ====================
+\section*{Speaking, Teaching \& Community}
+\begin{itemize}
+  \item Speaker / instructor on CTF, Linux, web security, Discord bot development, and developer workflows at SITCON, MOPCON, SCIST/SCAICT, AIS3-related activities, and information clubs.
+  \item SITCON 2026 Development Team Deputy Lead; TWNOG 7 Infra Team; MOPCON 2025 Development Team; HITCON Event Staff; SITCON Camp 2025 Counselor Team Lead.
+  \item AIS3 Juniors Teaching Assistant; SCIST Cybersecurity TA / Problem Setter; THJCC Founder / Problem Setter.
+\end{itemize}
+
+%==================== CERTIFICATIONS & SKILLS ====================
+\section*{Certifications \& Skills}
+\textbf{Certifications:} Cisco Certified Support Technician Cybersecurity; Information Technician Specialist Cybersecurity, both Apr. 13, 2024.\\
+\textbf{Security:} CTF, web security, penetration testing basics, attack-defense exercises, cybersecurity training.\\
+\textbf{Development:} Python, TypeScript, JavaScript, Shell, Next.js, Astro, FastAPI, Express.js.\\
+\textbf{Infrastructure / Network:} Linux administration, Docker services, deployment, monitoring, log investigation, backup/recovery, TCP/IP, DNS, DHCP, NAT, firewall policy, router/switch configuration.
+
+\end{document}

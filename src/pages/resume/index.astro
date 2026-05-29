@@ -1,0 +1,533 @@
+---
+import { Icon } from "astro-icon/components";
+import { cvContent } from "../../i18n/sections/cv";
+import CvLayout from "../../layouts/CvLayout.astro";
+
+const locales = ["en", "zh-TW"] as const;
+const en = cvContent.en;
+---
+
+<CvLayout
+	title="Yo-Rei Huang / OsGa — Resume"
+	description={en.summary}
+	lang="en"
+>
+	<div id="resume" data-lang="en">
+		<div class="toolbar">
+			<a class="tb-home" href="/">← osga.dev</a>
+			<div class="tb-right">
+				<div class="lang-switch" role="group" aria-label="Language">
+					<button type="button" data-lang-btn="en" aria-label="English">EN</button>
+					<button type="button" data-lang-btn="zh-TW" aria-label="中文">中文</button>
+				</div>
+				<button type="button" class="print-btn" id="print-btn">
+					<Icon name="lucide:printer" aria-hidden="true" />
+					<span data-print-text>Print</span>
+				</button>
+			</div>
+		</div>
+
+		{locales.map((loc) => {
+			const cv = cvContent[loc];
+			return (
+				<div class="paper" data-locale={loc}>
+					<article class="cv">
+						<header class="cv-head">
+							<div class="cv-name-row">
+								<h1 class="cv-name">{cv.name}</h1>
+								<span class="cv-name-alt">{cv.nameAlt}</span>
+							</div>
+							<p class="cv-headline">{cv.headline}</p>
+							<div class="cv-contacts">
+								<span><Icon name="lucide:map-pin" aria-hidden="true" />{cv.location}</span>
+								{cv.contacts.map((c) => (
+									<a href={c.href} target="_blank" rel="noreferrer">
+										<Icon name={c.icon} aria-hidden="true" />{c.label}
+									</a>
+								))}
+							</div>
+						</header>
+
+						<section>
+							<h2>{cv.sectionLabels.summary}</h2>
+							<p class="cv-summary">{cv.summary}</p>
+						</section>
+
+						<section>
+							<h2>{cv.sectionLabels.education}</h2>
+							{cv.education.map((e) => (
+								<div class="entry">
+									<div class="entry-head">
+										<span class="entry-org">{e.org}</span>
+										<span class="entry-period">{e.period}</span>
+									</div>
+									<div class="entry-detail">{e.detail}</div>
+								</div>
+							))}
+						</section>
+
+						<section>
+							<h2>{cv.sectionLabels.experience}</h2>
+							{cv.experience.map((e) => (
+								<div class="entry">
+									<div class="entry-head">
+										<span class="entry-org">{e.org}</span>
+										<span class="entry-period">{e.period}</span>
+									</div>
+									<div class="entry-role">{e.role}</div>
+									<ul class="entry-bullets">
+										{e.bullets.map((b) => (
+											<li>{b}</li>
+										))}
+									</ul>
+								</div>
+							))}
+						</section>
+
+						<section>
+							<h2>{cv.sectionLabels.projects}</h2>
+							<ul class="cv-list">
+								{cv.projects.map((p) => (
+									<li>
+										{p.href ? (
+											<a class="proj-name" href={p.href} target="_blank" rel="noreferrer">{p.name}</a>
+										) : (
+											<span class="proj-name">{p.name}</span>
+										)}
+										<span class="dash"> — </span>
+										<span>{p.desc}</span>
+									</li>
+								))}
+							</ul>
+						</section>
+
+						<section>
+							<h2>{cv.sectionLabels.achievements}</h2>
+							<ul class="cv-list">
+								{cv.achievements.map((g) => (
+									<li>
+										<span class="ach-year">{g.year}</span>
+										<span>{g.items.join(" · ")}</span>
+									</li>
+								))}
+							</ul>
+						</section>
+
+						<section>
+							<h2>{cv.sectionLabels.community}</h2>
+							<ul class="cv-list">
+								{cv.community.map((c) => (
+									<li>{c}</li>
+								))}
+							</ul>
+						</section>
+
+						<section>
+							<h2>{cv.sectionLabels.skills}</h2>
+							<div class="cv-skills">
+								{cv.skills.map((s) => (
+									<>
+										<span class="skill-label">{s.label}</span>
+										<span class="skill-value">{s.value}</span>
+									</>
+								))}
+								<span class="skill-label">{cv.sectionLabels.certifications}</span>
+								<span class="skill-value">{cv.certifications}</span>
+							</div>
+						</section>
+					</article>
+				</div>
+			);
+		})}
+	</div>
+</CvLayout>
+
+<style>
+	/* ---- language visibility ---- */
+	#resume[data-lang="en"] .paper[data-locale="zh-TW"],
+	#resume[data-lang="zh-TW"] .paper[data-locale="en"] {
+		display: none;
+	}
+
+	/* ---- toolbar (screen only) ---- */
+	.toolbar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		width: 210mm;
+		max-width: 100%;
+		margin: 0 auto 1.1rem;
+	}
+
+	.tb-home {
+		color: var(--muted);
+		text-decoration: none;
+		font-size: 0.85rem;
+	}
+
+	.tb-home:hover {
+		color: var(--accent);
+	}
+
+	.tb-right {
+		display: flex;
+		align-items: center;
+		gap: 0.6rem;
+	}
+
+	.lang-switch {
+		display: inline-flex;
+		border: 1px solid var(--rule);
+		border-radius: 999px;
+		overflow: hidden;
+	}
+
+	.lang-switch button {
+		border: 0;
+		background: transparent;
+		padding: 0.32rem 0.72rem;
+		font: inherit;
+		font-size: 0.8rem;
+		line-height: 1;
+		color: var(--muted);
+		cursor: pointer;
+	}
+
+	.lang-switch button[aria-pressed="true"] {
+		background: var(--accent);
+		color: #fff;
+	}
+
+	.print-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		border: 1px solid var(--accent);
+		background: var(--accent);
+		color: #fff;
+		border-radius: 999px;
+		padding: 0.34rem 0.85rem;
+		font: inherit;
+		font-size: 0.8rem;
+		line-height: 1;
+		cursor: pointer;
+	}
+
+	.print-btn:hover {
+		background: #2c453c;
+	}
+
+	.print-btn :global(svg) {
+		width: 0.95em;
+		height: 0.95em;
+	}
+
+	/* ---- paper wrapper (carries the on-screen scaling box) ---- */
+	.paper {
+		margin: 0 auto;
+	}
+
+	/* ---- the A4 page: identical box for screen and print ---- */
+	.cv {
+		width: 210mm;
+		min-height: 297mm;
+		padding: 12mm 13mm;
+		background: var(--paper);
+		color: var(--ink);
+		font-size: 10px;
+		line-height: 1.42;
+		transform-origin: top left;
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+	}
+
+	.cv-head {
+		margin-bottom: 0.35em;
+	}
+
+	.cv-name-row {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 1em;
+		flex-wrap: wrap;
+	}
+
+	.cv-name {
+		margin: 0;
+		font-size: 1.95em;
+		font-weight: 700;
+		letter-spacing: -0.01em;
+	}
+
+	.cv-name-alt {
+		font-size: 1.05em;
+		font-weight: 500;
+		color: var(--muted);
+	}
+
+	.cv-headline {
+		margin: 0.2em 0 0;
+		font-size: 1em;
+		font-weight: 600;
+		color: var(--accent);
+	}
+
+	.cv-contacts {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.25em 0.9em;
+		margin-top: 0.5em;
+		font-size: 0.9em;
+		color: var(--muted);
+	}
+
+	.cv-contacts a,
+	.cv-contacts span {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.3em;
+		color: var(--muted);
+		text-decoration: none;
+	}
+
+	.cv-contacts a:hover {
+		color: var(--accent);
+		text-decoration: underline;
+	}
+
+	.cv-contacts :global(svg) {
+		width: 1.05em;
+		height: 1.05em;
+		color: var(--accent-soft);
+		flex-shrink: 0;
+	}
+
+	.cv h2 {
+		margin: 0.95em 0 0.45em;
+		font-size: 1.02em;
+		font-weight: 700;
+		color: var(--accent);
+		letter-spacing: 0.01em;
+		border-bottom: 1px solid var(--rule);
+		padding-bottom: 0.18em;
+	}
+
+	.cv section:first-of-type h2 {
+		margin-top: 0.5em;
+	}
+
+	.cv-summary {
+		margin: 0;
+	}
+
+	.entry {
+		margin: 0 0 0.55em;
+	}
+
+	.entry:last-child {
+		margin-bottom: 0;
+	}
+
+	.entry-head {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		gap: 1em;
+	}
+
+	.entry-org {
+		font-weight: 700;
+	}
+
+	.entry-period {
+		color: var(--muted);
+		font-size: 0.85em;
+		white-space: nowrap;
+	}
+
+	.entry-role {
+		font-style: italic;
+		color: var(--accent-soft);
+		font-size: 0.92em;
+		margin-top: 0.04em;
+	}
+
+	.entry-detail {
+		font-size: 0.95em;
+		margin-top: 0.1em;
+	}
+
+	.entry-bullets {
+		margin: 0.14em 0 0;
+		padding-left: 1.15em;
+		font-size: 0.95em;
+	}
+
+	.entry-bullets li {
+		margin-bottom: 0.12em;
+	}
+
+	.entry-bullets li:last-child {
+		margin-bottom: 0;
+	}
+
+	.cv-list {
+		margin: 0;
+		padding-left: 1.15em;
+	}
+
+	.cv-list li {
+		margin-bottom: 0.38em;
+	}
+
+	.cv-list li:last-child {
+		margin-bottom: 0;
+	}
+
+	.proj-name {
+		font-weight: 700;
+		color: var(--accent);
+		text-decoration: none;
+	}
+
+	.proj-name:hover {
+		text-decoration: underline;
+	}
+
+	.dash {
+		color: var(--muted);
+	}
+
+	.ach-year {
+		font-weight: 700;
+		margin-right: 0.4em;
+	}
+
+	.cv-skills {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		gap: 0.28em 0.9em;
+	}
+
+	.skill-label {
+		font-weight: 700;
+		color: var(--accent);
+	}
+
+	/* keep entries and sections from splitting across printed pages */
+	.cv section,
+	.entry,
+	.cv-list li {
+		break-inside: avoid;
+	}
+
+	.cv h2 {
+		break-after: avoid;
+	}
+
+	/* ---- screen chrome (desk + sheet shadow) ---- */
+	@media screen {
+		:global(body) {
+			background: #e6e3db;
+		}
+
+		.paper {
+			border-radius: 4px;
+			overflow: hidden;
+			box-shadow:
+				0 1px 2px rgba(0, 0, 0, 0.08),
+				0 14px 38px rgba(0, 0, 0, 0.14);
+		}
+	}
+
+	/* ---- print: drop the on-screen scaling so it renders 1:1 ---- */
+	@media print {
+		.toolbar {
+			display: none !important;
+		}
+
+		.paper {
+			width: auto !important;
+			height: auto !important;
+			margin: 0 !important;
+			border-radius: 0 !important;
+			box-shadow: none !important;
+		}
+
+		.cv {
+			transform: none !important;
+		}
+	}
+</style>
+
+<script>
+	const root = document.getElementById("resume");
+	const buttons = Array.from(
+		document.querySelectorAll<HTMLButtonElement>("[data-lang-btn]"),
+	);
+	const printText = document.querySelector<HTMLElement>("[data-print-text]");
+	const printBtn = document.getElementById("print-btn");
+
+	const titles: Record<string, string> = {
+		en: "Yo-Rei Huang / OsGa — Resume",
+		"zh-TW": "黃宥睿 — 履歷",
+	};
+	const printLabels: Record<string, string> = {
+		en: "Print",
+		"zh-TW": "列印",
+	};
+
+	// Scale each A4 sheet down to fit narrow viewports while keeping it
+	// proportionally identical to the printed page (same line breaks, one page).
+	function fitSheets() {
+		if (!root) return;
+		const available = root.clientWidth - 2;
+		for (const paper of Array.from(
+			document.querySelectorAll<HTMLElement>(".paper"),
+		)) {
+			const sheet = paper.querySelector<HTMLElement>(".cv");
+			if (!sheet) continue;
+			const naturalWidth = sheet.offsetWidth;
+			if (naturalWidth === 0) continue; // hidden language
+			const scale = Math.min(1, available / naturalWidth);
+			sheet.style.transform = scale === 1 ? "" : `scale(${scale})`;
+			paper.style.width = `${naturalWidth * scale}px`;
+			paper.style.height = `${sheet.offsetHeight * scale}px`;
+		}
+	}
+
+	function setLang(lang: string) {
+		if (!root) return;
+		root.dataset.lang = lang;
+		document.documentElement.lang = lang === "zh-TW" ? "zh-TW" : "en";
+		document.title = titles[lang] ?? titles.en;
+		if (printText) printText.textContent = printLabels[lang] ?? printLabels.en;
+		for (const b of buttons) {
+			b.setAttribute("aria-pressed", String(b.dataset.langBtn === lang));
+		}
+		try {
+			localStorage.setItem("cv-lang", lang);
+		} catch {}
+		fitSheets();
+	}
+
+	for (const b of buttons) {
+		b.addEventListener("click", () => setLang(b.dataset.langBtn ?? "en"));
+	}
+
+	printBtn?.addEventListener("click", () => window.print());
+	window.addEventListener("resize", fitSheets);
+
+	let saved: string | null = null;
+	try {
+		saved = localStorage.getItem("cv-lang");
+	} catch {}
+	const initial =
+		saved ??
+		(navigator.language?.toLowerCase().startsWith("zh") ? "zh-TW" : "en");
+	setLang(initial);
+</script>
+
