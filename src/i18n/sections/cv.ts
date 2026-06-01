@@ -165,7 +165,7 @@ export const cvContent: Record<"zh-TW", CvContent> = {
           "CDX 資安攻防推廣交流賽 初賽第二名 / 決賽佳作",
           "AIS3 EOF 進階資安攻防演練 最佳藍色小精靈獎",
           "AIS3 HACKATHON 銅質獎",
-          "大專校院資訊應用服務創新競賽 台灣大 AI 紅隊 eKYC 滲透創新組",
+          "大專校院資訊應用服務創新競賽 台灣大 AI 紅隊 eKYC 滲透創新組 第一名",
           "ITSA 生成式 AI 應用網頁設計競賽 佳作",
         ],
       },
