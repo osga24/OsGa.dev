@@ -6,6 +6,11 @@ export const experienceContent = {
     experienceItems: [
       {
         period: "2026 - 至今",
+        role: "攻防檢測員",
+        org: "教育體系資安攻防演練",
+      },
+      {
+        period: "2026 - 至今",
         role: "網管工讀生",
         org: "國立雲林科技大學 資訊管理系",
       },
@@ -22,7 +27,7 @@ export const experienceContent = {
       },
       {
         period: "2025 - 至今",
-        role: "系統組組長",
+        role: "組長",
         org: "國立雲林科技大學 網路管理小組",
       },
 
@@ -39,7 +44,7 @@ export const experienceContent = {
       },
 
       {
-        period: "2025 - 2026",
+        period: "2025 - 至今",
         role: "攻擊手",
         org: "行政院網路攻防演練",
       },
@@ -54,6 +59,11 @@ export const experienceContent = {
   en: {
     experienceTitle: "Work Experience",
     experienceItems: [
+      {
+        period: "2026 - Present",
+        role: "Cybersecurity Red Team Assessor",
+        org: "Education Sector Cybersecurity Exercise",
+      },
       {
         period: "2026 - Present",
         role: "Network Management Assistant",
@@ -71,7 +81,7 @@ export const experienceContent = {
       },
       {
         period: "2025 - Present",
-        role: "System Team Lead",
+        role: "Leader",
         org: "Network Management Team, NYUST",
       },
       {
@@ -85,7 +95,7 @@ export const experienceContent = {
         org: "AAASec 2025 Cybersecurity Talent Training Program",
       },
       {
-        period: "2025 - 2026",
+        period: "2025 - Present",
         role: "Red Team Operator",
         org: "Executive Yuan Cyber Attack and Defense Exercise",
       },
