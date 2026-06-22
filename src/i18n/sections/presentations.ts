@@ -48,10 +48,20 @@ const presentationItemsByCategory = {
   ],
   sec: [
     {
+      date: "2026-05-30",
+      content: "靜宜大學 行雲者研發基地",
+      topic: "OSINT 與社交工程",
+    },
+    {
       date: "2026-04-25",
       content: "資安防護實戰CTF 資安人才培育課程（台南場）",
       topic: "Rookie 挑戰 HITCON CTF",
       href: "https://moda.gov.tw/ACS/press/news/press/19558",
+    },
+    {
+      date: "2026-03-08",
+      content: "南大附中 資訊研究社",
+      topic: "網路安全經驗分享",
     },
     {
       date: "2026-01-21",
