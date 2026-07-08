@@ -5,6 +5,23 @@ export const projectsContent = {
     projectsTitle: "Projects",
     projectItems: [
       {
+        title: "selfTMP",
+        summary: "可自行部署的臨時分享服務，整合文字暫存、檔案暫存與短連結。",
+        description:
+          "以 Go 建置的輕量自架暫存分享工具，將 Pastebin、檔案暫存與短網址整合在同一個服務中。支援自訂短連結 ID、到期時間、一次性連結、密碼保護與管理後台，適合放在反向代理後方作為個人或小團隊的私有分享入口。",
+        imageSrc: "/project/project-selfTMP.webp",
+        imageAlt: "selfTMP 專案封面",
+        stack: ["Go", "SQLite", "Docker"],
+        highlights: [
+          "整合文字、檔案與短連結分享",
+          "支援自訂 slug、TTL、一次性連結與密碼保護",
+          "單一 Go binary 搭配 SQLite，部署簡單",
+        ],
+        href: "https://github.com/osga24/selfTMP",
+        hrefLabel: "View repo",
+        githubHref: "https://github.com/osga24/selfTMP",
+      },
+      {
         title: "osga.dev",
         summary: "個人網站，整理競賽、分享專案等經歷。",
         description:
@@ -69,6 +86,24 @@ export const projectsContent = {
   en: {
     projectsTitle: "Projects",
     projectItems: [
+      {
+        title: "selfTMP",
+        summary:
+          "A self-hostable temporary sharing service that combines text snippets, file sharing, and short links.",
+        description:
+          "A lightweight self-hosted temporary sharing tool built with Go, combining Pastebin-style text snippets, temporary file sharing, and short URLs in one service. It supports custom short link IDs, expiration times, one-time links, password protection, and an admin dashboard, making it suitable as a private sharing portal for individuals or small teams behind a reverse proxy.",
+        imageSrc: "/project/project-selfTMP.webp",
+        imageAlt: "selfTMP project cover",
+        stack: ["Go", "SQLite", "Docker"],
+        highlights: [
+          "Combines text, file, and short link sharing",
+          "Supports custom slugs, TTL, one-time links, and password protection",
+          "Easy to deploy with a single Go binary and SQLite",
+        ],
+        href: "https://github.com/osga24/selfTMP",
+        hrefLabel: "View repo",
+        githubHref: "https://github.com/osga24/selfTMP",
+      },
       {
         title: "osga.dev",
         summary:

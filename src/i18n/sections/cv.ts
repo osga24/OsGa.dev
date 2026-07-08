@@ -140,6 +140,11 @@ export const cvContent: Record<"zh-TW", CvContent> = {
         desc: "參與官方網站與活動系統開發，負責官網、大地遊戲、CFP 頁面與贊助徵求書等功能與頁面建置，技術包含 Astro、Next.js、Go 與 Three.js。",
       },
       {
+        name: "selfTMP",
+        href: "https://github.com/osga24/selfTMP",
+        desc: "以 Go 建置的自架暫存分享服務，整合文字暫存、檔案暫存與短連結，支援自訂 slug、TTL、一次性連結與密碼保護，單一 binary 搭配 SQLite 部署簡單。",
+      },
+      {
         name: "NYUST ICS",
         href: "https://nyust-ics.osga.dev",
         desc: "雲科大課表轉換工具，可將 DOCX 課表解析為 ICS 行事曆檔，支援課程時間解析、預覽與瀏覽器端處理，降低手動建立行事曆的成本。",
