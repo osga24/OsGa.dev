@@ -17,8 +17,6 @@ export const projectsContent = {
           "支援自訂 slug、TTL、一次性連結與密碼保護",
           "單一 Go binary 搭配 SQLite，部署簡單",
         ],
-        href: "https://github.com/osga24/selfTMP",
-        hrefLabel: "View repo",
         githubHref: "https://github.com/osga24/selfTMP",
       },
       {
@@ -100,8 +98,6 @@ export const projectsContent = {
           "Supports custom slugs, TTL, one-time links, and password protection",
           "Easy to deploy with a single Go binary and SQLite",
         ],
-        href: "https://github.com/osga24/selfTMP",
-        hrefLabel: "View repo",
         githubHref: "https://github.com/osga24/selfTMP",
       },
       {
