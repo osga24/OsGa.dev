@@ -77,7 +77,7 @@ const contacts: readonly CvLink[] = [
 export const cvContent: Record<"zh-TW", CvContent> = {
   "zh-TW": {
     name: "黃宥睿",
-    nameAlt: "Yo-Rei Huang / OsGa",
+    nameAlt: "Yo-Rui Huang / OsGa",
     headline: "滲透測試｜全端開發｜DevOps｜網路維運",
     location: "台灣，GMT+8",
     contacts,
