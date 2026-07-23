@@ -20,7 +20,7 @@ export const siteIdentityContent: SiteIdentityContent = {
     },
     {
       label: "Instagram",
-      href: "https://www.instagram.com/os324_/",
+      href: "https://www.instagram.com/osga.dev/",
       icon: "simple-icons:instagram",
     },
   ],
