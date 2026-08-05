@@ -50,6 +50,8 @@ export type ExperienceItem = {
 export type ExperienceContent = {
   experienceTitle: string;
   experienceItems: readonly ExperienceItem[];
+  otherRolesTitle: string;
+  otherRolesItems: readonly ExperienceItem[];
 };
 
 export type CertificationItem = {

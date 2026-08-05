@@ -25,11 +25,6 @@ export const communityConferenceContent = {
       },
       {
         year: "2025",
-        content: "AIS3 Juniors 2025",
-        role: "助教",
-      },
-      {
-        year: "2025",
         content: "臺灣駭客年會 HITCON",
         role: "活動組組員",
       },
@@ -57,11 +52,6 @@ export const communityConferenceContent = {
         year: "2024",
         content: "南臺灣學生資訊社群 SCIST (S5)",
         role: "資安助教",
-      },
-      {
-        year: "2024",
-        content: "AIS3 Juniors 2024",
-        role: "助教",
       },
       {
         year: "2024",
@@ -105,11 +95,6 @@ export const communityConferenceContent = {
       },
       {
         year: "2025",
-        content: "AIS3 Juniors 2025",
-        role: "Teaching Assistant",
-      },
-      {
-        year: "2025",
         content: "HITCON",
         role: "Program Team Member",
       },
@@ -137,11 +122,6 @@ export const communityConferenceContent = {
         year: "2024",
         content: "SCIST (S5)",
         role: "Cybersecurity Teaching Assistant",
-      },
-      {
-        year: "2024",
-        content: "AIS3 Juniors 2024",
-        role: "Teaching Assistant",
       },
       {
         year: "2024",

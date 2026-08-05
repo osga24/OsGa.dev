@@ -191,7 +191,7 @@ export const cvContent: Record<"zh-TW", CvContent> = {
       "創辦並擔任雲科大資訊安全研究社（YunHack）首屆社長，亦為校內網路管理小組（YunNET）成員 / 系統組組長，推動校內資安與網路維運社群發展。",
       "累積 30+ 場技術演講與工作坊，主題涵蓋 CTF、Linux、Web 安全、Discord Bot 開發與開發工作流，曾在 SITCON 2025 / 2026、MOPCON 2025、HITCON CTF、資安署等場合分享。",
       "擔任 SITCON 2026 開發組副組長、TWNOG 7 Infra 組、MOPCON 2025 開發組、HITCON 活動組、SITCON Camp 2025 隊輔組組長。",
-      "擔任 AIS3 Juniors 助教、SCIST 資安助教 / 出題者、THJCC 創辦人 / 出題者，長期投入資安教育、題目設計與社群推廣。",
+      "擔任 AIS3 助教、SCIST 資安助教 / 出題者、THJCC 創辦人 / 出題者，長期投入資安教育、題目設計與社群推廣。",
     ],
     certifications:
       "Cisco Certified Support Technician Cybersecurity；Information Technology Specialist: Cybersecurity",
