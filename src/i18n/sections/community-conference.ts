@@ -9,7 +9,7 @@ export const communityConferenceContent = {
     communityConferenceTitle: "社群 & 研討會",
     communityConferenceItems: [
       {
-        year: "2026",
+        year: "2026 - 至今",
         content: "台灣網路維運論壇 TWNOG 7",
         role: "Infra 組",
       },
@@ -24,7 +24,7 @@ export const communityConferenceContent = {
         role: "開發組組員",
       },
       {
-        year: "2025",
+        year: "2025 - 至今",
         content: "臺灣駭客年會 HITCON",
         role: "活動組組員",
       },
@@ -79,7 +79,7 @@ export const communityConferenceContent = {
     communityConferenceTitle: "Community & Conferences",
     communityConferenceItems: [
       {
-        year: "2026",
+        year: "2026 - Present",
         content: "TWNOG 7",
         role: "Infra Team",
       },
@@ -94,7 +94,7 @@ export const communityConferenceContent = {
         role: "Development Team Member",
       },
       {
-        year: "2025",
+        year: "2025 - Present",
         content: "HITCON",
         role: "Program Team Member",
       },

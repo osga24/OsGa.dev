@@ -33,7 +33,7 @@ export const experienceContent = {
       },
 
       {
-        period: "2024 - 2025",
+        period: "2024 - 至今",
         role: "資安組工讀生",
         org: "國立雲林科技大學 圖資處",
       },
@@ -96,7 +96,7 @@ export const experienceContent = {
         org: "AAASec 2025 Cybersecurity Talent Training Program",
       },
       {
-        period: "2024 - 2025",
+        period: "2024 - Present",
         role: "Cybersecurity Assistant",
         org: "Office of Library and Information Services, NYUST",
       },
