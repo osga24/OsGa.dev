@@ -11,6 +11,8 @@ type Props = {
   highlightsLabel: string;
   linkFallbackLabel: string;
   githubButtonLabel: string;
+  viewAllHref?: string;
+  viewAllLabel?: string;
 };
 
 const {
@@ -22,12 +24,19 @@ const {
   highlightsLabel,
   linkFallbackLabel,
   githubButtonLabel,
+  viewAllHref,
+  viewAllLabel,
 } = Astro.props;
 ---
 
 <section class="projects reveal-content" aria-labelledby="projects-title">
   <div class="projects-header">
     <h2 id="projects-title" class="projects-title">{title}</h2>
+    {viewAllHref && viewAllLabel && (
+      <a class="projects-view-all interactive-link" href={viewAllHref}>
+        {viewAllLabel} →
+      </a>
+    )}
   </div>
 
   <div class="projects-list divided-list">
@@ -35,6 +44,7 @@ const {
       <details class="project-card">
         <summary class="project-summary">
           <div class="project-heading">
+            {item.org && <p class="project-org">{item.org}</p>}
             <h3>{item.title}</h3>
             <p class="project-brief">{item.summary}</p>
           </div>
@@ -110,7 +120,18 @@ const {
   }
 
   .projects-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
     margin-bottom: 1.25rem;
+  }
+
+  .projects-view-all {
+    flex: 0 0 auto;
+    color: var(--muted);
+    font-size: 0.88rem;
+    text-decoration: none;
   }
 
   .projects-title {
@@ -140,6 +161,14 @@ const {
   .project-heading {
     flex: 1;
     min-width: 0;
+  }
+
+  .project-org {
+    margin: 0 0 0.25rem;
+    color: var(--muted);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
   .project-heading h3 {

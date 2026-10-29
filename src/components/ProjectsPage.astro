@@ -1,0 +1,94 @@
+---
+import Footer from "./Footer.astro";
+import LocaleSwitcher from "./LocaleSwitcher.astro";
+import ProjectsGrid from "./ProjectsGrid.astro";
+import ThemeToggle from "./ThemeToggle.astro";
+import { contentByLocale, type Locale } from "../i18n/content";
+
+type Props = {
+	locale: Locale;
+};
+
+const { locale } = Astro.props;
+const content = contentByLocale[locale];
+const otherLocale: Locale = locale === "en" ? "zh-TW" : "en";
+const homeHref = locale === "en" ? "/" : "/zh-tw";
+
+// Pinned projects first, keeping the authored order within each group.
+const items = [
+	...content.projectItems.filter((item) => item.pinned),
+	...content.projectItems.filter((item) => !item.pinned),
+];
+---
+
+<div class="page-actions">
+	<a class="back-link interactive-link hover-scale reveal-content" href={homeHref} data-skip-intro>
+		{content.projectsBackLabel}
+	</a>
+	<div class="page-actions-end">
+		<ThemeToggle
+			lightLabel={content.themeLightLabel}
+			darkLabel={content.themeDarkLabel}
+		/>
+		<LocaleSwitcher
+			label={content.switchLocaleLabel}
+			href={contentByLocale[otherLocale].projectsPageHref}
+		/>
+	</div>
+</div>
+
+<section class="projects-page-hero reveal-content">
+	<h1 class="wordmark">{content.projectsPageTitle}</h1>
+</section>
+
+<ProjectsGrid
+	title={content.projectsPageListTitle}
+	items={items}
+	closeLabel={content.projectsCloseLabel}
+	stackLabel={content.projectStackLabel}
+	highlightsLabel={content.projectHighlightsLabel}
+	linkFallbackLabel={content.projectLinkFallbackLabel}
+	githubButtonLabel={content.projectGithubButtonLabel}
+/>
+
+<Footer title={content.title} quickLinks={content.quickLinks} />
+
+<script>
+	document.querySelectorAll<HTMLAnchorElement>("[data-skip-intro]").forEach((link) => {
+		link.addEventListener("click", () => {
+			try {
+				window.sessionStorage.setItem("skip-wordmark-intro-once", "true");
+			} catch {}
+		});
+	});
+
+	document.body.classList.add("is-expanded");
+</script>
+
+<style>
+	.page-actions {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+
+	.page-actions-end {
+		display: flex;
+		align-items: center;
+		gap: 1.25rem;
+	}
+
+	.back-link {
+		color: var(--muted);
+		font-size: 0.88rem;
+		letter-spacing: 0.08em;
+		text-decoration: none;
+		--hover-scale: 1.05;
+	}
+
+	.projects-page-hero {
+		width: 100%;
+	}
+</style>

@@ -1,0 +1,428 @@
+---
+import { Icon } from "astro-icon/components";
+import type { ProjectItem } from "../i18n/content";
+
+type Props = {
+  title: string;
+  items: readonly ProjectItem[];
+  closeLabel: string;
+  stackLabel: string;
+  highlightsLabel: string;
+  linkFallbackLabel: string;
+  githubButtonLabel: string;
+};
+
+const {
+  title,
+  items,
+  closeLabel,
+  stackLabel,
+  highlightsLabel,
+  linkFallbackLabel,
+  githubButtonLabel,
+} = Astro.props;
+---
+
+<section class="projects-grid-section reveal-content" aria-labelledby="projects-grid-title">
+  <h2 id="projects-grid-title" class="projects-grid-title">{title}</h2>
+
+  <ul class="projects-grid">
+    {items.map((item, index) => (
+      <li>
+        <button
+          type="button"
+          class="grid-card"
+          data-project-open={`project-dialog-${index}`}
+          aria-haspopup="dialog"
+        >
+          <span class="grid-body">
+            {item.org && <span class="project-org">{item.org}</span>}
+            <span class="grid-name">{item.title}</span>
+            <span class="grid-summary">{item.summary}</span>
+
+            {item.stack && item.stack.length > 0 && (
+              <span class="grid-tags">
+                {item.stack.map((tag) => (
+                  <span>{tag}</span>
+                ))}
+              </span>
+            )}
+          </span>
+
+          <span class="grid-arrow" aria-hidden="true">
+            <Icon name="lucide:arrow-up-right" />
+          </span>
+        </button>
+
+        <dialog
+          id={`project-dialog-${index}`}
+          class="project-dialog"
+          aria-labelledby={`project-dialog-${index}-title`}
+        >
+          <div class="dialog-inner">
+            <div class="dialog-header">
+              <div>
+                {item.org && <p class="project-org">{item.org}</p>}
+                <h3 id={`project-dialog-${index}-title`}>{item.title}</h3>
+              </div>
+              <button type="button" class="dialog-close interactive-link hover-scale" data-project-close>
+                <Icon name="lucide:x" aria-hidden="true" />
+                <span class="sr-only">{closeLabel}</span>
+              </button>
+            </div>
+
+            {item.imageSrc && (
+              <img
+                class="dialog-image"
+                src={item.imageSrc}
+                alt={item.imageAlt ?? `${item.title} preview`}
+                loading="lazy"
+              />
+            )}
+
+            <p class="dialog-description">{item.description}</p>
+
+            {item.stack && item.stack.length > 0 && (
+              <div class="dialog-block">
+                <p class="meta-kicker">{stackLabel}</p>
+                <ul class="dialog-tags">
+                  {item.stack.map((tag) => (
+                    <li>{tag}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {item.highlights && item.highlights.length > 0 && (
+              <div class="dialog-block">
+                <p class="meta-kicker">{highlightsLabel}</p>
+                <ul class="dialog-highlights">
+                  {item.highlights.map((highlight) => (
+                    <li>{highlight}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {(item.href || item.githubHref) && (
+              <div class="dialog-links">
+                {item.href && (
+                  <a class="dialog-button interactive-link" href={item.href} target="_blank" rel="noreferrer">
+                    <Icon name="lucide:arrow-up-right" aria-hidden="true" />
+                    <span>{item.hrefLabel ?? linkFallbackLabel}</span>
+                  </a>
+                )}
+                {item.githubHref && (
+                  <a class="dialog-button interactive-link" href={item.githubHref} target="_blank" rel="noreferrer">
+                    <Icon name="simple-icons:github" aria-hidden="true" />
+                    <span>{githubButtonLabel}</span>
+                  </a>
+                )}
+              </div>
+            )}
+          </div>
+        </dialog>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>("[data-project-open]").forEach((button) => {
+    const dialog = document.getElementById(button.dataset.projectOpen ?? "");
+    if (!(dialog instanceof HTMLDialogElement)) {
+      return;
+    }
+
+    button.addEventListener("click", () => {
+      dialog.showModal();
+      document.documentElement.classList.add("has-open-dialog");
+    });
+
+    dialog.addEventListener("close", () => {
+      document.documentElement.classList.remove("has-open-dialog");
+    });
+
+    dialog.querySelector("[data-project-close]")?.addEventListener("click", () => {
+      dialog.close();
+    });
+
+    // Close when clicking the backdrop (the dialog element itself, outside .dialog-inner).
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) {
+        dialog.close();
+      }
+    });
+  });
+</script>
+
+<style>
+  .projects-grid-section {
+    width: 100%;
+  }
+
+  .projects-grid-title {
+    margin: 0 0 1.25rem;
+    font-size: clamp(1.35rem, 4vw, 1.8rem);
+    line-height: 1.1;
+  }
+
+  .projects-grid {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .projects-grid > li {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  /* Row */
+  .grid-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem 0;
+    border: 0;
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .grid-body {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-wrap: anywhere;
+  }
+
+  .grid-name {
+    font-size: 1rem;
+    font-weight: 700;
+    transition: color var(--theme-duration, 0.32s) var(--ease);
+  }
+
+  .grid-card:hover .grid-name,
+  .grid-card:focus-visible .grid-name {
+    color: var(--icon-hover);
+  }
+
+  .project-org {
+    margin: 0 0 0.25rem;
+    color: var(--muted);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .grid-summary {
+    margin-top: 0.3rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .grid-arrow {
+    flex: 0 0 auto;
+    display: inline-flex;
+    padding-top: 0.15rem;
+    color: var(--muted);
+    transition:
+      color var(--theme-duration, 0.32s) var(--ease),
+      transform 0.2s ease;
+  }
+
+  .grid-arrow :global(svg) {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .grid-card:hover .grid-arrow,
+  .grid-card:focus-visible .grid-arrow {
+    color: var(--icon-hover);
+    transform: translate(2px, -2px);
+  }
+
+  .grid-tags,
+  .dialog-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .grid-tags {
+    margin-top: 0.6rem;
+  }
+
+  .grid-tags span,
+  .dialog-tags li {
+    border: 1px solid var(--line);
+    padding: 0.15rem 0.55rem;
+    font-size: 0.76rem;
+    color: var(--muted);
+  }
+
+  /* Popup */
+  :global(html.has-open-dialog) {
+    overflow: hidden;
+  }
+
+  .project-dialog {
+    width: min(40rem, calc(100vw - 2rem));
+    max-height: calc(100dvh - 3rem);
+    padding: 0;
+    border: 1px solid var(--line);
+    background: var(--bg);
+    color: var(--text);
+    overflow-y: auto;
+  }
+
+  .project-dialog::backdrop {
+    background: color-mix(in srgb, #151515 45%, transparent);
+    backdrop-filter: blur(4px);
+  }
+
+  .project-dialog[open] {
+    animation: dialog-in 0.28s var(--ease);
+  }
+
+  .project-dialog[open]::backdrop {
+    animation: backdrop-in 0.28s var(--ease);
+  }
+
+  @keyframes dialog-in {
+    from {
+      opacity: 0;
+      transform: translateY(0.75rem) scale(0.98);
+    }
+  }
+
+  @keyframes backdrop-in {
+    from {
+      opacity: 0;
+    }
+  }
+
+  .dialog-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.25rem;
+    overflow-wrap: anywhere;
+  }
+
+  .dialog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .dialog-header h3 {
+    margin: 0;
+    font-size: clamp(1.2rem, 3.5vw, 1.5rem);
+    line-height: 1.15;
+  }
+
+  .dialog-close {
+    display: inline-flex;
+    padding: 0.25rem;
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    --hover-scale: 1.1;
+  }
+
+  .dialog-close :global(svg) {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .dialog-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: block;
+    object-fit: cover;
+    border: 1px solid var(--line);
+  }
+
+  .dialog-description {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .dialog-tags {
+    margin-top: 0.2rem;
+  }
+
+  .dialog-highlights {
+    margin: 0.2rem 0 0;
+    padding-left: 1.1rem;
+  }
+
+  .dialog-highlights li + li {
+    margin-top: 0.35rem;
+  }
+
+  .dialog-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem 1.1rem;
+  }
+
+  .dialog-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid var(--line);
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.92rem;
+    line-height: 1;
+    --hover-scale: 1.05;
+  }
+
+  .dialog-button :global(svg) {
+    width: 0.95rem;
+    height: 0.95rem;
+    flex: 0 0 auto;
+  }
+
+  @media (max-width: 520px) {
+    .dialog-inner {
+      padding: 1rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .grid-arrow,
+    .project-dialog[open],
+    .project-dialog[open]::backdrop {
+      transition: none;
+      animation: none;
+    }
+
+    .grid-card:hover .grid-arrow,
+    .grid-card:focus-visible .grid-arrow {
+      transform: none;
+    }
+  }
+</style>

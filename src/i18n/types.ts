@@ -112,6 +112,7 @@ export type CommunityConferenceContent = {
 
 export type ProjectItem = {
   title: string;
+  org?: string;
   summary: string;
   description: string;
   imageSrc?: string;
@@ -121,11 +122,19 @@ export type ProjectItem = {
   href?: string;
   hrefLabel?: string;
   githubHref?: string;
+  pinned?: boolean;
 };
 
 export type ProjectsContent = {
   projectsTitle: string;
   projectItems: readonly ProjectItem[];
+  projectsPageHref: string;
+  projectsPageTitle: string;
+  projectsPageLead: string;
+  projectsViewAllLabel: string;
+  projectsPageListTitle: string;
+  projectsCloseLabel: string;
+  projectsBackLabel: string;
 };
 
 export type UiContent = {

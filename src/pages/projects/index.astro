@@ -1,0 +1,15 @@
+---
+import ProjectsPage from "../../components/ProjectsPage.astro";
+import { contentByLocale } from "../../i18n/content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const content = contentByLocale["en"];
+---
+
+<BaseLayout
+	title={`${content.projectsPageTitle} — ${content.seoTitle}`}
+	description={content.projectsPageLead}
+	lang="en"
+>
+	<ProjectsPage locale="en" />
+</BaseLayout>

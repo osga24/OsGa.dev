@@ -50,13 +50,15 @@ const { content } = Astro.props;
 
 <ProjectsSection
 	title={content.projectsTitle}
-	items={content.projectItems}
+	items={content.projectItems.filter((item) => item.pinned)}
 	expandLabel={content.projectExpandLabel}
 	collapseLabel={content.projectCollapseLabel}
 	stackLabel={content.projectStackLabel}
 	highlightsLabel={content.projectHighlightsLabel}
 	linkFallbackLabel={content.projectLinkFallbackLabel}
 	githubButtonLabel={content.projectGithubButtonLabel}
+	viewAllHref={content.projectsPageHref}
+	viewAllLabel={content.projectsViewAllLabel}
 />
 
 <Certifications
