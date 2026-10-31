@@ -175,6 +175,7 @@ const cv = cvContent["zh-TW"];
 	 * clipping — so screen and print render identically (page margins via @page).
 	 */
 	.cv {
+		box-sizing: border-box;
 		width: 100%;
 		max-width: 210mm;
 		margin: 0 auto;
@@ -388,7 +389,7 @@ const cv = cvContent["zh-TW"];
 	/* ---- skills ---- */
 	.cv-skills {
 		display: grid;
-		grid-template-columns: max-content 1fr;
+		grid-template-columns: max-content minmax(0, 1fr);
 		gap: 0.22em 1em;
 	}
 
@@ -402,6 +403,15 @@ const cv = cvContent["zh-TW"];
 		.cv {
 			padding: 1.4rem 1.15rem 2rem;
 			font-size: 12px;
+		}
+
+		.cv-skills {
+			grid-template-columns: minmax(0, 1fr);
+			gap: 0.2em;
+		}
+
+		.skill-label:not(:first-child) {
+			margin-top: 0.5em;
 		}
 	}
 

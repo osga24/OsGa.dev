@@ -92,7 +92,7 @@ export const cvContent: Record<"zh-TW", CvContent> = {
       certifications: "證照",
     },
     summary:
-      "雲科大資訊管理系學生，專注於資訊安全、全端開發與基礎架構實務。興趣領域涵蓋滲透測試、DevOps、網路維運與 Web 應用開發，具備 CTF 競賽、校園網路與系統維運、內部工具開發、資安教學、技術演講與攻防演練經驗。擅長結合攻防思維、開發能力與維運經驗，從漏洞分析、系統建置到服務改善，解決實務場景中的安全與工程問題。",
+      "雲科大資訊管理系學生，具備資安攻防、全端開發與校園網路維運經驗。參與校內弱點檢測及行政院、教育體系攻防演練，並投入 CTF 競賽與資安教學。開發實務涵蓋網站與 CMS 建置、身分驗證、資料遷移、容器化部署與 CI/CD，能從安全檢測、功能開發到服務維運處理實際需求。",
     education: [
       {
         org: "國立雲林科技大學",
@@ -104,36 +104,41 @@ export const cvContent: Record<"zh-TW", CvContent> = {
       {
         org: "國立雲林科技大學 - 網路管理與開發",
         period: "2025 - 至今",
-        role: "系統組組長 / 各單位網管開發工讀生",
+        role: "網管小組第 27 屆系統組組長 / 第 28 屆副組長；各單位網管開發工讀生",
         bullets: [
-          "擔任網路管理小組系統組組長，協調日常維運、工作分派與跨單位技術支援。",
-          "負責校園網路服務、伺服器、Linux 系統與內部服務的維運、部署與問題排查。",
-          "提供校內單位與學生網路設定支援，協助國內外生解決連線問題，並針對單位需求提出網路架構規劃建議。",
-          "維護與開發校內單位網站及相關服務，協助改善服務穩定性、可維護性與使用體驗。",
+          "協調網管小組日常維運、工作分派與跨單位技術支援，維護校園網路服務、Linux 伺服器與內部系統。",
+          "支援諮商中心、工業管理系及資訊管理系的網站開發與網路維運，協助師生排查連線問題與規劃網路設定。",
+          "建置網站內容管理、Docker 部署與自架 runner 自動部署流程，並開發宿網報修對話紀錄匯出功能。",
         ],
       },
       {
         org: "國立雲林科技大學 - 資安與滲透測試",
-        period: "2024 - 2025",
+        period: "2024 - 至今",
         role: "資安組工讀生",
         bullets: [
-          "協助執行校內單位服務弱點掃描，整理弱點結果並進行風險初步分析。",
-          "針對 Web 服務與系統設定問題進行檢測，協助單位確認弱點成因與修復方向。",
-          "協助校內單位進行弱點修復、設定調整與提供資安改善，提升服務安全性。",
+          "執行校內服務弱點掃描與 Web / 系統設定檢測，整理風險、分析成因並提出修復方向。",
+          "協助校內單位修復弱點、調整設定與改善服務安全性；完成三甲科技 2025 資安人才培訓計畫（2025 - 2026）。",
         ],
       },
       {
         org: "行政院網路攻防演練 / 教育體系資安攻防演練",
-        period: "2025 - 2026",
-        role: "紅隊演練攻擊手",
+        period: "2025 - 至今",
+        role: "行政院演練攻擊手（2025 - 2026）/ 教育體系攻防檢測員（2026 - 至今）",
         bullets: [
-          "於授權攻防演練環境中進行安全測試，協助驗證系統防護成效與潛在風險。",
-          "運用滲透測試方法進行弱點檢測、攻擊路徑分析與風險整理。",
-          "彙整測試結果與改善建議，協助提升偵測、防護與應變能力。",
+          "於授權演練環境進行弱點檢測、攻擊路徑分析與安全測試，驗證系統防護成效。",
+          "彙整測試結果、風險與改善建議，協助提升偵測、防護與應變能力。",
         ],
       },
     ],
     projects: [
+      {
+        name: "雲科諮商輔導中心網站",
+        desc: "以 Next.js、Payload CMS 與 PostgreSQL 建置新版官網、後台及 API，完成舊站內容遷移與帳號編輯權限設計；整合 Docker、Caddy、GHCR 與自架 runner 的 CI/CD 部署及備份流程。",
+      },
+      {
+        name: "AetherClub Panel",
+        desc: "以 Go、React 與 PostgreSQL 重建營運後台，整合 Discord OAuth2、成員驗證、角色工作區及訂單 / 帳務功能；完成 Supabase 資料遷移，並開發自動語音房等 Discord Bot 功能。",
+      },
       {
         name: "SITCON 2026",
         href: "https://sitcon.org/2026",
@@ -150,9 +155,8 @@ export const cvContent: Record<"zh-TW", CvContent> = {
         desc: "雲科大課表轉換工具，可將 DOCX 課表解析為 ICS 行事曆檔，支援課程時間解析、預覽與瀏覽器端處理，降低手動建立行事曆的成本。",
       },
       {
-        name: "QuickJump",
-        href: "https://github.com/osga24/Quick-Jump",
-        desc: "Bash / Zsh 命令列工具，透過自訂 hotkey 快速跳轉常用資料夾，支援 shell 整合、自動補全、JSON 設定與安裝腳本，改善命令列工作流程效率。",
+        name: "YunNET Support Discord Bot",
+        desc: "參與宿網 Discord 報修系統開發，負責含訊息編輯 / 刪除歷史的 HTML / PDF 對話紀錄匯出，並以 Docker 與自架 runner 建立自動部署流程。",
       },
     ],
     achievements: [
@@ -188,10 +192,10 @@ export const cvContent: Record<"zh-TW", CvContent> = {
       },
     ],
     community: [
-      "創辦並擔任雲科大資訊安全研究社（YunHack）首屆社長，亦為校內網路管理小組（YunNET）成員 / 系統組組長，推動校內資安與網路維運社群發展。",
+      "創辦並擔任雲科大資訊安全研究社（YunHack）首屆社長；擔任網路管理小組（YunNET）第 27 屆系統組組長、第 28 屆副組長。",
       "累積 30+ 場技術演講與工作坊，主題涵蓋 CTF、Linux、Web 安全、Discord Bot 開發與開發工作流，曾在 SITCON 2025 / 2026、MOPCON 2025、HITCON CTF、資安署等場合分享。",
       "擔任 SITCON 2026 開發組副組長、TWNOG 7 Infra 組、MOPCON 2025 開發組、HITCON 活動組、SITCON Camp 2025 隊輔組組長。",
-      "擔任 AIS3 助教、SCIST 資安助教 / 出題者、THJCC 創辦人 / 出題者，長期投入資安教育、題目設計與社群推廣。",
+      "擔任 AIS3 2026 跨域資訊安全助教、AIS3 Junior 2024 - 2026 助教、雲科大 114 程式設計概念與方法助教，以及 SCIST 資安助教 / 出題者、THJCC 創辦人 / 出題者。",
     ],
     certifications:
       "Cisco Certified Support Technician Cybersecurity；Information Technology Specialist: Cybersecurity",
@@ -204,7 +208,7 @@ export const cvContent: Record<"zh-TW", CvContent> = {
       {
         label: "開發",
         value:
-          "Python、TypeScript、JavaScript、Shell、Next.js、Astro、FastAPI、Express.js、Go",
+          "Python、TypeScript、JavaScript、Go、Shell、React、Next.js、Astro、FastAPI、Express.js、Payload CMS、PostgreSQL、SQLite、MongoDB",
       },
       {
         label: "基礎設施 / 網路",
@@ -214,7 +218,7 @@ export const cvContent: Record<"zh-TW", CvContent> = {
       {
         label: "DevOps / 開發流程自動化",
         value:
-          "自動化腳本、部署流程設計、CI/CD 、Git / GitHub 、內部工具開發、維運流程優化",
+          "Git / GitHub、CI/CD、自架 runner、GHCR、Docker Compose、Caddy、自動化腳本、資料遷移、備份與部署流程設計",
       },
     ],
   },
