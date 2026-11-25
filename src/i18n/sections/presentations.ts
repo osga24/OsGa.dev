@@ -48,6 +48,16 @@ const presentationItemsByCategory = {
   ],
   sec: [
     {
+      date: "2026-10-20",
+      content: "宜蘭大學",
+      topic: "115學年度 校園資安體驗賽 暨 通報菁英招募計畫",
+    },
+    {
+      date: "2026-10-14",
+      content: "靜宜大學 帽子工廠",
+      topic: "滲透測試 Basic Workshop",
+    },
+    {
       date: "2026-05-30",
       content: "靜宜大學 行雲者研發基地",
       topic: "OSINT 與社交工程",
